@@ -5,7 +5,8 @@
 .header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 9999;
+    /* ✅ acima do hero + dropdown */
     width: 100%;
     background: transparent;
 }
@@ -39,6 +40,11 @@
         0 0.6rem 1.2rem rgba(11, 18, 32, 0.10);
 
     overflow: visible;
+    /* ✅ permite dropdown/painéis fora */
+    position: relative;
+    /* ✅ cria contexto para abs */
+    isolation: isolate;
+    /* ✅ stacking limpo com ::before/::after */
 
     transition:
         transform var(--transition-normal),
@@ -185,7 +191,12 @@
 /* ✅ TOPO: fundo igual ao Events/About/Partners */
 .innerTop {
     position: relative;
-    overflow: hidden;
+
+    /* ❗️FIX CRÍTICO: isto estava a cortar dropdown + hamburger no topo */
+    overflow: visible;
+
+    /* ✅ stacking limpo com pseudos (e evita bugs de z-index no mobile) */
+    isolation: isolate;
 
     background:
         radial-gradient(110% 80% at 12% 8%, rgba(1, 80, 127, 0.35), rgba(1, 80, 127, 0) 55%),
@@ -213,6 +224,9 @@
 
     filter: blur(10px);
     opacity: 0.9;
+
+    border-radius: inherit;
+    /* ✅ mantém o arredondado */
 }
 
 /* grain igual */
@@ -230,6 +244,9 @@
             rgba(255, 255, 255, 0.08) 1px,
             rgba(0, 0, 0, 0) 2px,
             rgba(0, 0, 0, 0) 4px);
+
+    border-radius: inherit;
+    /* ✅ mantém o arredondado */
 }
 
 /* ✅ SCROLLED: mantém glass */

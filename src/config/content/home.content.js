@@ -410,6 +410,9 @@ const partners = {
   items: [
     { key: "anadia", image: partnerAnadia, name: "Anadia" },
     { key: "catar", image: partnerCatar, name: "Qatar" },
+    { key: "malta", image: partnerMalta, name: "Malta" },
+    { key: "lebanon", image: partnerLebanon, name: "Lebanon" },
+
     { key: "catarclub", image: partnerCatarClub, name: "Qatar Club" },
     {
       key: "catargymnasticsfederation",
@@ -460,8 +463,6 @@ const partners = {
     },
     { key: "fpb", image: partnerFpb, name: "FPB" },
     { key: "kuwait", image: partnerKuwait, name: "Kuwait" },
-    { key: "lebanon", image: partnerLebanon, name: "Lebanon" },
-    { key: "malta", image: partnerMalta, name: "Malta" },
     {
       key: "municipioanadia",
       image: partnerMunicipioAnadia,
@@ -495,5 +496,5 @@ export const headerContent = {
   about,
   events,
   partners,
-  footer
+  footer,
 };

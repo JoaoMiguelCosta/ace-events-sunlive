@@ -42,7 +42,8 @@
     flex-direction: column;
     gap: 0.2rem;
 
-    z-index: 200;
+    z-index: 10000;
+    /* ✅ acima do topo/hero (mobile+desktop) */
     transform-origin: top center;
 }
 
