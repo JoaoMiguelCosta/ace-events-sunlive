@@ -1,0 +1,276 @@
+.section {
+    width: 100%;
+    padding: clamp(1rem, 2.5vw, 2.25rem) 0 clamp(2.75rem, 6vw, 5.25rem);
+    position: relative;
+    overflow: hidden;
+
+    /* ✅ fundo ACE - IGUAL ao About/Events */
+    background:
+        radial-gradient(110% 80% at 12% 8%, rgba(1, 80, 127, 0.35), rgba(1, 80, 127, 0) 55%),
+        radial-gradient(90% 70% at 88% 18%, rgba(1, 67, 109, 0.32), rgba(1, 67, 109, 0) 58%),
+        radial-gradient(120% 90% at 50% 110%, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0) 60%),
+        linear-gradient(180deg, #012f4b 0%, #013a5f 40%, #01283f 100%);
+}
+
+/* ✅ glow igual */
+.section::before {
+    content: "";
+    position: absolute;
+    inset: -6rem -2rem -6rem -2rem;
+    pointer-events: none;
+
+    background:
+        radial-gradient(60% 70% at 15% 10%, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 60%),
+        radial-gradient(55% 65% at 85% 20%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 65%),
+        radial-gradient(70% 60% at 50% 0%, rgba(1, 67, 109, 0.18), rgba(1, 67, 109, 0) 62%);
+
+    filter: blur(10px);
+    opacity: 0.9;
+}
+
+/* ✅ grain igual */
+.section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+
+    background-image: repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.08) 0px,
+            rgba(255, 255, 255, 0.08) 1px,
+            rgba(0, 0, 0, 0) 2px,
+            rgba(0, 0, 0, 0) 4px);
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    position: relative;
+    z-index: 1;
+}
+
+/* ========= Header (ACE) ========= */
+.header {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: clamp(0.9rem, 1.6vw, 1.25rem);
+}
+
+.title {
+    margin: 0;
+    color: var(--color-text-on-primary);
+    font-size: clamp(2.1rem, 4.2vw, 4rem);
+    line-height: 1.02;
+    font-weight: 950;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+    position: relative;
+}
+
+.subtitle {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--color-text-muted);
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: var(--leading-relaxed);
+}
+
+/* ========= Grid ========= */
+.grid {
+    display: grid;
+    gap: clamp(0.9rem, 2vw, 1.35rem);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+/* ========= Card (glass claro ACE) ========= */
+.card {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    border-radius: clamp(1.05rem, 1.6vw, 1.35rem);
+    border: 1px solid var(--color-border);
+
+    background-color: var(--color-text-on-primary);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 1.05rem 2.6rem rgba(11, 18, 32, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-normal),
+        background var(--transition-normal);
+
+    outline: none;
+
+    height: clamp(140px, 11.4vw, 184px);
+    padding: clamp(0.65rem, 1.2vw, 0.9rem);
+    overflow: hidden;
+
+    will-change: transform;
+}
+
+/* shine / light sweep */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+
+    background:
+        radial-gradient(120% 120% at 20% 18%, rgba(1, 67, 109, 0.10), rgba(1, 67, 109, 0) 55%),
+        radial-gradient(120% 120% at 80% 70%, rgba(1, 80, 127, 0.10), rgba(1, 80, 127, 0) 60%),
+        linear-gradient(115deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+}
+
+/* micro highlight na borda interna */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0.5px;
+    border-radius: inherit;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    opacity: 0.85;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(1, 67, 109, 0.28);
+    background: rgba(255, 255, 255, 0.80);
+
+    box-shadow:
+        0 1.35rem 3.4rem rgba(11, 18, 32, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:focus-visible {
+    border-color: rgba(1, 67, 109, 0.32);
+    box-shadow:
+        0 1.35rem 3.4rem rgba(11, 18, 32, 0.14),
+        0 0 0 0.22rem rgba(1, 67, 109, 0.16);
+}
+
+/* ✅ Logo */
+.logo {
+    display: block;
+    width: auto;
+    height: auto;
+
+    max-height: 9rem;
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter: none;
+    transition: transform var(--transition-fast);
+}
+
+.card:hover .logo {
+    transform: scale(1.035);
+}
+
+/* ✅ última linha (2 logos) centrada em desktop (4 colunas) */
+.grid> :nth-last-child(2) {
+    grid-column: 2 / 3;
+}
+
+.grid> :last-child {
+    grid-column: 3 / 4;
+}
+
+/* ========= Responsivo ========= */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid> :nth-last-child(2),
+    .grid> :last-child {
+        grid-column: auto;
+    }
+
+    .card {
+        height: clamp(118px, 13vw, 148px);
+        padding: clamp(0.6rem, 1.4vw, 0.85rem);
+    }
+
+    .logo {
+        max-height: 82px;
+        max-width: 96%;
+    }
+}
+
+@media (max-width: 720px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+        height: 132px;
+        padding: 0.8rem;
+    }
+
+    .logo {
+        max-height: 86px;
+        max-width: 96%;
+    }
+}
+
+@media (max-width: 520px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: 132px;
+    }
+
+    .logo {
+        max-height: 88px;
+        max-width: 96%;
+    }
+}
+
+/* ===== Solução definitiva p/ logos brancos (sem editar imagem) ===== */
+.card[data-key="municipioanadia"],
+.card[data-key="teamgym"] {
+    background:
+        linear-gradient(180deg, rgba(222, 238, 255, 1) 0%, rgba(204, 228, 252, 1) 100%);
+
+    border-color: rgba(1, 67, 109, 0.35);
+
+    box-shadow:
+        0 1.15rem 2.8rem rgba(11, 18, 32, 0.14),
+        inset 0 0 0 1px rgba(1, 67, 109, 0.22),
+        inset 0 10px 18px rgba(255, 255, 255, 0.65),
+        inset 0 -14px 28px rgba(1, 67, 109, 0.18);
+}
+
+.card[data-key="municipioanadia"] .logo,
+.card[data-key="teamgym"] .logo {
+    filter:
+        drop-shadow(0 0 0.75px rgba(4, 88, 141, 0.85)) drop-shadow(0 2px 6px rgba(11, 18, 32, 0.28));
+}
+
+.card[data-key="municipioanadia"]:hover,
+.card[data-key="teamgym"]:hover {
+    background:
+        linear-gradient(180deg, rgba(212, 232, 252, 1) 0%, rgba(196, 224, 248, 1) 100%);
+}

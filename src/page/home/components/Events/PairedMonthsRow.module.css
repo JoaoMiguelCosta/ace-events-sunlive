@@ -1,0 +1,77 @@
+.pairedBlock {
+    display: grid;
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+/* header desktop */
+.pairedHeader {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 320px));
+    gap: clamp(1rem, 2.2vw, 1.6rem);
+    justify-content: start;
+}
+
+.pairedTitleLeft,
+.pairedTitleRight {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding-left: 0.25rem;
+}
+
+.pairedTitleLeft {
+    grid-column: 1 / 2;
+}
+
+.pairedTitleRight {
+    grid-column: 2 / 3;
+}
+
+.rightCol3 {
+    grid-column: 3 / 4;
+}
+
+.pairedMonth {
+    font-weight: 950;
+    letter-spacing: -0.01em;
+    color: var(--color-text-on-primary);
+}
+
+.rowGrid3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 320px));
+    gap: clamp(1rem, 2.2vw, 1.6rem);
+    justify-content: start;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+    .pairedHeader {
+        grid-template-columns: repeat(2, minmax(220px, 320px));
+    }
+
+    .rightCol3,
+    .pairedTitleRight {
+        grid-column: 2 / 3;
+    }
+
+    .rowGrid3 {
+        grid-template-columns: repeat(2, minmax(220px, 320px));
+    }
+}
+
+
+/* mobile: JSX já trata o layout */
+@media (max-width: 560px) {
+
+    .pairedHeader,
+    .rowGrid3 {
+        display: none;
+    }
+
+    .pairedBlock {
+        justify-items: center;
+        /* 🔑 centra grupos April / May */
+    }
+}

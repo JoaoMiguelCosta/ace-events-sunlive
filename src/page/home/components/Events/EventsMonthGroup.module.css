@@ -1,0 +1,67 @@
+.group {
+    display: grid;
+    gap: clamp(0.75rem, 1.8vw, 0.95rem);
+}
+
+.header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-left: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.title {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.2vw, 1.15rem);
+    font-weight: 950;
+    letter-spacing: -0.01em;
+    color: var(--color-text-on-primary);
+}
+
+/* grid normal */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+    gap: clamp(0.9rem, 2.2vw, 1.6rem);
+    justify-content: start;
+}
+
+.gridPaired {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(0.9rem, 2.2vw, 1.6rem);
+}
+
+@media (max-width: 560px) {
+    .group {
+        justify-items: center;
+        /* 🔑 centra mês + cards */
+    }
+
+    .grid {
+        justify-content: center;
+    }
+
+    .header {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ✅ entre 562px e 696px: cards alinhados à esquerda */
+@media (min-width: 562px) and (max-width: 696px) {
+    .group {
+        justify-items: start;
+    }
+
+    .grid {
+        justify-content: start;
+    }
+}

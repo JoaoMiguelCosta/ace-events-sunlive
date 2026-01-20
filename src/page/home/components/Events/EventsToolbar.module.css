@@ -1,0 +1,75 @@
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    overflow: visible;
+    z-index: 300;
+    position: relative;
+
+    border-radius: var(--radius-lg);
+    padding: clamp(0.75rem, 2vw, 0.95rem);
+    border: 1px solid var(--color-border);
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 0.75rem 2.2rem rgba(11, 18, 32, 0.16);
+    min-width: 0;
+}
+
+.chips {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+/* ✅ <=1107px: o dropdown fica na mesma linha (abaixo) mas alinhado à direita */
+@media (max-width: 1107px) {
+    .right {
+        width: 100%;
+        justify-content: flex-end;
+        /* ✅ encosta à direita */
+    }
+}
+
+/* ✅ mobile: chips com scroll horizontal para não esmagar */
+@media (max-width: 480px) {
+    .toolbar {
+        flex-direction: column;
+        /* 🔑 evita esmagar */
+        align-items: stretch;
+    }
+
+    .chips {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        width: 100%;
+        /* 🔑 ocupa a linha */
+        min-height: 3rem;
+        /* 🔑 não colapsa */
+        padding-bottom: 0.4rem;
+
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .right {
+        width: 100%;
+        justify-content: stretch;
+        /* dropdown ocupa linha */
+    }
+}

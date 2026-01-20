@@ -1,0 +1,122 @@
+.wrapper {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.tab {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 0.95rem 1rem;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(1, 67, 109, 0.10);
+
+    cursor: pointer;
+    text-align: left;
+
+    transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease,
+        border-color 140ms ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tab:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 40px rgba(11, 18, 32, 0.08), 0 6px 14px rgba(11, 18, 32, 0.06);
+}
+
+.tab:focus-visible {
+    outline: 3px solid rgba(1, 67, 109, 0.28);
+    outline-offset: 2px;
+}
+
+.active {
+    background: #01436d;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.iconWrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: rgba(1, 67, 109, 0.08);
+}
+
+.active .iconWrap {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    color: #01436d;
+}
+
+.active .icon {
+    color: #fff;
+}
+
+.label {
+    font-weight: 900;
+    color: #01436d;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.active .label {
+    color: #fff;
+}
+
+/* ✅ Mobile: tabs em linha (corrigido: 938px) + FIX corte nas pontas */
+@media (max-width: 938px) {
+    .wrapper {
+        display: grid;
+      
+        grid-auto-columns: minmax(220px, 1fr);
+
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+
+     
+        padding-top: 0.25rem;
+            padding-bottom: 0.6rem;
+        margin: 0 -0.6rem;
+
+        scroll-snap-type: x mandatory;
+        gap: 0.6rem;
+    }
+
+    .tab {
+        scroll-snap-align: start;
+        padding: 0.85rem 0.9rem;
+    }
+}
+
+/* ✅ Tight mobile */
+@media (max-width: 640px) {
+    .wrapper {
+        grid-auto-columns: minmax(190px, 1fr);
+        padding: 0 0.55rem 0.35rem;
+        margin: 0 -0.55rem;
+    }
+
+    .tab {
+        padding: 0.8rem 0.85rem;
+        border-radius: 16px;
+    }
+
+    .iconWrap {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+    }
+}

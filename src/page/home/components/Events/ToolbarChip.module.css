@@ -1,0 +1,49 @@
+.chip {
+    padding: 0.55rem 0.85rem;
+    border-radius: var(--radius-pill);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--color-text-on-primary);
+    font-weight: 900;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+
+    transition: transform var(--transition-fast), background var(--transition-fast),
+        border-color var(--transition-fast);
+    outline: none;
+
+    white-space: nowrap;
+    /* ✅ perfeito para scroll horizontal no mobile */
+}
+
+.chip:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.chip:focus-visible {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.16);
+}
+
+.active {
+    border-color: rgba(255, 255, 255, 0.26);
+    background: rgba(1, 67, 109, 0.32);
+}
+
+/* ✅ DESATIVADO */
+.disabled,
+.chip:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chip:disabled:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+}

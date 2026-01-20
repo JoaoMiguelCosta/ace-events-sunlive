@@ -1,0 +1,203 @@
+.wrap {
+    position: relative;
+
+    /* ✅ wrapper mais pequeno (desktop/tablet) */
+    width: clamp(10.5rem, 18vw, 13.5rem);
+    min-width: 10.5rem;
+    max-width: 13.5rem;
+
+    z-index: 9999;
+}
+
+.button {
+    width: 100%;
+    min-width: 0;
+    /* ✅ importante em flex/grid */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ✅ centra o texto */
+    gap: 0.75rem;
+
+    position: relative;
+    /* ✅ necessário para o chevron absoluto */
+    border-radius: 0.95rem;
+    padding: 0.65rem 2.1rem 0.65rem 0.9rem;
+    /* ✅ espaço à direita p/ chevron */
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--color-text-on-primary);
+    font-weight: 900;
+
+    outline: none;
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.button:focus-visible {
+    border-color: rgba(255, 255, 255, 0.34);
+    box-shadow:
+        0 0 0 4px rgba(255, 255, 255, 0.16),
+        0 0.9rem 2.2rem rgba(11, 18, 32, 0.22);
+}
+
+.buttonActive {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.42);
+
+    background:
+        radial-gradient(120% 90% at 50% 0%,
+            rgba(255, 255, 255, 0.20),
+            rgba(255, 255, 255, 0) 60%),
+        rgba(1, 67, 109, 0.62);
+
+    box-shadow:
+        0 1.15rem 2.8rem rgba(11, 18, 32, 0.30),
+        0 0 0 5px rgba(1, 67, 109, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.buttonActive:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.50);
+}
+
+.label {
+    text-align: center;
+    /* ✅ garante centrado */
+    flex: 0 1 auto;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.chevron {
+    position: absolute;
+    right: 0.95rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+
+    width: 0.65rem;
+    height: 0.65rem;
+    border-right: 2px solid rgba(255, 255, 255, 0.88);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.88);
+    opacity: 0.9;
+    flex: 0 0 auto;
+}
+
+.menu {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    /* ✅ mesma largura do wrap/botão */
+    min-width: 10.5rem;
+    max-width: 13.5rem;
+
+    z-index: 999;
+    isolation: isolate;
+
+    padding: 0.5rem;
+    border-radius: 1.05rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(6, 40, 61, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 0.9rem 2.4rem rgba(11, 18, 32, 0.22);
+    list-style: none;
+    margin: 0;
+
+    max-height: 16.5rem;
+    overflow: auto;
+}
+
+.menu::-webkit-scrollbar {
+    width: 10px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+}
+
+.item {
+    width: 100%;
+    text-align: left;
+
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.85rem;
+
+    color: var(--color-text-on-primary);
+    font-weight: 900;
+
+    border: 1px solid transparent;
+    background: transparent;
+
+    transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.item:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.itemActive {
+    background: rgba(1, 67, 109, 0.32);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* ✅ <=1107px: o dropdown fica alinhado à direita e o menu abre para a direita */
+@media (max-width: 1107px) {
+    .wrap {
+        margin-left: auto;
+        /* ✅ empurra o dropdown para a direita */
+    }
+
+    .menu {
+        left: auto;
+        right: 0;
+        /* ✅ prende o menu à direita */
+    }
+}
+
+/* ✅ mobile: ocupa a linha toda e sem limites */
+@media (max-width: 480px) {
+    .wrap {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        margin-left: 0;
+        /* ✅ volta ao normal no mobile */
+    }
+
+    .menu {
+        max-width: none;
+        min-width: 0;
+        left: 0;
+        right: 0;
+        /* ✅ ocupa a largura toda no mobile */
+    }
+}
