@@ -291,7 +291,7 @@ const events = {
       href: "https://www.wagtrainingcamp.sunlive.pt/malta",
       year: 2026,
       month: "July",
-      dateText: "12–19 July, 2026",
+      dateText: "8–13 July, 2026",
       tbd: false,
       sport: "WAG",
       start: { year: 2026, month: 7, day: 12 },
