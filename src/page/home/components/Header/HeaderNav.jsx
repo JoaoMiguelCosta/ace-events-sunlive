@@ -25,25 +25,76 @@ export default function HeaderNav({ menu }) {
     close();
   };
 
+  const renderLink = (item, mode) => {
+    const isMobile = mode === "mobile";
+    const isExternal = !!item.href || item.external;
+    const href = item.href ?? item.anchor ?? "#";
+    const Icon = item.icon;
+
+    // ✅ external com icon: desktop e mobile -> ícone-only
+    const iconOnlyDesktop = !isMobile && isExternal && Icon;
+    const iconOnlyMobile = isMobile && isExternal && Icon;
+
+    const cls = iconOnlyDesktop
+      ? styles.iconLinkPlain // ✅ sem círculo no desktop
+      : iconOnlyMobile
+        ? styles.mobileIconLink
+        : isMobile
+          ? styles.mobileLink
+          : styles.navLink;
+
+    const commonProps = {
+      href,
+      className: cls,
+      onClick: isMobile ? closeAll : undefined,
+      ...(isExternal ? { target: "_blank", rel: "noreferrer noopener" } : null),
+      ...(iconOnlyDesktop || iconOnlyMobile
+        ? { "aria-label": item.label, title: item.label }
+        : null),
+    };
+
+    return (
+      <a key={`${mode}-${item.label}`} {...commonProps}>
+        {iconOnlyMobile ? (
+          <>
+            <span className={styles.linkIcon} aria-hidden="true">
+              <Icon />
+            </span>
+            <span className={styles.mobileLinkRight} aria-hidden="true">
+              ↗
+            </span>
+          </>
+        ) : iconOnlyDesktop ? (
+          <span className={styles.linkIcon} aria-hidden="true">
+            <Icon />
+          </span>
+        ) : isMobile ? (
+          <>
+            <span className={styles.mobileLinkLeft}>
+              {Icon ? (
+                <span className={styles.linkIcon} aria-hidden="true">
+                  <Icon />
+                </span>
+              ) : null}
+              <span className={styles.linkText}>{item.label}</span>
+            </span>
+            <span className={styles.mobileLinkRight} aria-hidden="true">
+              ↗
+            </span>
+          </>
+        ) : (
+          item.label
+        )}
+      </a>
+    );
+  };
+
   const renderItems = (mode = "desktop") =>
     items.map((item) => {
       const hasDropdown = item.type === "dropdown";
       const open = hasDropdown && isOpen(item.label);
 
-      if (!hasDropdown) {
-        const cls = mode === "mobile" ? styles.mobileLink : styles.navLink;
-
-        return (
-          <a
-            key={`${mode}-${item.label}`}
-            href={item.anchor}
-            className={cls}
-            onClick={mode === "mobile" ? closeAll : undefined}
-          >
-            {item.label}
-          </a>
-        );
-      }
+      if (!hasDropdown) return renderLink(item, mode);
 
       // dropdown item
       if (mode === "desktop") {
@@ -92,7 +143,9 @@ export default function HeaderNav({ menu }) {
           </button>
 
           <div
-            className={`${styles.mobileDropdownSlot} ${open ? styles.mobileDropdownOpen : ""}`}
+            className={`${styles.mobileDropdownSlot} ${
+              open ? styles.mobileDropdownOpen : ""
+            }`}
           >
             <HeaderDropdown
               isOpen={open}
@@ -127,7 +180,9 @@ export default function HeaderNav({ menu }) {
 
       {/* Mobile panel */}
       <div
-        className={`${styles.mobilePanel} ${mobileOpen ? styles.mobilePanelOpen : ""}`}
+        className={`${styles.mobilePanel} ${
+          mobileOpen ? styles.mobilePanelOpen : ""
+        }`}
       >
         <nav className={styles.mobileNav} aria-label="Menu mobile">
           {renderItems("mobile")}

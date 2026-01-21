@@ -30,13 +30,17 @@
     background: rgba(255, 255, 255, 0);
     border: 0.0625rem solid rgba(255, 255, 255, 0);
 
-    transition:
-        background-color var(--transition-normal),
+    transition: background-color var(--transition-normal),
         border-color var(--transition-normal),
         transform var(--transition-normal),
         opacity var(--transition-normal);
 
     white-space: nowrap;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navLink:hover {
@@ -77,6 +81,57 @@
 .caretOpen {
     transform: rotate(180deg) translateY(0.05rem);
     opacity: 1;
+}
+
+/* =========================
+   Ícones
+========================= */
+.linkIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkIcon :global(svg) {
+    width: 1.15rem;
+    height: 1.15rem;
+    stroke-width: 2.1;
+}
+
+/* ✅ Desktop external icon: sem círculo */
+.iconLinkPlain {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.35rem 0.4rem;
+    border-radius: 0.75rem;
+
+    background: transparent;
+    border: 0.0625rem solid transparent;
+    box-shadow: none;
+
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+
+    transition: transform var(--transition-normal),
+        background-color var(--transition-normal),
+        border-color var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+.iconLinkPlain:hover {
+    transform: translateY(-0.03rem);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.10);
+    opacity: 1;
+}
+
+.iconLinkPlain:focus-visible {
+    outline: none;
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 0 0.16rem rgba(255, 255, 255, 0.18);
 }
 
 /* =========================
@@ -138,7 +193,6 @@
     top: calc(100% + 0.5rem);
     right: 0;
 
-    /* ✅ mais estreito */
     width: min(86vw, 16.75rem);
 
     padding: 0.38rem;
@@ -164,7 +218,6 @@
     transform-origin: top right;
     z-index: 250;
 
-    /* ✅ menos alto */
     max-height: min(58vh, 20rem);
     overflow: auto;
 }
@@ -214,13 +267,62 @@
     gap: 0.18rem;
 }
 
+/* ✅ mobile: alinhamento ícone + texto */
+.mobileLinkLeft {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+}
+
+.linkText {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mobileLinkRight {
+    opacity: 0.9;
+}
+
+/* ✅ Mobile icon-only link (Instagram) */
+.mobileIconLink {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.52rem 0.62rem;
+    border-radius: 0.72rem;
+
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.mobileIconLink:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.mobileIconLink .linkIcon :global(svg) {
+    width: 1.2rem;
+    height: 1.2rem;
+    stroke-width: 2.1;
+}
+
 /* =========================
    Submenu (mobile) abre à ESQUERDA
 ========================= */
 .mobileDropdownSlot {
     display: none;
     position: relative;
-    /* base para o dropdown absolut */
 }
 
 .mobileDropdownOpen {
@@ -286,7 +388,8 @@
     }
 
     .mobileLink,
-    .mobileLinkBtn {
+    .mobileLinkBtn,
+    .mobileIconLink {
         font-size: 0.86rem;
         padding: 0.5rem 0.6rem;
     }
@@ -298,11 +401,13 @@
 @media (prefers-reduced-motion: reduce) {
 
     .navLink,
-    .caret {
+    .caret,
+    .iconLinkPlain {
         transition: none;
     }
 
-    .navLink:hover {
+    .navLink:hover,
+    .iconLinkPlain:hover {
         transform: none;
     }
 }

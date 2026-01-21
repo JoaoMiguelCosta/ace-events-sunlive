@@ -14,7 +14,7 @@
 /* ✅ garante o mesmo alinhamento do site (1200px) */
 .container {
     margin: 0 auto;
-    padding-top: 0.75rem;
+   
 }
 
 /* ✅ Uma camada extra de “polish” sem mexer no layout */

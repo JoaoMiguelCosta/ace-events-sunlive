@@ -52,6 +52,7 @@ import {
   Users,
   Globe,
   Award,
+  Instagram,
 } from "../../ui/icons";
 
 /* =========================
@@ -82,6 +83,14 @@ const header = {
     { label: "Events", anchor: "#events" },
     { label: "Partners", anchor: "#partners" },
     { label: "Contacts", anchor: "#contacts" },
+
+    // ✅ Instagram (externo)
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/ace.sunlive/",
+      icon: Instagram,
+      external: true,
+    },
   ],
 };
 
