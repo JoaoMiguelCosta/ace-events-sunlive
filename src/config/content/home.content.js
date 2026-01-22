@@ -278,7 +278,7 @@ const events = {
       href: "",
       year: 2026,
       month: "July",
-      dateText: "10–12 July, 2026",
+      dateText: "3–5 July, 2026",
       tbd: false,
       sport: "Basket Sub 20",
       start: { year: 2026, month: 7, day: 3 },
