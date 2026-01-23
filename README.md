@@ -1,12 +1,15 @@
 # Projeto ACE – Plataforma de Eventos
 
 ## TL;DR
+
 Plataforma web de eventos desportivos, moderna e responsiva, construída em React com CSS Modules e foco em UX, acessibilidade e performance.
 
 ---
 
 ## 📌 Visão Geral
+
 Este projeto é uma plataforma de divulgação e exploração de eventos desportivos. O foco principal é:
+
 - Design moderno (glass / night UI)
 - Totalmente responsivo (mobile-first)
 - Componentização clara
@@ -15,6 +18,7 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## 🧱 Stack Tecnológica
+
 - React (componentes funcionais)
 - CSS Modules (estilos isolados)
 - JavaScript (ES6+)
@@ -23,6 +27,7 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## 📂 Estrutura do Projeto
+
 ```
 /src
  ├─ components
@@ -49,6 +54,7 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## 🎨 Design & UI
+
 - Sistema de cores centralizado em :root
 - Glassmorphism com backdrop-filter
 - Espaçamentos responsivos com clamp()
@@ -57,6 +63,7 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## 📱 Responsividade
+
 - Mobile-first
 - Breakpoints fluidos
 - Conteúdo centralizado em todas as larguras
@@ -65,6 +72,7 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## ♿ Acessibilidade
+
 - aria-label, role, tablist
 - :focus-visible
 - HTML semântico
@@ -73,17 +81,21 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## ⚙️ Componentes-Chave
+
 ### Hero
+
 - Background dinâmico
 - Overlay para contraste
 - Títulos multi-linha
 
 ### EventsToolbar
+
 - Filtros por mês e desporto
 - Estado ativo controlado externamente
 - Layout adaptável
 
 ### Partners
+
 - Grid de logos
 - Cards com fundo suave
 - Overrides por parceiro
@@ -91,7 +103,9 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
 ---
 
 ## 🗂 Conteúdo Dinâmico
+
 Todo o conteúdo vem de:
+
 ```
 /config/content/home.content.js
 ```
@@ -99,12 +113,14 @@ Todo o conteúdo vem de:
 ---
 
 ## 🚀 Como Correr o Projeto
+
 ```bash
 npm install
 npm run dev
 ```
 
 Build produção:
+
 ```bash
 npm run build
 ```
@@ -112,6 +128,7 @@ npm run build
 ---
 
 ## 🧪 Boas Práticas
+
 - Componentes reutilizáveis
 - CSS previsível
 - Sem estilos globais desnecessários
@@ -120,6 +137,7 @@ npm run build
 ---
 
 ## 🔧 Próximos Passos
+
 - Dark / Light mode
 - Framer Motion
 - CMS
@@ -128,12 +146,14 @@ npm run build
 ---
 
 ## 📄 Licença
+
 Projeto privado / em desenvolvimento.
 
 ---
 
 ## 👤 Autor
-João Costa
-Estudante de Programação Web
 
-teste
+João Costa
+
+
+
