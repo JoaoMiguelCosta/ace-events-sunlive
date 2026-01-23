@@ -1,0 +1,54 @@
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+
+    background:
+        radial-gradient(48rem 120rem at 0% 35%,
+            rgba(0, 40, 85, 0.34) 0%,
+            rgba(0, 40, 85, 0.18) 32%,
+            rgba(0, 40, 85, 0.00) 66%),
+
+        radial-gradient(48rem 120rem at 100% 30%,
+            rgba(0, 40, 85, 0.36) 0%,
+            rgba(0, 40, 85, 0.20) 34%,
+            rgba(0, 40, 85, 0.00) 68%),
+
+        radial-gradient(90rem 50rem at 50% 108%,
+            rgba(0, 40, 85, 0.24) 0%,
+            rgba(0, 40, 85, 0.12) 38%,
+            rgba(0, 40, 85, 0.00) 68%),
+
+        radial-gradient(60rem 34rem at 18% 10%,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(255, 255, 255, 0.06) 34%,
+            rgba(255, 255, 255, 0.00) 62%),
+
+        linear-gradient(135deg, #f1f7ff 0%, #e2efff 38%, #f0f7ff 100%);
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    padding: clamp(18px, 2.5vw, 28px);
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(10px);
+}
+
+.back:hover {
+    background: rgba(255, 255, 255, 0.24);
+}

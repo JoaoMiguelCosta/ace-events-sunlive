@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from "./EventPage.module.css";
+import styles from "./EventLayout.module.css";
+import Footer from "../../components/Footer/Footer.jsx";
 
 export default function EventLayout({ children }) {
   return (
@@ -11,6 +12,9 @@ export default function EventLayout({ children }) {
 
         {children}
       </div>
+
+      {/* ✅ Footer full width */}
+      <Footer />
     </div>
   );
 }

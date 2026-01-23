@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-import { headerContent } from "../../../../config/content/home.content.js"
+import { headerContent } from "../../../config/content/home.content.js";
 
 export default function Footer() {
   const footer = headerContent?.footer;

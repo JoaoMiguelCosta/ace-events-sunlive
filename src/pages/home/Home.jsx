@@ -7,7 +7,7 @@ import About from "./components/About/About.jsx";
 import EventsSection from "./components/Events/EventsSection.jsx";
 import Partners from "./components/Partners/Partners.jsx";
 
-import Footer from "./components/Footer/Footer.jsx";
+import Footer from "../../shared/components/Footer/Footer.jsx";
 
 import { headerContent } from "../../config/content/home.content.js";
 

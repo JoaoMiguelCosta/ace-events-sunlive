@@ -1,4 +1,4 @@
-import EventLayout from "../EventLayout.jsx";
+import EventLayout from "../../../shared/layout/EventLayout/EventLayout.jsx";
 
 export default function SunliveTrackTrophyC2({ event }) {
   return (

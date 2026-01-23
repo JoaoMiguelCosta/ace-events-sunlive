@@ -1,10 +1,9 @@
 /* wrapper sem fundo (só para espaçamento e alinhamento) */
 .shell {
     width: 100%;
-   
 }
 
-/* ✅ footer limitado (fundo + glow + grain dentro dos 1200px) */
+/* footer limitado (fundo + glow + grain dentro dos 1200px) */
 .footer {
     width: min(1200px, 100%);
     margin: 0 auto;
@@ -13,8 +12,6 @@
     overflow: hidden;
 
     padding: clamp(1.15rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
-
-  
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 
     background:
@@ -26,7 +23,7 @@
     box-shadow: 0 0.75rem 2.2rem rgba(11, 18, 32, 0.16);
 }
 
-/* ✅ glow igual */
+/* glow */
 .footer::before {
     content: "";
     position: absolute;
@@ -42,7 +39,7 @@
     opacity: 0.9;
 }
 
-/* ✅ grain igual */
+/* grain */
 .footer::after {
     content: "";
     position: absolute;
@@ -66,7 +63,6 @@
 
     position: relative;
     z-index: 1;
-    /* ✅ acima do grain */
 
     color: rgba(255, 255, 255, 0.9);
     font-weight: 800;
@@ -76,7 +72,6 @@
     line-height: 1.35;
 }
 
-/* ♿ reduz motion */
 @media (prefers-reduced-motion: reduce) {
     .footer::before {
         filter: none;
