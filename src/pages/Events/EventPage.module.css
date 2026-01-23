@@ -3,8 +3,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-
-    /* opcional: evita scroll horizontal por algum elemento maior */
     overflow-x: clip;
 
     background:
@@ -28,24 +26,28 @@
             rgba(255, 255, 255, 0.06) 34%,
             rgba(255, 255, 255, 0.00) 62%),
 
-        linear-gradient(135deg,
-            #f1f7ff 0%,
-            #e2efff 38%,
-            #f0f7ff 100%);
-
-    color: var(--color-text);
+        linear-gradient(135deg, #f1f7ff 0%, #e2efff 38%, #f0f7ff 100%);
 }
 
-/* ✅ 100% até 1200px; acima disso fica centrado */
 .container {
     width: min(1200px, 100%);
     margin-inline: auto;
-
-
+    padding: clamp(18px, 2.5vw, 28px);
 }
 
-/* só para não ficares com “página vazia” */
-.placeholder {
-    width: 100%;
-    padding: clamp(3rem, 6vw, 5rem) 0;
+.back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(10px);
+}
+
+.back:hover {
+    background: rgba(255, 255, 255, 0.24);
 }

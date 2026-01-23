@@ -62,10 +62,10 @@ select {
     --ace-cta-blue: rgb(0, 170, 255);
 
     /* ✅ largura global (máx 1200px) */
-    --page-max: 1200px;
-    --page-pad: 4vw;
+    --pages-max: 1200px;
+    --pages-pad: 4vw;
     /* padding lateral fluido */
-    --page-width: min(var(--page-max), calc(100vw - (var(--page-pad) * 2)));
+    --pages-width: min(var(--pages-max), calc(100vw - (var(--pages-pad) * 2)));
 }
 
 /* ✅ wrapper opcional para o fundo da página (podes usar no Layout/App) */
@@ -76,7 +76,7 @@ select {
 
 /* ✅ container global para alinhar TODAS as secções/hero/header */
 .aceContainer {
-    width: var(--page-width);
+    width: var(--pages-width);
     margin-inline: auto;
 }
 

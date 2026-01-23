@@ -1,4 +1,4 @@
-// config/content/home.content.js
+// src/config/content/home.content.js
 
 import aceLogo from "../../assets/ace/ace.png";
 import heroImg from "../../assets/hero/hero.png";
@@ -40,9 +40,9 @@ import partnerKuwait from "../../assets/partners/kuwait.png";
 import partnerLebanon from "../../assets/partners/lebanon.png";
 import partnerMalta from "../../assets/partners/malta.png";
 import partnerMunicipioAnadia from "../../assets/partners/municipioanadia.png";
-import partnerPegasus from "../../assets/partners/pegasus.png";
 import partnerTeamGym from "../../assets/partners/teamgym.png";
 import partnerTurismo from "../../assets/partners/turismo.png";
+import partnerPegasus from "../../assets/partners/pegasus.png";
 import partnerUec from "../../assets/partners/uec.png";
 
 import {
@@ -410,6 +410,20 @@ const events = {
   ],
 };
 
+// ✅ eventos externos (não têm página interna)
+export const EXTERNAL_EVENT_KEYS = new Set([
+  "blackline",
+  "sunlive-international-wag-training-camp", // WAG Malta
+  "international-wag-training-camp", // WAG Portugal/Anadia
+  "international-continental-cup", // Continental Cup
+]);
+
+// ✅ auto-href: todos internos menos estes 4
+events.items = events.items.map((e) => {
+  if (EXTERNAL_EVENT_KEYS.has(e.key)) return e;
+  return { ...e, href: `/events/${e.key}` };
+});
+
 /* =========================
    PARTNERS
 ========================= */
@@ -490,12 +504,12 @@ const partners = {
 const footer = {
   id: "footer",
   copyright: "© Copyright 2026 Sunlive – All Rights Reserved",
-  // opcional (se quiseres mais tarde):
   links: [
     // { label: "Privacy", href: "/privacy" },
     // { label: "Terms", href: "/terms" },
   ],
 };
+
 /* =========================
    EXPORT (HOME CONTENT)
 ========================= */

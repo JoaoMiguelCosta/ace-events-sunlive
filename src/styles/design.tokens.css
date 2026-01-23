@@ -61,7 +61,7 @@
     /* -----------------------
    *  LAYOUT
    * --------------------- */
-    --layout-page-max: 80rem;
+    --layout-pages-max: 80rem;
     --layout-inner-max: 72rem;
     --header-offset: 4.5rem;
 

@@ -48,7 +48,7 @@ Este projeto é uma plataforma de divulgação e exploração de eventos desport
  ├─ styles
  │   └─ variables.css
  │
- └─ pages
+ └─ pagess
 ```
 
 ---
