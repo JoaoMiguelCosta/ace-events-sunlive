@@ -13,7 +13,6 @@ export default function EventLayout({ children }) {
         {children}
       </div>
 
-      {/* ✅ Footer full width */}
       <Footer />
     </div>
   );
