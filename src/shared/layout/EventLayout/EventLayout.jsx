@@ -1,3 +1,4 @@
+// src/shared/layout/EventLayout/EventLayout.jsx
 import { Link } from "react-router-dom";
 import styles from "./EventLayout.module.css";
 import Footer from "../../components/Footer/Footer.jsx";

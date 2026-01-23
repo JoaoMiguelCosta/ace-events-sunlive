@@ -1,9 +1,13 @@
+// src/pages/Events/EventPage.jsx
 import { useParams, Navigate } from "react-router-dom";
 import {
   headerContent,
   EXTERNAL_EVENT_KEYS,
 } from "../../config/content/home.content.js";
-import { PAGE_BY_KEY } from "./eventPagesMap.js";
+import { EVENTS_BY_KEY } from "../../config/content/events/eventRoutes.js";
+
+
+import EventLayout from "../../shared/layout/EventLayout/EventLayout.jsx";
 
 export default function EventPage() {
   const { key } = useParams();
@@ -13,14 +17,31 @@ export default function EventPage() {
     return <Navigate to="/" replace />;
   }
 
-  const event = headerContent.events.items.find((e) => e.key === key);
-  const Page = PAGE_BY_KEY[key];
+  // 🔸 "evento base" (lista oficial)
+  const eventBase = headerContent.events.items.find((e) => e.key === key);
 
-  // 🔸 fallback mínimo (sem layout / estilos)
-  if (!event || !Page) {
-    return null;
+  // 🔸 conteúdo detalhado (página)
+  const content = EVENTS_BY_KEY[key];
+
+  if (!eventBase || !content) {
+    return <Navigate to="/" replace />;
   }
 
-  // 🔸 página específica trata layout + footer
-  return <Page event={event} />;
+  return (
+    <EventLayout>
+      {/* A partir daqui é o TEU template fixo.
+          Liga as secções ao "content". */}
+      {/* Ex.: <Hero data={content.hero} /> */}
+      {/* Ex.: <InfoCards items={content.infoCards} /> */}
+      {/* Ex.: <Responsaveis items={content.responsaveis} /> */}
+      {/* Ex.: <Partner data={content.partner} /> */}
+      {/* Ex.: <About data={content.about} /> */}
+      {/* Ex.: <Program data={content.program} /> */}
+
+      {/* Enquanto não ligares aos componentes, podes testar assim: */}
+      <h1>{content.hero?.title || eventBase.title}</h1>
+      <p>{content.hero?.dateLabel}</p>
+      <p>{content.hero?.locationLabel}</p>
+    </EventLayout>
+  );
 }
