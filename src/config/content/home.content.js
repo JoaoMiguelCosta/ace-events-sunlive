@@ -273,7 +273,7 @@ const events = {
     },
     {
       key: "sunlive-international-cup",
-      title: "Sunlive International CUP",
+      title: "Sunlive International Tournament",
       image: eventSunliveInternationalCup,
       href: "",
       year: 2026,

@@ -6,42 +6,42 @@ import {
 } from "../../config/content/home.content.js";
 import { EVENTS_BY_KEY } from "../../config/content/events/eventRoutes.js";
 
-
 import EventLayout from "../../shared/layout/EventLayout/EventLayout.jsx";
+import styles from "./EventPage.module.css";
+
+import HeroSection from "./components/HeroSection.jsx";
 
 export default function EventPage() {
   const { key } = useParams();
 
-  // 🔸 eventos externos → fora do site
-  if (EXTERNAL_EVENT_KEYS.has(key)) {
-    return <Navigate to="/" replace />;
-  }
+  if (EXTERNAL_EVENT_KEYS.has(key)) return <Navigate to="/" replace />;
 
-  // 🔸 "evento base" (lista oficial)
-  const eventBase = headerContent.events.items.find((e) => e.key === key);
-
-  // 🔸 conteúdo detalhado (página)
+  const eventBase =
+    headerContent?.events?.items?.find((e) => e.key === key) || null;
   const content = EVENTS_BY_KEY[key];
 
-  if (!eventBase || !content) {
-    return <Navigate to="/" replace />;
-  }
+  if (!eventBase || !content) return <Navigate to="/" replace />;
+
+  const theme = content.theme || {};
+
+  const themeVars = {
+    "--bg": theme.bg,
+    "--bgAlt": theme.bgAlt,
+    "--surface": theme.surface,
+    "--surfaceAlt": theme.surfaceAlt,
+    "--primary": theme.primary,
+    "--secondary": theme.secondary,
+    "--accent": theme.accent,
+    "--text": theme.text,
+    "--textMuted": theme.textMuted,
+    "--border": theme.border,
+  };
 
   return (
-    <EventLayout>
-      {/* A partir daqui é o TEU template fixo.
-          Liga as secções ao "content". */}
-      {/* Ex.: <Hero data={content.hero} /> */}
-      {/* Ex.: <InfoCards items={content.infoCards} /> */}
-      {/* Ex.: <Responsaveis items={content.responsaveis} /> */}
-      {/* Ex.: <Partner data={content.partner} /> */}
-      {/* Ex.: <About data={content.about} /> */}
-      {/* Ex.: <Program data={content.program} /> */}
-
-      {/* Enquanto não ligares aos componentes, podes testar assim: */}
-      <h1>{content.hero?.title || eventBase.title}</h1>
-      <p>{content.hero?.dateLabel}</p>
-      <p>{content.hero?.locationLabel}</p>
+    <EventLayout style={themeVars}>
+      <div className={styles.eventPage}>
+        <HeroSection hero={content.hero} fallbackTitle={eventBase.title} />
+      </div>
     </EventLayout>
   );
 }
