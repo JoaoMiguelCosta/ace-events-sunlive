@@ -9,7 +9,7 @@ import eventBootCamp from "../../assets/events/boot-camp.png";
 import eventEgTrampolinsTrainingCamp from "../../assets/events/eg-trampolins-training-camp.png";
 import eventInternationalCoachingAcademy from "../../assets/events/international-coaching-academy.png";
 import eventInternationalContinentalCup from "../../assets/events/international-continental-cup.png";
-import eventInternationalWagtTrainingCamp from "../../assets/events/international-wagt-training-camp.png";
+import eventInternationalWagTrainingCamp from "../../assets/events/international-wag-training-camp.png";
 import eventMasterTrackWorldRecord from "../../assets/events/master-track-world-record.png";
 import eventRgAtlanticCup from "../../assets/events/rg-atlantic-cup.png";
 import eventRhythmicGymnasticsSunsetCup from "../../assets/events/rhythmic-gymnastics-sunset-cup.png";
@@ -326,15 +326,15 @@ const events = {
     {
       key: "international-wag-training-camp",
       title: "International WAG Training Camp",
-      image: eventInternationalWagtTrainingCamp,
+      image: eventInternationalWagTrainingCamp,
       href: "https://www.wagtrainingcamp.sunlive.pt/anadia",
       year: 2026,
       month: "August",
-      dateText: "17–22 August, 2026",
+      dateText: "19–24 August, 2026",
       tbd: false,
       sport: "WAG",
-      start: { year: 2026, month: 8, day: 17 },
-      end: { year: 2026, month: 8, day: 22 },
+      start: { year: 2026, month: 8, day: 19 },
+      end: { year: 2026, month: 8, day: 24 },
     },
     {
       key: "teamgym",
