@@ -1,11 +1,13 @@
+/* EventLayout.module.css */
+
 .wrapper {
     min-height: 100vh;
     width: 100%;
     margin: 0;
     overflow-x: clip;
 
-    /* ✅ margem fluida (gutter) que encolhe com o ecrã e nunca zera */
-    padding-inline: clamp(14px, 4vw, 96px);
+    /* ✅ margem fluida: 16px (mobile) → até 96px (desktop grande) */
+    padding-inline: clamp(16px, 4vw, 96px);
     padding-block: 0;
 
     background:
@@ -28,7 +30,5 @@
     max-width: 1200px;
     width: 100%;
     margin-inline: auto;
-
-    /* ✅ evita que padding/width cause overflow */
     box-sizing: border-box;
 }
