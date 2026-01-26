@@ -1,4 +1,4 @@
-// src/pages/Events/components/OfficialPartner.jsx
+// src/pages/Events/components/CombinedContact.jsx
 import styles from "../EventPage.module.css";
 
 function initials(name = "") {
@@ -11,18 +11,19 @@ function initials(name = "") {
     .join("");
 }
 
-export default function OfficialPartner({ content }) {
-  const data = content?.officialPartner;
+export default function CombinedContact({ content }) {
+  const data = content?.combinedContact;
   if (!data) return null;
 
-  const title = data.title || "Parceria";
+  const title = data.title || "Responsáveis/Parceria";
   const name = data.name || "Sunlive";
   const description =
-    data.description || "Parceiro oficial do evento e apoio à organização.";
+    data.description ||
+    "Responsáveis e Parceiro oficial do evento e apoio à organização.";
   const logo = data.logo;
 
   return (
-    <section className={styles.partnerWrap} aria-label="Parceria">
+    <section className={styles.partnerWrap} aria-label={title}>
       <h2 className={styles.partnerTitle}>{title}</h2>
 
       <div className={`${styles.glassCard} ${styles.partnerCard}`}>

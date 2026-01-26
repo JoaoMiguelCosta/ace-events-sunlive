@@ -3,10 +3,27 @@ import { Link } from "react-router-dom";
 import styles from "../EventPage.module.css";
 import { ArrowLeft, Calendar, Pin, Download } from "../../../ui/icons";
 
-export default function HeroSection({ hero, fallbackTitle }) {
+// ✅ Vite: mapeia todos os banners (retorna URL final)
+const BANNERS = import.meta.glob("../../../assets/banners/*", {
+  eager: true,
+  import: "default",
+});
+
+const getBannerUrl = (filename) => {
+  if (!filename) return null;
+  // tenta match por sufixo (mais tolerante)
+  const hit = Object.entries(BANNERS).find(([path]) =>
+    path.endsWith(`/${filename}`),
+  );
+  return hit ? hit[1] : null;
+};
+
+export default function HeroSection({ hero, fallbackTitle, flags }) {
   if (!hero) return null;
 
   const { title, dateLabel, locationLabel, image, actions } = hero;
+
+  const hideActions = flags?.hideHeroActions === true;
 
   const primary = actions?.primary;
   const secondary = actions?.secondary;
@@ -17,19 +34,18 @@ export default function HeroSection({ hero, fallbackTitle }) {
   const secondaryLabel = secondary?.label || "Download Programa";
   const secondaryHref = secondary?.href || "#";
 
+  const hasAnyAction = !!(primary?.href || secondary?.href);
+
+  const bgUrl = getBannerUrl(image);
+
   return (
     <section
       className={styles.hero}
-      style={{
-        backgroundImage: image
-          ? `url(/src/assets/banners/${image})`
-          : undefined,
-      }}
+      style={{ backgroundImage: bgUrl ? `url(${bgUrl})` : undefined }}
       aria-label="Event Hero"
     >
       <div className={styles.heroShade}>
         <div className={styles.heroInner}>
-          {/* Voltar */}
           <Link to="/" className={styles.heroBack}>
             <ArrowLeft size={16} className={styles.backIcon} />
             Voltar
@@ -53,18 +69,22 @@ export default function HeroSection({ hero, fallbackTitle }) {
             )}
           </div>
 
-          <div className={styles.heroActions}>
-            {/* Primary CTA */}
-            <a className={styles.primaryBtn} href={primaryHref}>
-              {primaryLabel}
-            </a>
+          {!hideActions && hasAnyAction && (
+            <div className={styles.heroActions}>
+              {primary?.href && (
+                <a className={styles.primaryBtn} href={primaryHref}>
+                  {primaryLabel}
+                </a>
+              )}
 
-            {/* Secondary CTA */}
-            <a className={styles.secondaryBtn} href={secondaryHref}>
-              <Download size={18} className={styles.btnIcon} />
-              {secondaryLabel}
-            </a>
-          </div>
+              {secondary?.href && (
+                <a className={styles.secondaryBtn} href={secondaryHref}>
+                  <Download size={18} className={styles.btnIcon} />
+                  {secondaryLabel}
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

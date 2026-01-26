@@ -10,3 +10,7 @@ export { default as Calendar } from "./Calendar";
 export { default as Pin } from "./Pin";
 export { default as Download } from "./Download";
 export { default as ArrowLeft } from "./ArrowLeft";
+export { default as Trophy } from "./Trophy";
+export { default as SignalHighIcon } from "./SignalHighIcon";
+
+export { default as CheckIcon } from "./CheckIcon";

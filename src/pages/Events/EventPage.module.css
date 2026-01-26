@@ -2,9 +2,33 @@
    EVENT PAGE (theme vars)
 ========================= */
 .eventPage {
-
     color: var(--text, #fff);
     padding: 0;
+}
+
+/* =========================
+   BASE: Glass Card (tinted by event vars)
+========================= */
+.glassCard {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.10));
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow, 0 16px 60px rgba(0, 0, 0, 0.35));
+    position: relative;
+    overflow: hidden;
+}
+
+.glassCard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            rgba(255, 255, 255, 0.02) 18%,
+            transparent 60%);
+    opacity: 0.9;
 }
 
 /* =========================
@@ -17,11 +41,10 @@
 
     background-size: cover;
     background-position: center 35%;
-    /* ligeiramente acima do centro */
     background-repeat: no-repeat;
 }
 
-/* blur layer: mais discreta (só para suavizar banding/artefactos) */
+/* blur layer */
 .hero::before {
     content: "";
     position: absolute;
@@ -34,32 +57,7 @@
     opacity: 0.14;
 }
 
-/* overlay: suficiente para esconder “AI look” sem matar a foto */
-.hero {
-    position: relative;
-    min-height: 420px;
-    overflow: hidden;
-
-    background-size: cover;
-    background-position: center 35%;
-    /* ligeiramente acima do centro */
-    background-repeat: no-repeat;
-}
-
-/* blur layer: mais discreta (só para suavizar banding/artefactos) */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: inherit;
-    background-size: cover;
-    background-position: inherit;
-    filter: blur(10px);
-    transform: scale(1.04);
-    opacity: 0.14;
-}
-
-/* overlay: suficiente para esconder “AI look” sem matar a foto */
+/* overlay */
 .heroShade {
     position: relative;
     z-index: 1;
@@ -69,17 +67,14 @@
     align-items: center;
 
     background:
-        /* escurece mais à esquerda (texto), e suaviza para a direita (atleta) */
         linear-gradient(90deg,
             rgba(0, 10, 24, 0.74) 0%,
             rgba(0, 10, 24, 0.52) 45%,
             rgba(0, 10, 24, 0.26) 78%,
             rgba(0, 10, 24, 0.12) 100%),
-        /* vinheta suave para esconder ruído/imperfeições no topo e cantos */
         radial-gradient(80rem 44rem at 65% 35%,
             rgba(0, 0, 0, 0.18) 0%,
             rgba(0, 0, 0, 0.00) 62%),
-        /* toque de cor do tema, muito leve */
         radial-gradient(70rem 38rem at 18% 42%,
             color-mix(in srgb, var(--bgAlt, var(--bg)) 22%, transparent) 0%,
             transparent 60%);
@@ -182,6 +177,34 @@
     color: currentColor;
 }
 
+/* back */
+.heroBack {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 18px;
+    text-decoration: none;
+
+    color: var(--textMuted, #b6c0cc);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.heroBack:hover {
+    color: var(--text, #fff);
+}
+
+.heroBack:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent) 70%, white);
+    outline-offset: 4px;
+    border-radius: 10px;
+}
+
+.backIcon {
+    flex: 0 0 auto;
+}
+
 /* =========================
    MOBILE
 ========================= */
@@ -211,29 +234,726 @@
     }
 }
 
-.heroBack {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    margin-bottom: 18px;
-    text-decoration: none;
-
-    color: var(--textMuted, #b6c0cc);
-    font-weight: 600;
-    letter-spacing: 0.01em;
+/* ✅ OVERVIEW (cards após o hero) */
+.overviewWrap {
+    width: 100%;
+    margin-top: 18px;
 }
 
-.heroBack:hover {
+.overviewGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.overviewCard {
+    padding: 18px 18px 16px;
+    border-radius: 16px;
+}
+
+.overviewTopRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.95;
+}
+
+.overviewIconBox {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.overviewIcon {
+    opacity: 0.9;
+}
+
+.overviewLabel {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.overviewValue {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 650;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* responsive */
+@media (max-width: 980px) {
+    .overviewGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .overviewGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   TEAM (Responsáveis)
+========================= */
+.sectionTitle {
+    margin: 48px 0 18px;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.teamWrap {
+    width: 100%;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.teamCard {
+    padding: 26px 18px 22px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.teamAvatarWrap {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 14px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: grid;
+    place-items: center;
+}
+
+.teamAvatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.teamAvatarFallback {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: 750;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.teamName {
+    font-size: 18px;
+    font-weight: 650;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 620px) {
+    .teamGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sectionTitle {
+        font-size: 34px;
+    }
+}
+
+/* =========================
+   OFFICIAL PARTNER (Parceria)
+========================= */
+.partnerWrap {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.partnerTitle {
+    margin: 0 0 18px;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.partnerCard {
+    width: 100%;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-radius: 16px;
+}
+
+.partnerLogoBox {
+    width: 92px;
+    height: 92px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    overflow: hidden;
+}
+
+.partnerLogoImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* placeholder quando não houver imagem */
+.partnerLogoPlaceholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+}
+
+.partnerText {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.partnerName {
+    font-size: 30px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.1;
+}
+
+.partnerDescription {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.70);
+    line-height: 1.4;
+}
+
+/* responsive */
+@media (max-width: 620px) {
+    .partnerTitle {
+        font-size: 34px;
+    }
+
+    .partnerCard {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .partnerLogoBox {
+        width: 76px;
+        height: 76px;
+    }
+
+    .partnerName {
+        font-size: 24px;
+    }
+
+    .partnerDescription {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   EVENT DESCRIPTION
+========================= */
+.descWrap {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.descTitle {
+    margin: 0 0 18px;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.descText {
+    max-width: 1100px;
+}
+
+.descParagraph {
+    margin: 0 0 18px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.highlightsCard {
+    margin-top: 26px;
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.highlightsTitle {
+    font-size: 20px;
+    font-weight: 750;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 14px;
+}
+
+.highlightsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 26px;
+}
+
+.highlightItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.highlightIcon {
+    color: #22c55e;
+    /* verde check */
+    flex: 0 0 auto;
+    margin-top: 1px;
+}
+
+.highlightText {
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* responsive */
+@media (max-width: 620px) {
+    .descTitle {
+        font-size: 34px;
+    }
+
+    .highlightsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .descParagraph {
+        font-size: 16px;
+    }
+
+    .highlightText {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   PROGRAM
+========================= */
+.programWrap {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.programTitle {
+    margin: 0 0 18px;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.programTabs {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+/* ✅ agora o tab vai usar o “glass” via className extra no JSX:
+   className={`${styles.programTab} ${styles.glassCard} ...`}
+*/
+.programTab {
+    border-radius: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    text-align: left;
+    min-width: 118px;
+
+    /* overrides do glassCard para tabs */
+    box-shadow: none;
+    transition: transform 120ms ease, filter 120ms ease, border 120ms ease;
+}
+
+.programTab:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+}
+
+.programTab:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent) 70%, white);
+    outline-offset: 4px;
+}
+
+/* ativo mantém “pill” branco */
+.programTabActive {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* desliga o brilho do glassCard quando ativo (senão suja o branco) */
+.programTabActive::before {
+    opacity: 0;
+}
+
+.programTabDay {
+    font-size: 13px;
+    font-weight: 650;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.programTabDate {
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.programTabActive .programTabDay {
+    color: rgba(0, 0, 0, 0.60);
+}
+
+.programTabActive .programTabDate {
+    color: rgba(0, 0, 0, 0.92);
+}
+
+/* ✅ o card do programa também deve levar .glassCard no JSX */
+.programCard {
+    width: 100%;
+    border-radius: 18px;
+    padding: 26px 22px;
+}
+
+.programRow {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 22px;
+    padding: 18px 0;
+}
+
+.programRow+.programRow {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.programTime {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.55);
+    padding-top: 2px;
+}
+
+.programItemTitle {
+    font-size: 16px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.programItemDesc {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.programEmpty {
+    padding: 10px 2px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* responsive */
+@media (max-width: 620px) {
+    .programTitle {
+        font-size: 34px;
+    }
+
+    .programRow {
+        grid-template-columns: 70px 1fr;
+        gap: 16px;
+    }
+}
+
+/* =========================
+   PRICING (Custos)
+========================= */
+.pricingWrap {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.pricingTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px;
+}
+
+.pricingTitle {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.pricingCard {
+    /* ✅ no JSX mete também className={`${styles.pricingCard} ${styles.glassCard}` */
+    padding: 22px;
+}
+
+.pricingTop {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.pricingName {
+    font-size: 18px;
+    font-weight: 750;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.pricingPrice {
+    font-size: 26px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.pricingList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.pricingItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pricingItemIcon {
+    color: #22c55e;
+    flex: 0 0 auto;
+    margin-top: 1px;
+}
+
+@media (max-width: 620px) {
+    .pricingTitle {
+        font-size: 34px;
+    }
+
+    .pricingGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricingPrice {
+        font-size: 24px;
+    }
+}
+
+/* =========================
+   OPTIONAL EXTRAS
+========================= */
+.extrasWrap {
+    width: 100%;
+    margin-top: 18px;
+    /* fica logo abaixo dos Custos */
+}
+
+.extrasCard {
+    width: 100%;
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.extrasTitle {
+    font-size: 16px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 14px;
+}
+
+.extrasList {
+    display: flex;
+    flex-direction: column;
+}
+
+.extrasRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 2px;
+}
+
+.extrasRow+.extrasRow {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.extrasLabel {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.extrasPrice {
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+    white-space: nowrap;
+}
+
+/* =========================
+   IMPORTANT NOTES
+========================= */
+.notesWrap {
+    width: 100%;
+    margin-top: 14px;
+    /* colado aos Extras */
+    padding-bottom: 8px;
+}
+
+.notesText {
+    max-width: 1100px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.notesLabel {
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* =========================
+   REGISTRATION
+========================= */
+.regWrap {
+    width: 100%;
+    margin-top: 40px;
+    padding: 46px 18px;
+    border-radius: 18px;
+
+    /* igual vibe aos cards */
+    background:
+        radial-gradient(70rem 40rem at 20% 35%,
+            color-mix(in srgb, var(--accent) 14%, transparent) 0%,
+            transparent 60%),
+        radial-gradient(70rem 40rem at 80% 30%,
+            color-mix(in srgb, var(--primary) 16%, transparent) 0%,
+            transparent 62%),
+        linear-gradient(135deg,
+            color-mix(in srgb, var(--bgAlt, var(--bg)) 55%, transparent) 0%,
+            color-mix(in srgb, var(--bg) 78%, transparent) 100%);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 70px rgba(0, 0, 0, 0.35);
+}
+
+.regInner {
+    width: min(900px, 100%);
+    margin-inline: auto;
+    text-align: center;
+
+    /* garante alinhamento vertical tipo mock */
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+
+.regTitle {
+    margin: 0;
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
     color: var(--text, #fff);
 }
 
-.heroBack:focus-visible {
-    outline: 2px solid color-mix(in srgb, var(--accent) 70%, white);
-    outline-offset: 4px;
-    border-radius: 10px;
+.regSubtitle {
+    margin: 0;
+    max-width: 720px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.78);
 }
 
-.backIcon {
-    flex: 0 0 auto;
+.regBtn {
+    /* para não “parecer texto” */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 14px;
+    padding: 14px 28px;
+    border-radius: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--text, #fff);
+    color: color-mix(in srgb, var(--bg, #0e1621) 70%, #000);
+
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+
+    /* remove "look" estranho nalguns browsers */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.regBtn:hover {
+    filter: brightness(1.03);
+}
+
+.regBtn:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent) 70%, white);
+    outline-offset: 4px;
+}
+
+.regHelper {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 620px) {
+    .regWrap {
+        padding: 34px 14px;
+    }
+
+    .regBtn {
+        width: 100%;
+    }
 }
