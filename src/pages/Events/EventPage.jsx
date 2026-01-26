@@ -20,6 +20,7 @@ import EventTeam from "./components/EventTeam.jsx";
 import OfficialPartner from "./components/OfficialPartner.jsx";
 import CombinedContact from "./components/CombinedContact.jsx";
 import Registration from "./components/Registration.jsx";
+import Footer from "./components/Footer.jsx";
 
 export default function EventPage() {
   const { key } = useParams();
@@ -73,6 +74,7 @@ export default function EventPage() {
         <OptionalExtras content={content} />
         <ImportantNotes content={content} />
         <Registration content={content} />
+        <Footer content={content} />
       </div>
     </EventLayout>
   );

@@ -147,6 +147,10 @@ export default {
     helper: "A inscrição é feita via Google Forms.",
   },
 
+  footer: {
+    text: "© Copyright 2026 Sunlive – All Rights Reserved",
+  },
+
   layout: {
     bg: "#1b2a1f",
     bgAlt: "#243a2a",

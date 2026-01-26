@@ -49,8 +49,9 @@ export default {
     },
   },
 
-
-  
+  footer: {
+    text: "© Copyright 2026 Sunlive – All Rights Reserved",
+  },
 
   layout: {
     bg: "#24140b",
