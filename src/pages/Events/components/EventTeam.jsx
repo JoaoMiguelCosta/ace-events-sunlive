@@ -16,14 +16,12 @@ export default function EventTeam({ content }) {
   const members = team?.members ?? [];
   if (!team || !members.length) return null;
 
-  const visible = members.slice(0, 2);
-
   return (
     <section className={styles.teamWrap} aria-label="Responsáveis do evento">
       <h2 className={styles.sectionTitle}>{team.title || "Responsáveis"}</h2>
 
       <div className={styles.teamGrid}>
-        {visible.map((p, idx) => (
+        {members.map((p, idx) => (
           <div
             key={`${p.name}-${idx}`}
             className={`${styles.glassCard} ${styles.teamCard}`}

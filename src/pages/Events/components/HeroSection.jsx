@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "../EventPage.module.css";
 import { ArrowLeft, Calendar, Pin, Download } from "../../../ui/icons";
 
-// ✅ Vite: mapeia todos os banners (retorna URL final)
 const BANNERS = import.meta.glob("../../../assets/banners/*", {
   eager: true,
   import: "default",
@@ -11,7 +10,6 @@ const BANNERS = import.meta.glob("../../../assets/banners/*", {
 
 const getBannerUrl = (filename) => {
   if (!filename) return null;
-  // tenta match por sufixo (mais tolerante)
   const hit = Object.entries(BANNERS).find(([path]) =>
     path.endsWith(`/${filename}`),
   );
@@ -37,6 +35,16 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
   const hasAnyAction = !!(primary?.href || secondary?.href);
 
   const bgUrl = getBannerUrl(image);
+
+  const onAnchorClick = (href) => (e) => {
+    if (!href || !href.startsWith("#")) return;
+    e.preventDefault();
+
+    const el = document.querySelector(href);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <section
@@ -72,7 +80,11 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
           {!hideActions && hasAnyAction && (
             <div className={styles.heroActions}>
               {primary?.href && (
-                <a className={styles.primaryBtn} href={primaryHref}>
+                <a
+                  className={styles.primaryBtn}
+                  href={primaryHref}
+                  onClick={onAnchorClick(primaryHref)} // ✅ scroll suave
+                >
                   {primaryLabel}
                 </a>
               )}

@@ -3,48 +3,48 @@ export default {
   hero: {
     title: "Sunlive International Tournament",
     dateLabel: "3–5 July, 2026",
-    locationLabel: "Anadia • High Performance Center",
+    locationLabel: "Pavilhão Desportivo de Sangalhos",
     image: "sunlive-international-tournament.png",
 
     actions: {
-      primary: { label: "Inscrever", href: "/" },
-      secondary: { label: "Download Programa", href: "/" },
+      primary: { label: "Register", href: "#register" },
+      secondary: { label: "Download Program", href: "/" },
     },
   },
 
   overview: {
     items: [
-      { icon: "trophy", label: "Modalidade", value: "Trampolins" },
-      { icon: "award", label: "Nível", value: "International Camp" },
-      { icon: "calendar", label: "Duração", value: "5 days" },
-      { icon: "users", label: "Capacidade", value: "40 athletes" },
+      { icon: "trophy", label: "Discipline", value: "Trampolines" },
+      { icon: "award", label: "Level", value: "International Camp" },
+      { icon: "calendar", label: "Duration", value: "3 days" },
+      { icon: "users", label: "Capacity", value: "xx athletes" },
     ],
   },
 
   combinedContact: {
-    title: "Responsáveis/Parceria",
+    title: "Event Leads / Partnership",
     name: "Sunlive",
     description:
-      "Responsáveis e Parceiro oficial do evento e apoio à organização.",
+      "Event leads and official event partner, providing organizational support.",
     logo: null,
   },
 
   description: {
-    title: "Sobre o Evento",
+    title: "About the Event",
     paragraphs: [
-      "O EG Trampolins Training Camp 2026 é um estágio internacional de alta performance destinado a atletas e treinadores que pretendem elevar o seu nível técnico e competitivo. Durante 5 dias intensivos, os participantes terão acesso a sessões de treino especializadas, workshops temáticos e acompanhamento personalizado por parte de uma equipa técnica de excelência.",
-      "Este campo de treino oferece uma oportunidade única de desenvolvimento num ambiente profissional, com acesso a equipamentos de última geração e metodologias de treino inovadoras utilizadas pelas principais seleções internacionais.",
+      "The EG Trampolines Training Camp 2026 is a high-performance international camp designed for athletes and coaches who want to elevate their technical and competitive level. Over 5 intensive days, participants will have access to specialized training sessions, themed workshops, and personalized support from an outstanding technical staff.",
+      "This training camp offers a unique development opportunity in a professional environment, with access to state-of-the-art equipment and innovative training methodologies used by leading international teams.",
     ],
     highlights: {
-      title: "Destaques",
+      title: "Highlights",
       icon: "check",
       items: [
-        "Sessões técnicas diárias com treinadores internacionais",
-        "Workshops de preparação física e mental",
-        "Networking com atletas de diferentes países",
-        "Análise de vídeo e feedback personalizado",
-        "Sessões de recuperação e fisioterapia",
-        "Certificado de participação oficial",
+        "Daily technical sessions with international coaches",
+        "Strength and mental preparation workshops",
+        "Networking with athletes from different countries",
+        "Video analysis and personalized feedback",
+        "Recovery sessions and physiotherapy support",
+        "Official participation certificate",
       ],
     },
   },
@@ -73,7 +73,6 @@ export default {
     border: "rgba(255,255,255,0.08)",
   },
 
-  // ✅ NOVO: vars para passares ao <EventLayout style={content.cssVars} />
   cssVars: {
     "--bg": "#24140b",
     "--bgAlt": "#2f1a0e",

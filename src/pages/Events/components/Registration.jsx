@@ -5,6 +5,8 @@ export default function Registration({ content }) {
   const data = content?.registration;
   if (!data) return null;
 
+  const id = data.id || "register"; // ✅ opcional (se quiseres controlar via content)
+
   const title = data.title || "Garante a tua vaga";
   const subtitle =
     data.subtitle ||
@@ -13,7 +15,7 @@ export default function Registration({ content }) {
   const helper = data.helper || "A inscrição é feita via Google Forms.";
 
   return (
-    <section className={styles.regWrap} aria-label={title}>
+    <section id={id} className={styles.regWrap} aria-label={title}>
       <div className={styles.regInner}>
         <h2 className={styles.regTitle}>{title}</h2>
         <p className={styles.regSubtitle}>{subtitle}</p>

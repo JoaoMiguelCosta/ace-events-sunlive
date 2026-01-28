@@ -1,155 +1,160 @@
+import silvio from "../../../assets/persons/silvio.png"
+import vasco from "../../../assets/persons/vasco.png"
+
 export default {
   key: "teamgym",
   hero: {
     title: "TeamGym",
     dateLabel: "29 August - 8 September, 2026",
-    locationLabel: "Anadia • High Performance Center",
+    locationLabel: "Velódromo de Sangalhos • High Performance Center",
     image: "teamgym.png",
 
     actions: {
-      primary: { label: "Inscrever", href: "/" },
-      secondary: { label: "Download Programa", href: "/" },
+      primary: { label: "Register", href: "#register" },
+      secondary: { label: "Download Program", href: "/" },
     },
   },
 
   overview: {
     items: [
-      { icon: "trophy", label: "Modalidade", value: "Trampolins" },
-      { icon: "award", label: "Nível", value: "International Camp" },
-      { icon: "calendar", label: "Duração", value: "5 days" },
-      { icon: "users", label: "Capacidade", value: "40 athletes" },
+      { icon: "trophy", label: "Discipline", value: "Trampolines" },
+      { icon: "award", label: "Level", value: "International Camp" },
+      { icon: "calendar", label: "Duration", value: "11 days" },
+      { icon: "users", label: "Capacity", value: "xx athletes" },
     ],
   },
 
   team: {
-    title: "Responsáveis",
+    title: "Event Leads",
     members: [
-      { name: "Silvio", avatar: null },
-      { name: "Vasco", avatar: null },
+      { name: "Silvio", avatar: silvio },
+      { name: "Vasco", avatar: vasco },
     ],
   },
 
   officialPartner: {
-    title: "Parceria",
+    title: "Partnership",
     name: "Sunlive",
-    description: "Parceiro oficial do evento e apoio à organização.",
+    description: "Official event partner and organizational support.",
     logo: null,
   },
 
   description: {
-    title: "Sobre o Evento",
+    title: "About the Event",
     paragraphs: [
-      "O EG Trampolins Training Camp 2026 é um estágio internacional de alta performance destinado a atletas e treinadores que pretendem elevar o seu nível técnico e competitivo. Durante 5 dias intensivos, os participantes terão acesso a sessões de treino especializadas, workshops temáticos e acompanhamento personalizado por parte de uma equipa técnica de excelência.",
-      "Este campo de treino oferece uma oportunidade única de desenvolvimento num ambiente profissional, com acesso a equipamentos de última geração e metodologias de treino inovadoras utilizadas pelas principais seleções internacionais.",
+      "The EG Trampolines Training Camp 2026 is a high-performance international camp designed for athletes and coaches who want to elevate their technical and competitive level. Over 5 intensive days, participants will have access to specialized training sessions, themed workshops, and personalized support from an outstanding technical staff.",
+      "This training camp offers a unique development opportunity in a professional environment, with access to state-of-the-art equipment and innovative training methodologies used by leading international teams.",
     ],
     highlights: {
-      title: "Destaques",
+      title: "Highlights",
       icon: "check",
       items: [
-        "Sessões técnicas diárias com treinadores internacionais",
-        "Workshops de preparação física e mental",
-        "Networking com atletas de diferentes países",
-        "Análise de vídeo e feedback personalizado",
-        "Sessões de recuperação e fisioterapia",
-        "Certificado de participação oficial",
+        "Daily technical sessions with international coaches",
+        "Strength and mental preparation workshops",
+        "Networking with athletes from different countries",
+        "Video analysis and personalized feedback",
+        "Recovery sessions and physiotherapy support",
+        "Official participation certificate",
       ],
     },
   },
 
   program: {
-    title: "Programa",
+    title: "Program",
     days: [
       {
         key: "sun",
-        weekday: "Domingo",
+        weekday: "Sunday",
         date: "27 Jul",
         items: [
           {
             time: "09:00",
-            title: "Check-in e Registo",
-            description: "Receção dos participantes e entrega de materiais",
+            title: "Check-in and Registration",
+            description: "Participant reception and materials handout",
           },
           {
             time: "11:00",
-            title: "Sessão de Boas-Vindas",
-            description: "Apresentação da equipa técnica e programa",
+            title: "Welcome Session",
+            description:
+              "Introduction of the coaching staff and program overview",
           },
-          { time: "12:30", title: "Almoço" },
+          { time: "12:30", title: "Lunch" },
           {
             time: "14:30",
-            title: "Avaliação Técnica Inicial",
-            description: "Análise individual do nível técnico",
+            title: "Initial Technical Assessment",
+            description: "Individual analysis of technical level",
           },
           {
             time: "17:00",
-            title: "Treino de Aquecimento",
-            description: "Sessão de adaptação ao equipamento",
+            title: "Warm-up Training",
+            description: "Equipment familiarization session",
           },
-          { time: "19:00", title: "Jantar" },
+          { time: "19:00", title: "Dinner" },
         ],
       },
-      { key: "mon", weekday: "Segunda", date: "28 Jul", items: [] },
-      { key: "tue", weekday: "Terça", date: "29 Jul", items: [] },
-      { key: "wed", weekday: "Quarta", date: "30 Jul", items: [] },
-      { key: "thu", weekday: "Quinta", date: "31 Jul", items: [] },
+      { key: "mon", weekday: "Monday", date: "28 Jul", items: [] },
+      { key: "tue", weekday: "Tuesday", date: "29 Jul", items: [] },
+      { key: "wed", weekday: "Wednesday", date: "30 Jul", items: [] },
+      { key: "thu", weekday: "Thursday", date: "31 Jul", items: [] },
     ],
   },
 
-  // ✅ NOVO: Pricing
   pricing: {
-    title: "Custos",
+    title: "Pricing",
     icon: "signal", // consome SignalHighIcon
     plans: [
       {
         key: "athlete",
-        name: "Atleta",
+        name: "Athlete",
         price: "€350",
         items: [
-          "Treinos e workshops",
-          "Seguro desportivo",
-          "Materiais do camp",
-          "Certificado",
+          "Training sessions and workshops",
+          "Sports insurance",
+          "Camp materials",
+          "Certificate",
         ],
       },
       {
         key: "coach",
-        name: "Treinador",
+        name: "Coach",
         price: "€200",
         items: [
-          "Acesso a todas as sessões",
-          "Materiais técnicos",
-          "Certificado de formação",
+          "Access to all sessions",
+          "Technical materials",
+          "Training certificate",
         ],
       },
     ],
   },
 
   optionalExtras: {
-    title: "Extras (Opcionais)",
+    title: "Extras (Optional)",
     items: [
-      { key: "accommodation", label: "Alojamento (4 noites)", price: "€180" },
-      { key: "meals", label: "Refeições completas", price: "€120" },
+      {
+        key: "accommodation",
+        label: "Accommodation (4 nights)",
+        price: "€180",
+      },
+      { key: "meals", label: "Full meals", price: "€120" },
       {
         key: "pack",
-        label: "Pack Alojamento + Refeições",
+        label: "Accommodation + Meals Package",
         price: "€280",
       },
     ],
   },
 
   importantNotes: {
-    label: "Notas:",
-    text: "Os valores apresentados incluem IVA. Pagamento a efetuar no ato da inscrição. Cancelamentos até 15 dias antes do evento são reembolsáveis a 80%. Política de privacidade disponível no formulário de inscrição.",
+    label: "Notes:",
+    text: "All prices include VAT. Payment is due at registration. Cancellations up to 15 days before the event are refundable at 80%. Privacy policy is available in the registration form.",
   },
 
   registration: {
-    title: "Garante a tua vaga",
-    subtitle:
-      "Não percas esta oportunidade única de treinar com os melhores. As vagas são limitadas!",
-    buttonLabel: "Inscrever Agora",
-    helper: "A inscrição é feita via Google Forms.",
+    title: "Secure your spot",
+    subtitle: "Don't miss this one-of-a-kind sports event.",
+    buttonLabel: "Register Now",
+    helper: "Registration is done via Google Forms.",
   },
-
   footer: {
     text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },
@@ -174,7 +179,6 @@ export default {
     border: "rgba(255,255,255,0.08)",
   },
 
-  // ✅ NOVO: vars para passares ao <EventLayout style={content.cssVars} />
   cssVars: {
     "--bg": "#0f2333",
     "--bgAlt": "#162f45",
