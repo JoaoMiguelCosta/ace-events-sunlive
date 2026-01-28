@@ -31,7 +31,7 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Escola Gimnica Aveiro",
+    name: "Escola Gímnica Aveiro",
     description: "Official event partner and organizational support.",
     logo: egayLogo,
     logoVariant: "tall", // ✅ tall

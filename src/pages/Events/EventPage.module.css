@@ -338,6 +338,7 @@
     font-weight: 650;
     color: rgba(255, 255, 255, 0.95);
 }
+
 /* =========================
    OFFICIAL PARTNER (Parceria)
 ========================= */
@@ -389,6 +390,7 @@
     flex: 0 0 auto;
     overflow: hidden;
 }
+
 /* ✅ para logos mais altos (2ª linha: tall) */
 .partnerLogoBoxTall {
     width: clamp(76px, 10vw, 104px);
