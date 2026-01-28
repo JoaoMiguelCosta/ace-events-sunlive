@@ -1,4 +1,5 @@
 import mayyakiryan from "../../../assets/persons/mayya-kiryan.png";
+import egayLogo from "../../../assets/logos/egay.png";
 
 export default {
   key: "rg-atlantic-cup",
@@ -30,9 +31,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "Escola Gimnica Aveiro",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: egayLogo,
+    logoVariant: "tall", // ✅ tall
   },
 
   description: {

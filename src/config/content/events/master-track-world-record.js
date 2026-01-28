@@ -1,5 +1,6 @@
 import bernado from "../../../assets/persons/bernardo.png"
 import jonasbohr from "../../../assets/persons/jonas-bohr.png"
+import aeroedgeLogo from "../../../assets/logos/aeroedge.png";
 
 export default {
   key: "master-track-world-record",
@@ -34,9 +35,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "AeroEdge",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: aeroedgeLogo,
+    logoVariant: "wide",
   },
 
   description: {

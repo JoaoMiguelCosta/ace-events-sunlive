@@ -1,4 +1,5 @@
 import ionuttrandaburu from "../../../assets/persons/ionut-trandaburu.png"
+import fgpLogo from "../../../assets/logos/fgp.png";
 
 export default {
   key: "international-coaching-academy",
@@ -30,9 +31,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "Federação de Ginástica de Portugal",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: fgpLogo,
+    logoVariant: "wide",
   },
 
   description: {

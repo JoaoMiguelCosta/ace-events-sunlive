@@ -1,5 +1,8 @@
 import manuelpastor from "../../../assets/persons/manuel-pastor.png";
 
+// ✅ logo wide
+import fgpLogo from "../../../assets/logos/fgp.png";
+
 export default {
   key: "stars-challenge",
   hero: {
@@ -29,9 +32,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "Federação de Ginástica de Portugal",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: fgpLogo,
+    logoVariant: "wide",
   },
 
   description: {
@@ -91,6 +95,6 @@ export default {
 
   flags: {
     hideHeroActions: true,
-    useCombinedContact: true,
+   
   },
 };

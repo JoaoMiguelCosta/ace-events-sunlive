@@ -1,6 +1,9 @@
 import fernandopiccirilo from "../../../assets/persons/fernando-piccirilo.png";
 import alexandrealmeida from "../../../assets/persons/alexandre-almeida.png";
 
+// ✅ logo wide
+import fdpLogo from "../../../assets/logos/fdp.png";
+
 export default {
   key: "sunlive-track-trophy-c2",
   hero: {
@@ -34,9 +37,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "Federação Portuguesa de Ciclismo",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: fdpLogo,
+    logoVariant: "wide",
   },
 
   description: {
@@ -101,7 +105,7 @@ export default {
 
   pricing: {
     title: "Pricing",
-    icon: "signal", // consome SignalHighIcon
+    icon: "signal",
     plans: [
       {
         key: "athlete",
@@ -136,11 +140,7 @@ export default {
         price: "€180",
       },
       { key: "meals", label: "Full meals", price: "€120" },
-      {
-        key: "pack",
-        label: "Accommodation + Meals Package",
-        price: "€280",
-      },
+      { key: "pack", label: "Accommodation + Meals Package", price: "€280" },
     ],
   },
 
@@ -185,7 +185,6 @@ export default {
     "--bgAlt": "#231b12",
     "--primary": "#573a1d",
     "--accent": "#a07445",
-
     "--text": "#ffffff",
     "--textMuted": "#d6c8bb",
     "--border": "rgba(255,255,255,0.08)",

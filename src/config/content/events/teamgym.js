@@ -1,5 +1,9 @@
-import silvio from "../../../assets/persons/silvio.png"
-import vasco from "../../../assets/persons/vasco.png"
+// src/config/content/events/teamgym.js
+import silvio from "../../../assets/persons/silvio.png";
+import vasco from "../../../assets/persons/vasco.png";
+
+// ✅ logo para a secção Partnership (TeamGym)
+import teamGymLogo from "../../../assets/logos/team-gym.png";
 
 export default {
   key: "teamgym",
@@ -34,9 +38,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "TeamGym Luxembourg",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: teamGymLogo,
+    logoVariant: "tall", // ✅ "wide" | "tall" | (vazio = default)
   },
 
   description: {
@@ -101,7 +106,7 @@ export default {
 
   pricing: {
     title: "Pricing",
-    icon: "signal", // consome SignalHighIcon
+    icon: "signal",
     plans: [
       {
         key: "athlete",
@@ -136,11 +141,7 @@ export default {
         price: "€180",
       },
       { key: "meals", label: "Full meals", price: "€120" },
-      {
-        key: "pack",
-        label: "Accommodation + Meals Package",
-        price: "€280",
-      },
+      { key: "pack", label: "Accommodation + Meals Package", price: "€280" },
     ],
   },
 
@@ -155,6 +156,7 @@ export default {
     buttonLabel: "Register Now",
     helper: "Registration is done via Google Forms.",
   },
+
   footer: {
     text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },
@@ -184,7 +186,6 @@ export default {
     "--bgAlt": "#162f45",
     "--primary": "#7bc5d7",
     "--accent": "#9fdbea",
-
     "--text": "#ffffff",
     "--textMuted": "#c7dde6",
     "--border": "rgba(255,255,255,0.08)",

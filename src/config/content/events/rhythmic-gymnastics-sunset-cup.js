@@ -2,13 +2,14 @@ import fernandatrigo from "../../../assets/persons/fernanda-trigo.png";
 import raissatrigo from "../../../assets/persons/raissa-trigo.png";
 
 import sasquiatrigo from "../../../assets/persons/sasquia-trigo.png";
+import gremiLogo from "../../../assets/logos/gremi.png";
 
 
 export default {
-  key: "rg-atlantic-cup",
+  key: "rhythmic-gymnastics-sunset-cup",
   hero: {
-    title: "RG Atlantic Cup",
-    dateLabel: "xx–xx October, 2026",
+    title: "Rhythmic Gymnastics Sunset Cup",
+    dateLabel: "xx–xx April, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     image: "rg-atlantic.png",
 
@@ -38,9 +39,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "GREMI",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: gremiLogo,
+    logoVariant: "tall",
   },
 
   description: {

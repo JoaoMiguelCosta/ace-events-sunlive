@@ -1,3 +1,5 @@
+import fpbLogo from "../../../assets/logos/fpb.png";
+
 export default {
   key: "sunlive-international-cup",
   hero: {
@@ -23,10 +25,11 @@ export default {
 
   combinedContact: {
     title: "Event Leads / Partnership",
-    name: "Sunlive",
+    name: "Federação Portuguesa de Basquetebol",
     description:
       "Event leads and official event partner, providing organizational support.",
-    logo: null,
+    logo: fpbLogo,
+    logoVariant: "tall",
   },
 
   description: {

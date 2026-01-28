@@ -1,4 +1,6 @@
 import luisnunes from "../../../assets/persons/luis-nunes.png";
+import europeanGymnasticsLogo from "../../../assets/logos/european-gymnastics.png";
+import fgpLogo from "../../../assets/logos/fgp.png";
 
 export default {
   key: "eg-trampolins-training-camp",
@@ -30,9 +32,21 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
-    description: "Official event partner and organizational support.",
-    logo: null,
+
+    partners: [
+      {
+        name: "European Gymnastics",
+        logo: europeanGymnasticsLogo,
+        logoVariant: "wide",
+        description: "Official event partner and organizational support.",
+      },
+      {
+        name: "Federação de Ginástica de Portugal",
+        logo: fgpLogo,
+        logoVariant: "wide",
+        description: "Official event partner and organizational support.",
+      },
+    ],
   },
 
   description: {
@@ -97,7 +111,7 @@ export default {
 
   pricing: {
     title: "Pricing",
-    icon: "signal", // consome SignalHighIcon
+    icon: "signal",
     plans: [
       {
         key: "athlete",
@@ -132,11 +146,7 @@ export default {
         price: "€180",
       },
       { key: "meals", label: "Full meals", price: "€120" },
-      {
-        key: "pack",
-        label: "Accommodation + Meals Package",
-        price: "€280",
-      },
+      { key: "pack", label: "Accommodation + Meals Package", price: "€280" },
     ],
   },
 
@@ -181,7 +191,6 @@ export default {
     "--bgAlt": "#23245a",
     "--primary": "#5054a0",
     "--accent": "#ffd66b",
-
     "--text": "#ffffff",
     "--textMuted": "#d6d8f0",
     "--border": "rgba(255,255,255,0.08)",

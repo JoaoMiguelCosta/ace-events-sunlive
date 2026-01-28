@@ -2,6 +2,7 @@
 
 import camilaFerezin from "../../../assets/persons/camila-ferezin.png";
 import brunaMartins from "../../../assets/persons/bruna-martins.png";
+import cbgLogo from "../../../assets/logos/cbg.png";
 
 export default {
   key: "bootcamp",
@@ -35,9 +36,10 @@ export default {
 
   officialPartner: {
     title: "Partnership",
-    name: "Sunlive",
+    name: "Confederação Brasileira de Ginástica",
     description: "Official event partner and organizational support.",
-    logo: null,
+    logo: cbgLogo,
+    logoVariant: "wide",
   },
 
   description: {
