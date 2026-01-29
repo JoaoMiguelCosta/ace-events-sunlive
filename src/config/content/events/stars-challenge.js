@@ -87,7 +87,7 @@ export default {
     "--bgAlt": "#241c08",
     "--primary": "#d4af37",
     "--accent": "#fff1b0",
-
+    "--heroBorder": "rgba(255, 241, 176, 0.35)",
     "--text": "#ffffff",
     "--textMuted": "#e6ddb8",
     "--border": "rgba(255,255,255,0.08)",
@@ -95,6 +95,5 @@ export default {
 
   flags: {
     hideHeroActions: true,
-   
   },
 };

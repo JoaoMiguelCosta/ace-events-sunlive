@@ -46,10 +46,22 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // ✅ overrides por evento (sem afetar os outros)
+  const bgPos = hero?.bgPos || "center";
+  const bleedX = Number.isFinite(hero?.bleedX) ? hero.bleedX : 3;
+  const bleedY = Number.isFinite(hero?.bleedY) ? hero.bleedY : 6;
+  const bgScale = Number.isFinite(hero?.bgScale) ? hero.bgScale : 1.01;
+
   return (
     <section
       className={styles.hero}
-      style={{ backgroundImage: bgUrl ? `url(${bgUrl})` : undefined }}
+      style={{
+        backgroundImage: bgUrl ? `url(${bgUrl})` : undefined,
+        "--heroBgPos": bgPos,
+        "--heroBleedX": `${bleedX}px`,
+        "--heroBleedY": `${bleedY}px`,
+        "--heroBgScale": bgScale,
+      }}
       aria-label="Event Hero"
     >
       <div className={styles.heroShade}>
@@ -83,7 +95,7 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
                 <a
                   className={styles.primaryBtn}
                   href={primaryHref}
-                  onClick={onAnchorClick(primaryHref)} // ✅ scroll suave
+                  onClick={onAnchorClick(primaryHref)}
                 >
                   {primaryLabel}
                 </a>

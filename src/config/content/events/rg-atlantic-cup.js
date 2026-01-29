@@ -178,16 +178,16 @@ export default {
     border: "rgba(255,255,255,0.08)",
   },
 
-  cssVars: {
-    "--bg": "#140018",
-    "--bgAlt": "#1d0026",
-    "--primary": "#c60065",
-    "--accent": "#00178d",
-
-    "--text": "#ffffff",
-    "--textMuted": "#d6c2dd",
-    "--border": "rgba(255,255,255,0.08)",
-  },
+cssVars: {
+  "--bg": "#140018",
+  "--bgAlt": "#1d0026",
+  "--primary": "#c60065",
+  "--accent": "#00178d",
+  "--heroBorder": "rgba(0, 23, 141, 0.35)",
+  "--text": "#ffffff",
+  "--textMuted": "#d6c2dd",
+  "--border": "rgba(255,255,255,0.08)",
+},
 
   flags: {},
 };

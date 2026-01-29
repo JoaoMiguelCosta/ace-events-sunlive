@@ -15,6 +15,12 @@ export default {
       primary: { label: "Register", href: "#register" },
       secondary: { label: "Download Program", href: "/" },
     },
+
+    // ✅ só para este banner (corrige topo/fundo + apanha o logo Sunlive)
+    bgPos: "85% 65%",
+    bleedX: 3,
+    bleedY: 10, // 🔥 mais bleed vertical (topo/fundo)
+    bgScale: 1.005, // 🔥 menos crop
   },
 
   overview: {
@@ -191,6 +197,7 @@ export default {
     "--text": "#ffffff",
     "--textMuted": "#cfe6c2",
     "--border": "rgba(255,255,255,0.08)",
+    "--heroBorder": "rgba(157,255,0,0.35)", // ou usa a cor que quiseres
   },
 
   flags: {},

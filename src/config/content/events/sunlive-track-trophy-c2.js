@@ -185,6 +185,7 @@ export default {
     "--bgAlt": "#231b12",
     "--primary": "#573a1d",
     "--accent": "#a07445",
+    "--heroBorder": "rgba(160, 116, 69, 0.35)",
     "--text": "#ffffff",
     "--textMuted": "#d6c8bb",
     "--border": "rgba(255,255,255,0.08)",
