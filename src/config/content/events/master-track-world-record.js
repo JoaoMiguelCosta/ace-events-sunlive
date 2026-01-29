@@ -10,6 +10,12 @@ export default {
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     image: "master-track.png",
 
+    // ✅ overrides
+    bgPos: "97% 82%", // right + bottom
+    bleedX: 3,
+    bleedY: 12,
+    bgScale: 1.003,
+
     actions: {
       primary: { label: "Register", href: "#register" },
       secondary: { label: "Download Program", href: "/" },
@@ -190,8 +196,6 @@ export default {
     "--text": "#ffffff",
     "--textMuted": "#d6d2c6",
     "--border": "rgba(255,255,255,0.08)",
-
- 
   },
 
   flags: {},

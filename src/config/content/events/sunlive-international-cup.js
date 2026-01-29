@@ -8,6 +8,12 @@ export default {
     locationLabel: "Pavilhão Desportivo de Sangalhos",
     image: "sunlive-international-tournament.png",
 
+    // ✅ overrides
+    bgPos: "93% 12%", // right + top
+    bleedX: 3,
+    bleedY: 14, // mais topo/fundo
+    bgScale: 1.002, // menos crop
+
     actions: {
       primary: { label: "Register", href: "#register" },
       secondary: { label: "Download Program", href: "/" },

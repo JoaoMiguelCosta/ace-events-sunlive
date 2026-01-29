@@ -13,6 +13,12 @@ export default {
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     image: "teamgym.png",
 
+    // ✅ overrides
+    bgPos: "98% 20%", // right + top
+    bleedX: 3,
+    bleedY: 12,
+    bgScale: 1.003,
+
     actions: {
       primary: { label: "Register", href: "#register" },
       secondary: { label: "Download Program", href: "/" },
