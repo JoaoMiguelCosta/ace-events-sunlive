@@ -27,8 +27,8 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "Trampolines" },
-      { icon: "award", label: "Level", value: "International Camp" },
+      { icon: "trophy", label: "Discipline", value: "definer to later" },
+      { icon: "award", label: "Level", value: "definer to later" },
       { icon: "calendar", label: "Duration", value: "11 days" },
       { icon: "users", label: "Capacity", value: "xx athletes" },
     ],
@@ -53,19 +53,19 @@ export default {
   description: {
     title: "About the Event",
     paragraphs: [
-      "The EG Trampolines Training Camp 2026 is a high-performance international camp designed for athletes and coaches who want to elevate their technical and competitive level. Over 5 intensive days, participants will have access to specialized training sessions, themed workshops, and personalized support from an outstanding technical staff.",
-      "This training camp offers a unique development opportunity in a professional environment, with access to state-of-the-art equipment and innovative training methodologies used by leading international teams.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Daily technical sessions with international coaches",
-        "Strength and mental preparation workshops",
-        "Networking with athletes from different countries",
-        "Video analysis and personalized feedback",
-        "Recovery sessions and physiotherapy support",
-        "Official participation certificate",
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet",
+        "Lorem ipsum dolor sit amet",
       ],
     },
   },
