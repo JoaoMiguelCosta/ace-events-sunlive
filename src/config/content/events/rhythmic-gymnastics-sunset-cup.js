@@ -12,6 +12,7 @@ export default {
     dateLabel: "xx–xx April, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     image: "rg-atlantic.png",
+   
 
     actions: {
       primary: { label: "Register", href: "#register" },

@@ -6,8 +6,8 @@
     margin: 0;
     overflow-x: clip;
 
-    /* ✅ margem fluida: 16px (mobile) → até 96px (desktop grande) */
-    padding-inline: clamp(16px, 4vw, 96px);
+    /* ✅ margem simples e consistente */
+    padding-inline: 16px;
     padding-block: 0;
 
     background:
@@ -26,9 +26,13 @@
         linear-gradient(135deg, var(--bg) 0%, var(--bgAlt, var(--bg)) 100%);
 }
 
+
+
+
 .container {
-    max-width: 1200px;
-    width: 100%;
+    width: min(1200px, 100%);
     margin-inline: auto;
+    padding-inline: 0;
+    /* ✅ importantíssimo */
     box-sizing: border-box;
 }

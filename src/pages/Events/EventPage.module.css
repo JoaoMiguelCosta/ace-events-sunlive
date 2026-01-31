@@ -1,11 +1,6 @@
-/* =========================
-   EVENT PAGE (theme vars)
-========================= */
 .eventPage {
-    color: var(--text, #fff);
-    padding: 0;
+    width: 100%;
 }
-
 
 /* =========================
    BASE: Glass Card (tinted by event vars)
@@ -35,6 +30,9 @@
 /* =========================
    HERO (igual à referência)
 ========================= */
+/* =========================
+   HERO
+========================= */
 .hero {
     position: relative;
     overflow: hidden;
@@ -42,7 +40,7 @@
     width: 100%;
     aspect-ratio: 2048 / 552;
 
-    /* ✅ defaults (não mexe nos banners que já estão OK) */
+    /* defaults */
     --heroBleedX: 3px;
     --heroBleedY: 6px;
     --heroBgPos: center;
@@ -52,7 +50,7 @@
     background-color: transparent;
 }
 
-/* blur layer (por trás) com bleed */
+/* blur layer */
 .hero::before {
     content: "";
     position: absolute;
@@ -69,7 +67,7 @@
     opacity: 0.22;
 }
 
-/* imagem nítida com bleed */
+/* sharp layer */
 .hero::after {
     content: "";
     position: absolute;
@@ -83,7 +81,8 @@
 
     transform: scale(var(--heroBgScale));
 }
-/* overlay a cobrir o hero todo */
+
+/* overlay */
 .heroShade {
     position: absolute;
     inset: 0;
@@ -105,10 +104,11 @@
             color-mix(in srgb, var(--bgAlt, var(--bg)) 22%, transparent) 0%,
             transparent 60%);
 }
+
 .heroInner {
     width: min(1200px, 100%);
     margin-inline: auto;
-    padding: clamp(16px, 2.5vw, 28px);
+    padding: clamp(10px, 1.6vw, 18px) clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 28px);
 }
 
 .heroTitle {
@@ -120,7 +120,7 @@
     color: var(--text, #fff);
 }
 
-/* badges (data / local) */
+/* badges */
 .heroBadges {
     display: flex;
     gap: 14px;
@@ -159,6 +159,7 @@
     gap: 14px;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .primaryBtn {
@@ -170,6 +171,12 @@
     color: color-mix(in srgb, var(--bg, #0e1621) 70%, #000);
     font-weight: 700;
     cursor: pointer;
+
+    /* Register sempre centrado */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .primaryBtn:hover {
@@ -228,6 +235,134 @@
 
 .backIcon {
     flex: 0 0 auto;
+}
+
+/* =========================
+   NO ACTIONS (Sunlive / Stars)
+========================= */
+.heroNoActions .heroBadges {
+    margin-bottom: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* ✅ até 900px: altura fluida */
+@media (max-width: 900px) {
+    .hero {
+        aspect-ratio: auto;
+        height: clamp(240px, 42vw, 360px);
+    }
+
+    .heroTitle {
+        max-width: 100%;
+        font-size: clamp(1.8rem, 5.6vw, 3rem);
+    }
+
+    .heroInner {
+        padding: clamp(10px, 1.6vw, 18px) clamp(14px, 3vw, 22px) clamp(16px, 3vw, 22px);
+    }
+}
+
+/* ✅ até 688px: empilha badges (fica melhor nos 688 e abaixo) */
+@media (max-width: 688px) {
+    .hero {
+        height: auto;
+        min-height: 340px;
+    }
+
+    .heroShade {
+        align-items: stretch;
+        padding-top: 6px;
+    }
+
+    .heroBadges {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .badge {
+        width: fit-content;
+        max-width: 95%;
+    }
+
+    .badge span {
+        white-space: normal;
+    }
+
+    /* no-actions: menos altura e sem espaço morto */
+    .heroNoActions {
+        min-height: 320px;
+    }
+
+    .heroNoActions .heroBadges {
+        margin-bottom: 0;
+    }
+}
+
+/* ✅ até 768px: garantir "Register" centrado */
+@media (max-width: 768px) {
+    .primaryBtn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* ✅ até 480px: layout mobile */
+@media (max-width: 480px) {
+    .hero {
+        height: clamp(300px, 88vw, 430px);
+    }
+
+    .heroShade {
+        align-items: flex-end;
+    }
+
+    .heroInner {
+        padding: 14px 14px 18px;
+    }
+
+    .heroBack {
+        margin-bottom: 10px;
+    }
+
+    .heroTitle {
+        font-size: clamp(1.55rem, 7.2vw, 2.35rem);
+        line-height: 1.08;
+        margin-bottom: 12px;
+    }
+
+    .badge {
+        padding: 8px 12px;
+    }
+
+    /* botões com largura natural */
+    .heroActions {
+        gap: 12px;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: auto;
+        max-width: 100%;
+    }
+
+    /* no-actions: reduzir altura para não sobrar */
+    .heroNoActions {
+        height: clamp(240px, 70vw, 360px);
+    }
+}
+
+/* ✅ 375px: garantir espaço */
+@media (max-width: 375px) {
+    .hero {
+        height: 420px;
+    }
 }
 
 /* =========================

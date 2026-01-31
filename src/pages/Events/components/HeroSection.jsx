@@ -33,6 +33,7 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
   const secondaryHref = secondary?.href || "#";
 
   const hasAnyAction = !!(primary?.href || secondary?.href);
+  const noActions = hideActions || !hasAnyAction;
 
   const bgUrl = getBannerUrl(image);
 
@@ -54,7 +55,7 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
 
   return (
     <section
-      className={styles.hero}
+      className={`${styles.hero} ${noActions ? styles.heroNoActions : ""}`}
       style={{
         backgroundImage: bgUrl ? `url(${bgUrl})` : undefined,
         "--heroBgPos": bgPos,
