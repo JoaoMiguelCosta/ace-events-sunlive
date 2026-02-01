@@ -38,20 +38,20 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title:
+      "The Event: Sunlive International Coaching Academy (High-Performance Week)",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Sunlive International Coaching Academy is an intensive week designed for coaches and athletes who want to level up their training with a clear, practical method. In a high-performance environment, you’ll focus on fundamentals, smart progressions, and training habits that transfer directly to daily practice.",
+      "Across daily sessions and short clinics, the goal is simple: improve technical quality, sharpen coaching decisions, and learn from an international setting. Expect hands-on work, real feedback, and space to exchange ideas with people who live the sport at a high level.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        
+        "Apparatus specialists for feedback and on-floor Q&A",
+        "Strength & conditioning and speed work (fast-track)",
+        "International networking in a high-performance center",
+        "Extra sessions: planning, judging, and competition preparation",
       ],
     },
   },

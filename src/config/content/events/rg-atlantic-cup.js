@@ -38,20 +38,20 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title:
+      "The Event: International Rhythmic Gymnastics Competition (RG Atlantic Cup)",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "RG Atlantic Cup is an international rhythmic gymnastics competition hosted in Sangalhos, Portugal, bringing together federations and clubs for a high-level event focused on performance, elegance, and competitive excellence.",
+      "The competition features individual All-Around and apparatus routines across multiple age categories, with an organized program that includes official sessions, awards, and a gala moment that celebrates teams and routines in a vibrant international atmosphere.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-      
+        "International rhythmic gymnastics competition",
+        "Individual competition: All-Around and apparatus across age categories",
+        "Awards for top placements plus special awards (e.g., Elegance, Artistry)",
+        "Competition with a gala moment and a strong international atmosphere",
       ],
     },
   },
