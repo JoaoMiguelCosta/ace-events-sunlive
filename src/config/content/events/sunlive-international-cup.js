@@ -39,21 +39,20 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : U18 Basketball Tournament",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "The future of basketball comes to Sangalhos. In a strategic partnership between Sunlive and the Portuguese Basketball Federation, this tournament brings together the top U18 prospects for three days of high-intensity competition.",
+      "Expect fast-paced games, strong matchups, and a competitive environment that highlights emerging talent — all hosted in an elite setting built for performance and development.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "U18 basketball tournament",
+        "Strategic partnership between Sunlive and the Portuguese Basketball Federation",
+        "High-intensity games, fast pace, and strong matchups",
+        "Showcasing emerging talent in a performance-driven environment",
+       
       ],
     },
   },

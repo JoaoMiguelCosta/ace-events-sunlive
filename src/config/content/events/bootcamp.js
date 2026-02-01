@@ -49,21 +49,19 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : Rhythmic Gymnastics Clinic with Camila Ferezin",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "A unique opportunity to learn and improve your technique. This Rhythmic Gymnastics clinic, led by renowned coach Camila Ferezin, opens the doors of the Velodrome of Sangalhos to athletes of all levels.",
+      "Expect an intensive training environment focused on growth, refinement, and technical development — with guidance tailored to support each gymnast’s progression, from beginners to advanced athletes.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "Rhythmic Gymnastics clinic led by Camila Ferezin",
+        "“Hosted at the Sangalhos Velodrome",
+        "Intensive training focused on technical improvement",
+        "Open to all levels, with guidance adapted to each gymnast",
       ],
     },
   },

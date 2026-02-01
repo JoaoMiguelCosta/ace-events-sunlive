@@ -39,21 +39,20 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : Artistic Gymnastics Gala/Competition (WAG & MAG)",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "The most exclusive event of the year. Stars Challenge is a world-class show that brings the elite of Women’s and Men’s Artistic Gymnastics to the Velodrome — a prestigious stage where technical perfection meets spectacle.",
+      "Access: Exclusive — invite only. Participation and attendance are limited, creating a premium environment for high-level performances and an unforgettable gala-style competition.",
     ],
+
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "World-class Artistic Gymnastics gala/competition (Women’s & Men’s)",
+        "A prestigious event where technical excellence meets spectacle",
+        "Gala format with top-level performances and premium production",
+        "Exclusive access — invitation only",
       ],
     },
   },

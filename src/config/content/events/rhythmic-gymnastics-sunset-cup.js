@@ -12,7 +12,6 @@ export default {
     dateLabel: "xx–xx April, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     image: "rg-atlantic.png",
-   
 
     actions: {
       primary: { label: "Register", href: "#register" },
@@ -47,21 +46,20 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : International Rhythmic Gymnastics Competition",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "The Velodrome of Sangalhos becomes a stage of elegance with Sunlive Sunset GR. Organized by Clube Gremi, this international competition brings together talent and grace in a top-level setting.",
+      "A celebration of rhythmic gymnastics excellence, where athletes showcase artistry and precision in a high-performance environment designed to deliver an outstanding competitive experience.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "International Rhythmic Gymnastics Competition",
+        "Hosted at the Sangalhos Velodrome in a top-level setting",
+        "Organized by Clube Gremi",
+        "Focused on high-performance, elegance, precision, and an outstanding competitive experience",
+       
       ],
     },
   },

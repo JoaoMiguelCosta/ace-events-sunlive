@@ -51,21 +51,21 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : TeamGym Training Camp with Silvio Sagramola",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "TeamGym excellence arrives at the Velodrome through a partnership with renowned specialist Silvio Sagramola. Over more than a week, teams and athletes focus on developing the technical and acrobatic skills that define this dynamic discipline.",
+      "The camp combines structured sessions, progressive drills, and performance-focused coaching — supporting both individual improvement and team cohesion in a high-performance training environment.",
     ],
+
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "TeamGym training camp led by Silvio Sagramola",
+        "Over a week of technical and acrobatic development",
+        "Structured sessions with progressive drills and discipline-specific work",
+        "Focused on individual improvement and team cohesion in a high-performance environment",
+       
       ],
     },
   },

@@ -50,21 +50,20 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : Track Cycling Race (C2 Category)",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Speed closes the sporting year. Once again in partnership with the Portuguese Cycling Federation, this C2-class event brings track cyclists together to compete for the trophy in the controlled, high-performance environment of the National Velodrome.",
+      "A day of precision and power, featuring fast-paced races and elite-level competition — designed to deliver a top-standard track cycling experience.",
     ],
+
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "Official track cycling race — C2 category",
+        "In partnership with the Portuguese Cycling Federation",
+        "Hosted in the controlled, high-performance environment of the National Velodrome",
+        "Fast-paced racing focused on precision, power, and high-level competition",
       ],
     },
   },

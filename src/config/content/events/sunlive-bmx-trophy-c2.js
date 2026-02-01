@@ -44,21 +44,21 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : BMX Race (C2 Category)",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Pure adrenaline on the track. In partnership with the Portuguese Cycling Federation, the Sunlive Trophy brings an official C2-level competition to the Velodrome, challenging BMX riders to showcase their technique and speed.",
+      "Expect explosive starts, technical lines, and intense head-to-head racing — an event built for high performance and a true competitive atmosphere.",
     ],
+
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "“Official BMX race — C2 category",
+        "In partnership with the Portuguese Cycling Federation",
+        "Focused on technique, speed, and technical lines",
+        "Intense racing with explosive starts and head-to-head battles",
+    
       ],
     },
   },
