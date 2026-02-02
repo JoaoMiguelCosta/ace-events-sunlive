@@ -26,7 +26,7 @@ export default {
         value: "Artistic Gymnastics",
       },
       { icon: "award", label: "Level", value: "International" },
-      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "calendar", label: "Duration", value: "1 day" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },

@@ -28,7 +28,7 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "Basketball" },
       { icon: "award", label: "Level", value: "National" },
-      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "calendar", label: "Duration", value: "3 days" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },

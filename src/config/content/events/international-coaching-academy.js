@@ -21,7 +21,7 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "Artistic Gymnastics" },
       { icon: "award", label: "Level", value: "International" },
-      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "calendar", label: "Duration", value: "7 days" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },
@@ -62,39 +62,208 @@ export default {
     title: "Program",
     days: [
       {
-        key: "sun",
-        weekday: "Sunday",
-        date: "27 Jul",
+        key: "mon",
+        weekday: "Monday",
+        date: "10 August",
         items: [
           {
-            time: "09:00",
-            title: "Check-in and Registration",
-            description: "Participant reception and materials handout",
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
           },
           {
-            time: "11:00",
-            title: "Welcome Session",
-            description:
-              "Introduction of the coaching staff and program overview",
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
           },
-          { time: "12:30", title: "Lunch" },
+          { time: "To be defined", title: "To be defined" },
           {
-            time: "14:30",
-            title: "Initial Technical Assessment",
-            description: "Individual analysis of technical level",
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
           },
           {
-            time: "17:00",
-            title: "Warm-up Training",
-            description: "Equipment familiarization session",
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
           },
-          { time: "19:00", title: "Dinner" },
+          { time: "To be defined", title: "To be defined" },
         ],
       },
-      { key: "mon", weekday: "Monday", date: "28 Jul", items: [] },
-      { key: "tue", weekday: "Tuesday", date: "29 Jul", items: [] },
-      { key: "wed", weekday: "Wednesday", date: "30 Jul", items: [] },
-      { key: "thu", weekday: "Thursday", date: "31 Jul", items: [] },
+      {
+        key: "tue",
+        weekday: "Tuesday",
+        date: "11 August",
+        items: [
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+        ],
+      },
+      {
+        key: "wed",
+        weekday: "Wednesday",
+        date: "12 August",
+        items: [
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+        ],
+      },
+      {
+        key: "thu",
+        weekday: "Thursday",
+        date: "13 August",
+        items: [
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+        ],
+      },
+      {
+        key: "fri",
+        weekday: "Friday",
+        date: "14 August",
+        items: [
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+        ],
+      },
+      {
+        key: "sat",
+        weekday: "Saturday",
+        date: "15 August",
+        items: [
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+        ],
+      },
+      {
+        key: "sun",
+        weekday: "Sunday",
+        date: "16 August",
+        items: [
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          {
+            time: "To be defined",
+            title: "To be defined",
+            description: "To be defined",
+          },
+          { time: "To be defined", title: "To be defined" },
+        ],
+      },
     ],
   },
 
@@ -105,23 +274,19 @@ export default {
       {
         key: "athlete",
         name: "Athlete",
-        price: "€350",
+        price: "definer to later",
         items: [
-          "Training sessions and workshops",
-          "Sports insurance",
-          "Camp materials",
-          "Certificate",
+          "definer to later",
+          "definer to later",
+          "definer to later",
+          "definer to later",
         ],
       },
       {
         key: "coach",
         name: "Coach",
-        price: "€200",
-        items: [
-          "Access to all sessions",
-          "Technical materials",
-          "Training certificate",
-        ],
+        price: "definer to later",
+        items: ["definer to later", "definer to later", "definer to later"],
       },
     ],
   },
@@ -131,21 +296,21 @@ export default {
     items: [
       {
         key: "accommodation",
-        label: "Accommodation (4 nights)",
-        price: "€180",
+        label: "definer to later",
+        price: "definer to later",
       },
-      { key: "meals", label: "Full meals", price: "€120" },
+      { key: "meals", label: "definer to later", price: "definer to later" },
       {
         key: "pack",
-        label: "Accommodation + Meals Package",
-        price: "€280",
+        label: "definer to later",
+        price: "definer to later",
       },
     ],
   },
 
   importantNotes: {
     label: "Notes:",
-    text: "All prices include VAT. Payment is due at registration. Cancellations up to 15 days before the event are refundable at 80%. Privacy policy is available in the registration form.",
+    text: "definer to later",
   },
 
   registration: {

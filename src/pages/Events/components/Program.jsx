@@ -60,7 +60,7 @@ export default function Program({ content }) {
           ))
         ) : (
           <div className={styles.programEmpty}>
-           definer to later
+       (Por preencher) — vais editar depois.  
           </div>
         )}
       </div>
