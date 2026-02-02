@@ -8,7 +8,9 @@ export default {
   hero: {
     title: "Stars Challenge",
     dateLabel: "21 November, 2026",
-    locationLabel: "Anadia • High Performance Center",
+    locationLabel: "Velódromo de Sangalhos • High Performance Center",
+    locationHref:
+      "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
     image: "stars-challenge.png",
 
     actions: {
@@ -18,8 +20,12 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "definer to later" },
-      { icon: "award", label: "Level", value: "definer to later" },
+      {
+        icon: "trophy",
+        label: "Discipline",
+        value: "Artistic Gymnastics",
+      },
+      { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "definer to later" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],

@@ -19,7 +19,14 @@ const getBannerUrl = (filename) => {
 export default function HeroSection({ hero, fallbackTitle, flags }) {
   if (!hero) return null;
 
-  const { title, dateLabel, locationLabel, image, actions } = hero;
+  const {
+    title,
+    dateLabel,
+    locationLabel,
+    locationHref, // ✅ novo
+    image,
+    actions,
+  } = hero;
 
   const hideActions = flags?.hideHeroActions === true;
 
@@ -70,7 +77,8 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
     >
       <div className={styles.heroShade}>
         <div className={styles.heroInner}>
-          <Link to="/" className={styles.heroBack}>
+          {/* ✅ volta para Home já na secção Events */}
+          <Link to="/#events" className={styles.heroBack}>
             <ArrowLeft size={16} className={styles.backIcon} />
             Back
           </Link>
@@ -85,12 +93,27 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
               </div>
             )}
 
-            {locationLabel && (
-              <div className={`${styles.badge} ${styles.badgeGhost}`}>
-                <Pin size={18} className={styles.badgeIcon} />
-                <span>{locationLabel}</span>
-              </div>
-            )}
+            {locationLabel &&
+              (locationHref ? (
+                // ✅ badge clicável (nova aba)
+                <a
+                  className={`${styles.badge} ${styles.badgeGhost}`}
+                  href={locationHref}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="Abrir localização no Google Maps"
+                  title="Abrir no Google Maps"
+                >
+                  <Pin size={18} className={styles.badgeIcon} />
+                  <span>{locationLabel}</span>
+                </a>
+              ) : (
+                // fallback: só texto
+                <div className={`${styles.badge} ${styles.badgeGhost}`}>
+                  <Pin size={18} className={styles.badgeIcon} />
+                  <span>{locationLabel}</span>
+                </div>
+              ))}
           </div>
 
           {!hideActions && hasAnyAction && (

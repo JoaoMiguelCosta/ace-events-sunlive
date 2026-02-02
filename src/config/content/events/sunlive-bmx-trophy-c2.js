@@ -10,6 +10,8 @@ export default {
     title: "Sunlive BMX Trophy C2",
     dateLabel: "definer to later, September, 2026",
     locationLabel: "Olympic BMX Track • Anadia",
+    locationHref:
+      "https://www.google.com/maps/search/?api=1&query=Pista%20de%20BMX%20de%20Anadia%2C%20Portugal",
     image: "bmx-trophy.png",
 
     actions: {
@@ -20,8 +22,8 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "definer to later" },
-      { icon: "award", label: "Level", value: "definer to later" },
+      { icon: "trophy", label: "Discipline", value: "BMX Race" },
+      { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "definer to later" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],

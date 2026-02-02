@@ -30,6 +30,9 @@
 /* =========================
    HERO (FULL RESPONSIVE)
 ========================= */
+/* =========================
+   HERO (FULL RESPONSIVE)
+========================= */
 .hero {
     position: relative;
     overflow: hidden;
@@ -173,6 +176,28 @@
     color: var(--textMuted, #b6c0cc);
 }
 
+/* ✅ Badge como link (Google Maps) */
+.badgeLink {
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    transition: background-color 160ms ease, border-color 160ms ease,
+        transform 160ms ease, box-shadow 160ms ease;
+}
+
+.badgeLink:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.badgeLink:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent, #7c4dff) 70%, #fff);
+    outline-offset: 3px;
+}
+
 /* actions */
 .heroActions {
     display: flex;
@@ -219,11 +244,23 @@
     color: var(--textMuted, #b6c0cc);
     font-weight: 600;
     cursor: pointer;
+
+    transition: background-color 160ms ease, color 160ms ease,
+        border-color 160ms ease, transform 160ms ease, opacity 160ms ease;
 }
 
 .secondaryBtn:hover {
     background: var(--surfaceAlt, rgba(255, 255, 255, 0.06));
     color: var(--text, #fff);
+}
+
+/* ✅ secondary desativado */
+.secondaryBtnDisabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
 }
 
 .btnIcon {
@@ -295,7 +332,9 @@
 @media (prefers-reduced-motion: reduce) {
 
     .heroBack,
-    .backIcon {
+    .backIcon,
+    .badgeLink,
+    .secondaryBtn {
         transition: none;
     }
 }

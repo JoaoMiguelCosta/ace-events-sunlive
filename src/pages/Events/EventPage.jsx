@@ -1,4 +1,5 @@
 // src/pages/Events/EventPage.jsx
+import { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import {
   headerContent,
@@ -15,7 +16,7 @@ import EventDescription from "./components/EventDescription.jsx";
 import Program from "./components/Program.jsx";
 import Pricing from "./components/Pricing.jsx";
 import OptionalExtras from "./components/OptionalExtras.jsx";
-import ImportantNotes from "./components/ImportantNotes.jsx"; // ✅ novo
+import ImportantNotes from "./components/ImportantNotes.jsx";
 import EventTeam from "./components/EventTeam.jsx";
 import OfficialPartner from "./components/OfficialPartner.jsx";
 import CombinedContact from "./components/CombinedContact.jsx";
@@ -33,6 +34,17 @@ export default function EventPage() {
   const content = EVENTS_BY_KEY?.[key] || null;
 
   if (!eventBase || !content) return <Navigate to="/" replace />;
+
+  // ✅ title do browser: vem do ficheiro do evento (ex.: bootcamp.js)
+  useEffect(() => {
+    const rawTitle = content?.hero?.title || eventBase?.title || "ACE";
+    const cleanTitle = String(rawTitle).replace(/\s+/g, " ").trim(); // remove \n
+    document.title = cleanTitle;
+
+    return () => {
+      document.title = "ACE";
+    };
+  }, [content, eventBase]);
 
   const theme = content.theme || {};
 

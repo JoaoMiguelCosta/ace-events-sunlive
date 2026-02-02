@@ -6,6 +6,10 @@ export default {
     title: "Sunlive International Tournament",
     dateLabel: "3–5 July, 2026",
     locationLabel: "Pavilhão Desportivo de Sangalhos",
+    locationHref:
+      "https://www.google.com/maps/search/?api=1&query=Pavilh%C3%A3o%20Desportivo%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
+    image: "bootcamp.png",
+
     image: "sunlive-international-tournament.png",
 
     // ✅ overrides
@@ -22,8 +26,8 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "definer to later" },
-      { icon: "award", label: "Level", value: "definer to later" },
+      { icon: "trophy", label: "Discipline", value: "Basketball" },
+      { icon: "award", label: "Level", value: "National" },
       { icon: "calendar", label: "Duration", value: "definer to later" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],

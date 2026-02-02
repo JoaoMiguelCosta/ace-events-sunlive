@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./Home.module.css";
 
 import Header from "./components/Header/Header";
@@ -12,6 +14,25 @@ import Footer from "../../shared/components/Footer/Footer.jsx";
 import { headerContent } from "../../config/content/home.content.js";
 
 export default function Home() {
+  const { hash } = useLocation();
+
+  // ✅ title da Home
+  useEffect(() => {
+    document.title = "ACE - Athletic Challenge Event";
+  }, []);
+
+  // ✅ scroll suave para âncoras (/#events, /#partners, etc.)
+  useEffect(() => {
+    if (!hash) return;
+
+    const el = document.querySelector(hash);
+    if (!el) return;
+
+    requestAnimationFrame(() => {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, [hash]);
+
   return (
     <main id="top" className={styles.wrapper}>
       <div className={styles.container}>
@@ -19,8 +40,10 @@ export default function Home() {
         <Hero />
         <About />
 
-        {/* ✅ Events */}
-        <EventsSection events={headerContent.events} />
+        {/* ✅ Events (âncora para voltar do evento) */}
+        <section id="events">
+          <EventsSection events={headerContent.events} />
+        </section>
 
         {/* ✅ Partners */}
         <Partners />
