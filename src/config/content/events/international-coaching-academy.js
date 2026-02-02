@@ -19,8 +19,8 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "definer to later" },
       { icon: "award", label: "Level", value: "definer to later" },
-      { icon: "calendar", label: "Duration", value: "7 days" },
-      { icon: "users", label: "Capacity", value: "xx athletes" },
+      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },
 
@@ -39,7 +39,7 @@ export default {
 
   description: {
     title:
-      "The Event: Sunlive International Coaching Academy (High-Performance Week)",
+      "The Event : Sunlive International Coaching Academy (High-Performance Week)",
     paragraphs: [
       "Sunlive International Coaching Academy is an intensive week designed for coaches and athletes who want to level up their training with a clear, practical method. In a high-performance environment, you’ll focus on fundamentals, smart progressions, and training habits that transfer directly to daily practice.",
       "Across daily sessions and short clinics, the goal is simple: improve technical quality, sharpen coaching decisions, and learn from an international setting. Expect hands-on work, real feedback, and space to exchange ideas with people who live the sport at a high level.",

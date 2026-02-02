@@ -29,8 +29,8 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "definer to later" },
       { icon: "award", label: "Level", value: "definer to later" },
-      { icon: "calendar", label: "Duration", value: "11 days" },
-      { icon: "users", label: "Capacity", value: "xx athletes" },
+      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },
 
@@ -65,7 +65,6 @@ export default {
         "Over a week of technical and acrobatic development",
         "Structured sessions with progressive drills and discipline-specific work",
         "Focused on individual improvement and team cohesion in a high-performance environment",
-       
       ],
     },
   },
@@ -75,65 +74,80 @@ export default {
     days: [
       {
         key: "sun",
-        weekday: "Sunday",
-        date: "27 Jul",
+        weekday: "definer to later",
+        date: "definer to later",
         items: [
           {
-            time: "09:00",
-            title: "Check-in and Registration",
-            description: "Participant reception and materials handout",
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
           },
           {
-            time: "11:00",
-            title: "Welcome Session",
-            description:
-              "Introduction of the coaching staff and program overview",
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
           },
-          { time: "12:30", title: "Lunch" },
+          { time: "definer to later", title: "definer to later" },
           {
-            time: "14:30",
-            title: "Initial Technical Assessment",
-            description: "Individual analysis of technical level",
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
           },
           {
-            time: "17:00",
-            title: "Warm-up Training",
-            description: "Equipment familiarization session",
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
           },
-          { time: "19:00", title: "Dinner" },
+          { time: "definer to later", title: "definer to later" },
         ],
       },
-      { key: "mon", weekday: "Monday", date: "28 Jul", items: [] },
-      { key: "tue", weekday: "Tuesday", date: "29 Jul", items: [] },
-      { key: "wed", weekday: "Wednesday", date: "30 Jul", items: [] },
-      { key: "thu", weekday: "Thursday", date: "31 Jul", items: [] },
+      {
+        key: "mon",
+        weekday: "definer to later",
+        date: "definer to later",
+        items: [],
+      },
+      {
+        key: "tue",
+        weekday: "definer to later",
+        date: "definer to later",
+        items: [],
+      },
+      {
+        key: "wed",
+        weekday: "definer to later",
+        date: "definer to later",
+        items: [],
+      },
+      {
+        key: "thu",
+        weekday: "definer to later",
+        date: "definer to later",
+        items: [],
+      },
     ],
   },
 
   pricing: {
     title: "Pricing",
-    icon: "signal",
+    icon: "signal", // consome SignalHighIcon
     plans: [
       {
         key: "athlete",
         name: "Athlete",
-        price: "€350",
+        price: "definer to later",
         items: [
-          "Training sessions and workshops",
-          "Sports insurance",
-          "Camp materials",
-          "Certificate",
+          "definer to later",
+          "definer to later",
+          "definer to later",
+          "definer to later",
         ],
       },
       {
         key: "coach",
         name: "Coach",
-        price: "€200",
-        items: [
-          "Access to all sessions",
-          "Technical materials",
-          "Training certificate",
-        ],
+        price: "definer to later",
+        items: ["definer to later", "definer to later", "definer to later"],
       },
     ],
   },
@@ -143,17 +157,21 @@ export default {
     items: [
       {
         key: "accommodation",
-        label: "Accommodation (4 nights)",
-        price: "€180",
+        label: "definer to later",
+        price: "definer to later",
       },
-      { key: "meals", label: "Full meals", price: "€120" },
-      { key: "pack", label: "Accommodation + Meals Package", price: "€280" },
+      { key: "meals", label: "definer to later", price: "definer to later" },
+      {
+        key: "pack",
+        label: "definer to later",
+        price: "definer to later",
+      },
     ],
   },
 
   importantNotes: {
     label: "Notes:",
-    text: "All prices include VAT. Payment is due at registration. Cancellations up to 15 days before the event are refundable at 80%. Privacy policy is available in the registration form.",
+    text: "definer to later",
   },
 
   registration: {

@@ -135,6 +135,24 @@
 }
 
 /* =========================
+   DISABLED LINK (Contacts)
+========================= */
+.linkDisabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none !important;
+    filter: grayscale(0.25);
+}
+
+.linkDisabled:hover {
+    background: rgba(255, 255, 255, 0) !important;
+    border-color: rgba(255, 255, 255, 0) !important;
+    box-shadow: none !important;
+    filter: grayscale(0.25);
+}
+
+/* =========================
    Mobile menu (hamburguer + painel)
 ========================= */
 .navWrap {

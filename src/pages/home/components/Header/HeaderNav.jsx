@@ -31,23 +31,40 @@ export default function HeaderNav({ menu }) {
     const href = item.href ?? item.anchor ?? "#";
     const Icon = item.icon;
 
+    // ✅ desativar Contacts (por label)
+    const isContacts = (item.label || "").toLowerCase() === "contacts";
+    const isDisabled = isContacts;
+
     // ✅ external com icon: desktop e mobile -> ícone-only
     const iconOnlyDesktop = !isMobile && isExternal && Icon;
     const iconOnlyMobile = isMobile && isExternal && Icon;
 
-    const cls = iconOnlyDesktop
-      ? styles.iconLinkPlain // ✅ sem círculo no desktop
+    const baseCls = iconOnlyDesktop
+      ? styles.iconLinkPlain
       : iconOnlyMobile
         ? styles.mobileIconLink
         : isMobile
           ? styles.mobileLink
           : styles.navLink;
 
+    const cls = `${baseCls} ${isDisabled ? styles.linkDisabled : ""}`;
+
+    // ✅ para desativado: remove target/rel, remove navegação, remove foco
     const commonProps = {
-      href,
+      href: isDisabled ? undefined : href,
       className: cls,
-      onClick: isMobile ? closeAll : undefined,
-      ...(isExternal ? { target: "_blank", rel: "noreferrer noopener" } : null),
+      onClick: (e) => {
+        if (isDisabled) {
+          e.preventDefault();
+          return;
+        }
+        if (isMobile) closeAll();
+      },
+      ...(isDisabled
+        ? { "aria-disabled": true, tabIndex: -1 }
+        : isExternal
+          ? { target: "_blank", rel: "noreferrer noopener" }
+          : null),
       ...(iconOnlyDesktop || iconOnlyMobile
         ? { "aria-label": item.label, title: item.label }
         : null),
@@ -78,9 +95,17 @@ export default function HeaderNav({ menu }) {
               ) : null}
               <span className={styles.linkText}>{item.label}</span>
             </span>
-            <span className={styles.mobileLinkRight} aria-hidden="true">
-              ↗
-            </span>
+
+            {/* ✅ sem seta quando disabled */}
+            {!isDisabled ? (
+              <span className={styles.mobileLinkRight} aria-hidden="true">
+                ↗
+              </span>
+            ) : (
+              <span className={styles.mobileLinkRight} aria-hidden="true">
+                —
+              </span>
+            )}
           </>
         ) : (
           item.label

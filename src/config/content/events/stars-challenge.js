@@ -20,8 +20,8 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "definer to later" },
       { icon: "award", label: "Level", value: "definer to later" },
-      { icon: "calendar", label: "Duration", value: "1 day" },
-      { icon: "users", label: "Capacity", value: "xx athletes" },
+      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },
 
@@ -39,7 +39,7 @@ export default {
   },
 
   description: {
-    title: "The Event : Artistic Gymnastics Gala/Competition (WAG & MAG)",
+    title: "The Event : Artistic Gymnastics Competition (WAG & MAG)",
     paragraphs: [
       "The most exclusive event of the year. Stars Challenge is a world-class show that brings the elite of Women’s and Men’s Artistic Gymnastics to the Velodrome — a prestigious stage where technical perfection meets spectacle.",
       "Access: Exclusive — invite only. Participation and attendance are limited, creating a premium environment for high-level performances and an unforgettable gala-style competition.",

@@ -53,6 +53,9 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
   const bleedY = Number.isFinite(hero?.bleedY) ? hero.bleedY : 6;
   const bgScale = Number.isFinite(hero?.bgScale) ? hero.bgScale : 1.01;
 
+  // ✅ por agora: desativar o secondary (Download Programa)
+  const secondaryDisabled = true;
+
   return (
     <section
       className={`${styles.hero} ${noActions ? styles.heroNoActions : ""}`}
@@ -69,7 +72,7 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
         <div className={styles.heroInner}>
           <Link to="/" className={styles.heroBack}>
             <ArrowLeft size={16} className={styles.backIcon} />
-            Voltar
+            Back
           </Link>
 
           <h1 className={styles.heroTitle}>{title || fallbackTitle}</h1>
@@ -103,7 +106,17 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
               )}
 
               {secondary?.href && (
-                <a className={styles.secondaryBtn} href={secondaryHref}>
+                <a
+                  className={`${styles.secondaryBtn} ${
+                    secondaryDisabled ? styles.secondaryBtnDisabled : ""
+                  }`}
+                  href={secondaryDisabled ? undefined : secondaryHref}
+                  aria-disabled={secondaryDisabled}
+                  tabIndex={secondaryDisabled ? -1 : 0}
+                  onClick={(e) => {
+                    if (secondaryDisabled) e.preventDefault();
+                  }}
+                >
                   <Download size={18} className={styles.btnIcon} />
                   {secondaryLabel}
                 </a>

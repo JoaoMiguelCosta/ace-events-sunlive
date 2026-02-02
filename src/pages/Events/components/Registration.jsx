@@ -5,7 +5,7 @@ export default function Registration({ content }) {
   const data = content?.registration;
   if (!data) return null;
 
-  const id = data.id || "register"; // ✅ opcional (se quiseres controlar via content)
+  const id = data.id || "register";
 
   const title = data.title || "Garante a tua vaga";
   const subtitle =
@@ -14,6 +14,8 @@ export default function Registration({ content }) {
   const buttonLabel = data.buttonLabel || "Inscrever Agora";
   const helper = data.helper || "A inscrição é feita via Google Forms.";
 
+  const isDisabled = true; // ✅ por enquanto desativado
+
   return (
     <section id={id} className={styles.regWrap} aria-label={title}>
       <div className={styles.regInner}>
@@ -21,9 +23,13 @@ export default function Registration({ content }) {
         <p className={styles.regSubtitle}>{subtitle}</p>
 
         <a
-          href="#"
-          className={styles.regBtn}
-          onClick={(e) => e.preventDefault()}
+          href={isDisabled ? undefined : data.href || "#"}
+          className={`${styles.regBtn} ${isDisabled ? styles.regBtnDisabled : ""}`}
+          aria-disabled={isDisabled}
+          tabIndex={isDisabled ? -1 : 0}
+          onClick={(e) => {
+            if (isDisabled) e.preventDefault();
+          }}
         >
           {buttonLabel}
         </a>

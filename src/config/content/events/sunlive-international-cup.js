@@ -24,8 +24,8 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "definer to later" },
       { icon: "award", label: "Level", value: "definer to later" },
-      { icon: "calendar", label: "Duration", value: "3 days" },
-      { icon: "users", label: "Capacity", value: "xx athletes" },
+      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },
 
@@ -52,7 +52,6 @@ export default {
         "Strategic partnership between Sunlive and the Portuguese Basketball Federation",
         "High-intensity games, fast pace, and strong matchups",
         "Showcasing emerging talent in a performance-driven environment",
-       
       ],
     },
   },
