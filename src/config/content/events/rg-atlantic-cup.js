@@ -94,25 +94,117 @@ export default {
         key: "mon",
         weekday: "definer to later",
         date: "definer to later",
-        items: [],
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+        ],
       },
       {
         key: "tue",
         weekday: "definer to later",
         date: "definer to later",
-        items: [],
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+        ],
       },
       {
         key: "wed",
         weekday: "definer to later",
         date: "definer to later",
-        items: [],
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+        ],
       },
       {
         key: "thu",
         weekday: "definer to later",
         date: "definer to later",
-        items: [],
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+          { time: "definer to later", title: "definer to later" },
+        ],
       },
     ],
   },
