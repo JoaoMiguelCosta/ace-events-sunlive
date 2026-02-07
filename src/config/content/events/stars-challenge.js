@@ -63,6 +63,24 @@ export default {
     },
   },
 
+  program: {
+    title: "Program",
+    days: [
+      {
+        key: "sun",
+        weekday: "Saturday",
+        date: "21 Nov",
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+        ],
+      },
+    ],
+  },
+
   footer: {
     text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },
@@ -98,7 +116,5 @@ export default {
     "--border": "rgba(255,255,255,0.08)",
   },
 
-  flags: {
-    hideHeroActions: true,
-  },
+  flags: {},
 };

@@ -240,7 +240,7 @@ const events = {
       key: "blackline",
       title: "Blackline",
       image: eventBlackLine,
-      href: "https://blacklinecoaching.com/",
+      href: "https://blacklinecoaching.com/book-events/",
       year: 2026,
       month: "May",
       dateText: "3–17 May, 2026",

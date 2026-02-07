@@ -19,7 +19,6 @@ export default {
     bgScale: 1.003,
 
     actions: {
-      primary: { label: "Register", href: "#register" },
       secondary: { label: "Download Program", href: "/" },
     },
   },
@@ -218,58 +217,6 @@ export default {
     ],
   },
 
-  pricing: {
-    title: "Pricing",
-    icon: "signal", // consome SignalHighIcon
-    plans: [
-      {
-        key: "athlete",
-        name: "Athlete",
-        price: "definer to later",
-        items: [
-          "definer to later",
-          "definer to later",
-          "definer to later",
-          "definer to later",
-        ],
-      },
-      {
-        key: "coach",
-        name: "Coach",
-        price: "definer to later",
-        items: ["definer to later", "definer to later", "definer to later"],
-      },
-    ],
-  },
-
-  optionalExtras: {
-    title: "Extras (Optional)",
-    items: [
-      {
-        key: "accommodation",
-        label: "definer to later",
-        price: "definer to later",
-      },
-      { key: "meals", label: "definer to later", price: "definer to later" },
-      {
-        key: "pack",
-        label: "definer to later",
-        price: "definer to later",
-      },
-    ],
-  },
-
-  importantNotes: {
-    label: "Notes:",
-    text: "definer to later",
-  },
-
-  registration: {
-    title: "Secure your spot",
-    subtitle: "Don't miss this one-of-a-kind sports event.",
-    buttonLabel: "Register Now",
-    helper: "Registration is done via Google Forms.",
-  },
   footer: {
     text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },

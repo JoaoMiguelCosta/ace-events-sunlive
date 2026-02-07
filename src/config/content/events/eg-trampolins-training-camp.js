@@ -7,7 +7,7 @@ export default {
   hero: {
     title: "EG Trampolines Training Camp",
     dateLabel: "27–31 July, 2026",
-    locationLabel: "Portugal • High Performance Center",
+    locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
     image: "eg-trampolins.png",

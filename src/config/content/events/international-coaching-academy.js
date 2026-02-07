@@ -6,7 +6,7 @@ export default {
   hero: {
     title: "Sunlive International Coaching Academy",
     dateLabel: "10–16 August, 2026",
-    locationLabel: "Anadia • High Performance Center",
+    locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
     image: "coaching-academy.png",

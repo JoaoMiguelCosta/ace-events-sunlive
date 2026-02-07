@@ -8,7 +8,7 @@ export default {
     locationLabel: "Pavilhão Desportivo de Sangalhos",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Pavilh%C3%A3o%20Desportivo%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
-    image: "bootcamp.png",
+   
 
     image: "sunlive-international-tournament.png",
 
@@ -19,7 +19,7 @@ export default {
     bgScale: 1.002, // menos crop
 
     actions: {
-      primary: { label: "Register", href: "#register" },
+    
       secondary: { label: "Download Program", href: "/" },
     },
   },
@@ -60,6 +60,48 @@ export default {
     },
   },
 
+  program: {
+  title: "Program",
+  days: [
+    {
+      key: "fri",
+      weekday: "Friday",
+      date: "3 Jul 2026",
+      items: [
+        {
+          time: "definer to later",
+          title: "definer to later",
+          description: "definer to later",
+        },
+      ],
+    },
+    {
+      key: "sat",
+      weekday: "Saturday",
+      date: "4 Jul 2026",
+      items: [
+        {
+          time: "definer to later",
+          title: "definer to later",
+          description: "definer to later",
+        },
+      ],
+    },
+    {
+      key: "sun",
+      weekday: "Sunday",
+      date: "5 Jul 2026",
+      items: [
+        {
+          time: "definer to later",
+          title: "definer to later",
+          description: "definer to later",
+        },
+      ],
+    },
+  ],
+},
+
   footer: {
     text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },
@@ -96,7 +138,7 @@ export default {
   },
 
   flags: {
-    hideHeroActions: true,
+   
     useCombinedContact: true,
   },
 };
