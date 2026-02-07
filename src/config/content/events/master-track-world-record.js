@@ -1,5 +1,5 @@
-import bernado from "../../../assets/persons/bernardo.png"
-import jonasbohr from "../../../assets/persons/jonas-bohr.png"
+import bernado from "../../../assets/persons/bernardo.png";
+import jonasbohr from "../../../assets/persons/jonas-bohr.png";
 import aeroedgeLogo from "../../../assets/logos/aeroedge.png";
 
 export default {
@@ -50,19 +50,19 @@ export default {
   },
 
   description: {
-    title: "About the Event",
+    title: "The Event : Aeroedge and Sunlive Cycling , Hour Record",
     paragraphs: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "The hour record is a solo cycling time trial where the rider tries to cover the maximum possible distance in exactly 60 minutes, typically on an indoor velodrome to keep conditions controlled.",
+      "It’s one of the purest tests of cycling performance because success depends on sustaining high power while minimizing aerodynamic drag and optimizing biomechanical efficiency.",
     ],
     highlights: {
       title: "Highlights",
       icon: "check",
       items: [
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
-        "Lorem ipsum dolor sit amet",
+        "Hour Record attempt — 60-minute solo time trial for maximum distance",
+        "Held at the Sangalhos Velodrome in a controlled indoor environment",
+        "Performance-driven focus: power, aerodynamics, and biomechanical efficiency",
+        "Official partnership with AeroEdge with organizational support",
       ],
     },
   },

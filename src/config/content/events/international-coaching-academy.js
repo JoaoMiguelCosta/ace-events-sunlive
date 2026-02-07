@@ -1,4 +1,4 @@
-import ionuttrandaburu from "../../../assets/persons/ionut-trandaburu.png"
+import ionuttrandaburu from "../../../assets/persons/ionut-trandaburu.png";
 import fgpLogo from "../../../assets/logos/fgp.png";
 
 export default {
