@@ -7,7 +7,7 @@ import fdpLogo from "../../../assets/logos/fdp.png";
 export default {
   key: "sunlive-bmx-trophy-c2",
   hero: {
-    title: "Sunlive BMX Trophy C2",
+    title: "Sunlive BMX Trophy",
     dateLabel: "definer to later, September, 2026",
     locationLabel: "Olympic BMX Track • Anadia",
     locationHref:
@@ -46,7 +46,7 @@ export default {
   },
 
   description: {
-    title: "The Event : BMX Race (C2 Category)",
+    title: "The Event : BMX Race",
     paragraphs: [
       "Pure adrenaline on the track. In partnership with the Portuguese Cycling Federation, the Sunlive Trophy brings an official C2-level competition to the Velodrome, challenging BMX riders to showcase their technique and speed.",
       "Expect explosive starts, technical lines, and intense head-to-head racing — an event built for high performance and a true competitive atmosphere.",
@@ -56,7 +56,7 @@ export default {
       title: "Highlights",
       icon: "check",
       items: [
-        "“Official BMX race — C2 category",
+        "“Official BMX race",
         "In partnership with the Portuguese Cycling Federation",
         "Focused on technique, speed, and technical lines",
         "Intense racing with explosive starts and head-to-head battles",

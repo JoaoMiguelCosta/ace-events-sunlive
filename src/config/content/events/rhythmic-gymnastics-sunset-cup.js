@@ -4,12 +4,11 @@ import raissatrigo from "../../../assets/persons/raissa-trigo.png";
 import sasquiatrigo from "../../../assets/persons/sasquia-trigo.png";
 import gremiLogo from "../../../assets/logos/gremi.png";
 
-
 export default {
   key: "rhythmic-gymnastics-sunset-cup",
   hero: {
     title: "Rhythmic Gymnastics Sunset Cup",
-    dateLabel: "definer to later, April, 2026",
+    dateLabel: "definer to later, October, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",

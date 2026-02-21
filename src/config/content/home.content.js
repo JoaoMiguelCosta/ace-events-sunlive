@@ -231,8 +231,8 @@ const events = {
       image: eventRhythmicGymnasticsSunsetCup,
       href: "",
       year: 2026,
-      month: "April",
-      dateText: "April 2026 (date to be confirmed)",
+      month: "October",
+      dateText: "October 2026 (date to be confirmed)",
       tbd: true,
       sport: "RG",
     },
@@ -262,7 +262,7 @@ const events = {
     },
     {
       key: "master-track-world-record",
-      title: "Master Track World Record",
+      title: "Master Track Hour World Record",
       image: eventMasterTrackWorldRecord,
       href: "",
       year: 2026,
@@ -351,7 +351,7 @@ const events = {
     },
     {
       key: "sunlive-bmx-trophy-c2",
-      title: "Sunlive BMX Trophy C2",
+      title: "Sunlive BMX Trophy",
       image: eventSunliveBmxTrophyC2,
       href: "",
       year: 2026,
@@ -398,7 +398,7 @@ const events = {
     },
     {
       key: "sunlive-track-trophy-c2",
-      title: "Sunlive Track Trophy C2",
+      title: "Sunlive Track Trophy",
       image: eventSunliveTrackTrophyC2,
       href: "",
       year: 2026,

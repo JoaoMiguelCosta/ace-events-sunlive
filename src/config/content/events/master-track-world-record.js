@@ -5,7 +5,7 @@ import aeroedgeLogo from "../../../assets/logos/aeroedge.png";
 export default {
   key: "master-track-world-record",
   hero: {
-    title: "Master Track World Record",
+    title: "Master Track Hour World Record",
     dateLabel: "definer to later, June, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:

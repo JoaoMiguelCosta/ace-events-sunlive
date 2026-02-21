@@ -7,7 +7,7 @@ import fdpLogo from "../../../assets/logos/fdp.png";
 export default {
   key: "sunlive-track-trophy-c2",
   hero: {
-    title: "Sunlive Track Trophy C2",
+    title: "Sunlive Track Trophy",
     dateLabel: "definer to later, December, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
@@ -53,7 +53,7 @@ export default {
   },
 
   description: {
-    title: "The Event : Track Cycling Race (C2 Category)",
+    title: "The Event : Track Cycling Race",
     paragraphs: [
       "Speed closes the sporting year. Once again in partnership with the Portuguese Cycling Federation, this C2-class event brings track cyclists together to compete for the trophy in the controlled, high-performance environment of the National Velodrome.",
       "A day of precision and power, featuring fast-paced races and elite-level competition — designed to deliver a top-standard track cycling experience.",
@@ -63,7 +63,7 @@ export default {
       title: "Highlights",
       icon: "check",
       items: [
-        "Official track cycling race — C2 category",
+        "Official track cycling race",
         "In partnership with the Portuguese Cycling Federation",
         "Hosted in the controlled, high-performance environment of the National Velodrome",
         "Fast-paced racing focused on precision, power, and high-level competition",
