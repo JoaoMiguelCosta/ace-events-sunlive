@@ -132,7 +132,7 @@ const about = {
         "ACE = Athletic Challenge Event",
         "A platform for multidisciplinary sports events",
         "Strong connection to the host region, culture and community",
-        "A continuous experience, not just a one-off competition",
+        "A continuous, year-round experience",
       ],
       footerNote: "SUNLIVE Events Presentation",
     },

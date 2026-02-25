@@ -35,7 +35,7 @@ export default {
   team: {
     title: "Event Leads",
     members: [
-      { name: "Bernardo", avatar: bernado },
+      { name: "Bernardo Gonçalves", avatar: bernado },
       { name: "Jonas Bohr", avatar: jonasbohr },
     ],
   },

@@ -48,8 +48,8 @@ export default {
   description: {
     title: "The Event : BMX Race",
     paragraphs: [
-      "Pure adrenaline on the track. In partnership with the Portuguese Cycling Federation, the Sunlive Trophy brings an official C2-level competition to the Velodrome, challenging BMX riders to showcase their technique and speed.",
-      "Expect explosive starts, technical lines, and intense head-to-head racing — an event built for high performance and a true competitive atmosphere.",
+      "Pure adrenaline on the track. In partnership with the Portuguese Cycling Federation, the Sunlive Trophy brings an official UCI C2-level race to the Velodrome, where BMX riders put their technique and speed to the test.",
+      "Expect fast starts, demanding lines, and intense head-to-head battles. It’s a competition built around performance, precision, and a real race-day atmosphere.",
     ],
 
     highlights: {

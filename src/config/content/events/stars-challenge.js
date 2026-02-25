@@ -47,8 +47,8 @@ export default {
   description: {
     title: "The Event : Artistic Gymnastics Competition (WAG & MAG)",
     paragraphs: [
-      "The most exclusive event of the year. Stars Challenge is a world-class show that brings the elite of Women’s and Men’s Artistic Gymnastics to the Velodrome — a prestigious stage where technical perfection meets spectacle.",
-      "Access: Exclusive — invite only. Participation and attendance are limited, creating a premium environment for high-level performances and an unforgettable gala-style competition.",
+      "The flagship event of the year. Stars Challenge is a world-class show that brings top Women’s and Men’s Artistic Gymnastics to the Velodrome, turning it into a prestigious stage where technical excellence meets spectacle.",
+      "Entry is by invitation only, with limited participation and attendance. This keeps the atmosphere premium and focused on high-level performances, ending in a gala-style night designed to be memorable on and off the floor.",
     ],
 
     highlights: {

@@ -8,7 +8,6 @@ export default {
     locationLabel: "Pavilhão Desportivo de Sangalhos",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Pavilh%C3%A3o%20Desportivo%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
-   
 
     image: "sunlive-international-tournament.png",
 
@@ -19,7 +18,6 @@ export default {
     bgScale: 1.002, // menos crop
 
     actions: {
-    
       secondary: { label: "Download Program", href: "/" },
     },
   },
@@ -45,8 +43,8 @@ export default {
   description: {
     title: "The Event : U18 Basketball Tournament",
     paragraphs: [
-      "The future of basketball comes to Sangalhos. In a strategic partnership between Sunlive and the Portuguese Basketball Federation, this tournament brings together the top U18 prospects for three days of high-intensity competition.",
-      "Expect fast-paced games, strong matchups, and a competitive environment that highlights emerging talent — all hosted in an elite setting built for performance and development.",
+      "Sangalhos welcomes the next generation of basketball. Through a strategic partnership between Sunlive and the Portuguese Basketball Federation, this tournament brings together top U18 prospects for three days of intense competition.",
+      "Expect fast-paced games, strong matchups, and a competitive setting that puts emerging talent in the spotlight. All of it takes place in a high-performance environment built for both development and results.",
     ],
     highlights: {
       title: "Highlights",
@@ -61,46 +59,46 @@ export default {
   },
 
   program: {
-  title: "Program",
-  days: [
-    {
-      key: "fri",
-      weekday: "Friday",
-      date: "3 Jul 2026",
-      items: [
-        {
-          time: "definer to later",
-          title: "definer to later",
-          description: "definer to later",
-        },
-      ],
-    },
-    {
-      key: "sat",
-      weekday: "Saturday",
-      date: "4 Jul 2026",
-      items: [
-        {
-          time: "definer to later",
-          title: "definer to later",
-          description: "definer to later",
-        },
-      ],
-    },
-    {
-      key: "sun",
-      weekday: "Sunday",
-      date: "5 Jul 2026",
-      items: [
-        {
-          time: "definer to later",
-          title: "definer to later",
-          description: "definer to later",
-        },
-      ],
-    },
-  ],
-},
+    title: "Program",
+    days: [
+      {
+        key: "fri",
+        weekday: "Friday",
+        date: "3 Jul 2026",
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+        ],
+      },
+      {
+        key: "sat",
+        weekday: "Saturday",
+        date: "4 Jul 2026",
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+        ],
+      },
+      {
+        key: "sun",
+        weekday: "Sunday",
+        date: "5 Jul 2026",
+        items: [
+          {
+            time: "definer to later",
+            title: "definer to later",
+            description: "definer to later",
+          },
+        ],
+      },
+    ],
+  },
 
   footer: {
     text: "© Copyright 2026 Sunlive – All Rights Reserved",
@@ -138,7 +136,6 @@ export default {
   },
 
   flags: {
-   
     useCombinedContact: true,
   },
 };

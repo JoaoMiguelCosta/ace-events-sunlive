@@ -55,8 +55,8 @@ export default {
     title:
       "The Event: Elite Training Camp (Trampoline, Double Mini Trampoline & Tumbling)",
     paragraphs: [
-      "A high-level technical event developed through the collaboration between European Gymnastics, the Portuguese Gymnastics Federation, and Sunlive (local partner). This exclusive camp brings together specialists in Trampoline, Double Mini Trampoline, and Tumbling for a true high-performance training experience.",
-      "Access: Closed event — no public registrations. Participation is by invitation/selection only, ensuring an elite environment focused on advanced technical development and performance.",
+      "This is a high-performance technical camp developed in collaboration with European Gymnastics, the Portuguese Gymnastics Federation, and Sunlive (local partner). It brings together specialists in Trampoline, Double Mini Trampoline, and Tumbling for an intense training environment focused on technical growth and performance.",
+      "Attendance is restricted and there is no public registration. Participation is by invitation or selection only, ensuring a limited group and the right conditions for advanced, high-level work.",
     ],
 
     highlights: {

@@ -40,8 +40,8 @@ export default {
   team: {
     title: "Event Leads",
     members: [
-      { name: "Silvio", avatar: silvio },
-      { name: "Vasco", avatar: vasco },
+      { name: "Silvio Sagramola", avatar: silvio },
+      { name: "Vasco Otero", avatar: vasco },
     ],
   },
 
@@ -56,8 +56,8 @@ export default {
   description: {
     title: "The Event : TeamGym Training Camp with Silvio Sagramola",
     paragraphs: [
-      "TeamGym excellence arrives at the Velodrome through a partnership with renowned specialist Silvio Sagramola. Over more than a week, teams and athletes focus on developing the technical and acrobatic skills that define this dynamic discipline.",
-      "The camp combines structured sessions, progressive drills, and performance-focused coaching — supporting both individual improvement and team cohesion in a high-performance training environment.",
+      "TeamGym excellence comes to the Velodrome in partnership with renowned specialist Silvio Sagramola. Over more than a week, teams and athletes work on the technical and acrobatic skills that define this dynamic discipline.",
+      "The camp blends structured sessions with progressive drills and performance-driven coaching. The focus is on steady individual improvement while also strengthening timing, confidence, and team cohesion in a high-performance setting.",
     ],
 
     highlights: {

@@ -53,8 +53,8 @@ export default {
   description: {
     title: "The Event : Rhythmic Gymnastics Clinic with Camila Ferezin",
     paragraphs: [
-      "A unique opportunity to learn and improve your technique. This Rhythmic Gymnastics clinic, led by renowned coach Camila Ferezin, opens the doors of the Velodrome of Sangalhos to athletes of all levels.",
-      "Expect an intensive training environment focused on growth, refinement, and technical development — with guidance tailored to support each gymnast’s progression, from beginners to advanced athletes.",
+      "A great chance to learn and sharpen your technique. Led by renowned coach Camila Ferezin, this Rhythmic Gymnastics clinic welcomes gymnasts of all levels at the Velodrome of Sangalhos.",
+      "Training is intensive and detail-focused, with coaching adapted to each gymnast’s needs. The goal is steady progress through refinement, clearer execution, and stronger technical foundations, whether you’re just starting out or working at an advanced level.",
     ],
     highlights: {
       title: "Highlights",

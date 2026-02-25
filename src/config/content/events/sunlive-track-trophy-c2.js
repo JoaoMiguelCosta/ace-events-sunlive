@@ -55,8 +55,8 @@ export default {
   description: {
     title: "The Event : Track Cycling Race",
     paragraphs: [
-      "Speed closes the sporting year. Once again in partnership with the Portuguese Cycling Federation, this C2-class event brings track cyclists together to compete for the trophy in the controlled, high-performance environment of the National Velodrome.",
-      "A day of precision and power, featuring fast-paced races and elite-level competition — designed to deliver a top-standard track cycling experience.",
+      "A fast finish to the sporting year. Once again in partnership with the Portuguese Cycling Federation, this UCI C2 event brings track cyclists to the National Velodrome to race for the trophy in a controlled, high-performance setting.",
+      "Expect a full day of precision and power, with high-speed races and a strong competitive level. Built to deliver a top-class track cycling experience from start to finish.",
     ],
 
     highlights: {
