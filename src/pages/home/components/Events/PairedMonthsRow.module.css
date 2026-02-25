@@ -4,12 +4,17 @@
     min-width: 0;
 }
 
-/* header desktop */
+/* ===== header desktop (default: 3 cols) ===== */
 .pairedHeader {
     display: grid;
     grid-template-columns: repeat(3, minmax(220px, 320px));
     gap: clamp(1rem, 2.2vw, 1.6rem);
     justify-content: start;
+}
+
+/* ✅ quando há só 2 cards (1+1), colapsa para 2 cols */
+.cols2 {
+    grid-template-columns: repeat(2, minmax(220px, 320px));
 }
 
 .pairedTitleLeft,
@@ -38,40 +43,47 @@
     color: var(--color-text-on-primary);
 }
 
-.rowGrid3 {
+/* ===== grid cards (default: 3 cols) ===== */
+.rowGrid {
     display: grid;
     grid-template-columns: repeat(3, minmax(220px, 320px));
     gap: clamp(1rem, 2.2vw, 1.6rem);
     justify-content: start;
 }
 
-/* tablet */
-@media (max-width: 1024px) {
-    .pairedHeader {
-        grid-template-columns: repeat(2, minmax(220px, 320px));
-    }
-
-    .rightCol3,
-    .pairedTitleRight {
-        grid-column: 2 / 3;
-    }
-
-    .rowGrid3 {
-        grid-template-columns: repeat(2, minmax(220px, 320px));
-    }
+/* ✅ quando há só 2 cards (1+1), colapsa para 2 cols */
+.rowGrid.cols2 {
+    grid-template-columns: repeat(2, minmax(220px, 320px));
 }
 
-
-/* mobile: JSX já trata o layout */
-@media (max-width: 560px) {
+/* ✅ <=1024px: JSX já trata o layout (cada mês vira bloco normal) */
+@media (max-width: 1024px) {
 
     .pairedHeader,
-    .rowGrid3 {
+    .rowGrid {
         display: none;
     }
 
+    /* ✅ CRUCIAL: não centrar, esticar a largura para o grid do mês ter espaço */
+    .pairedBlock {
+        justify-items: stretch;
+        width: 100%;
+    }
+
+    /* ✅ cada EventsMonthGroup deve ocupar a largura toda */
+    .pairedBlock>* {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* ✅ opcional: em mobile “real” volta a centrar se quiseres */
+@media (max-width: 560px) {
     .pairedBlock {
         justify-items: center;
-        /* 🔑 centra grupos April / May */
+    }
+
+    .pairedBlock>* {
+        width: 100%;
     }
 }

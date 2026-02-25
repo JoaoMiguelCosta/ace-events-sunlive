@@ -6,7 +6,7 @@ export default {
   key: "master-track-world-record",
   hero: {
     title: "Master Track Hour World Record",
-    dateLabel: "definer to later, June, 2026",
+    dateLabel: "4 June, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
@@ -27,7 +27,7 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "definer to later" },
       { icon: "award", label: "Level", value: "definer to later" },
-      { icon: "calendar", label: "Duration", value: "definer to later" },
+      { icon: "calendar", label: "Duration", value: "1 Day" },
       { icon: "users", label: "Capacity", value: "definer to later" },
     ],
   },
@@ -70,148 +70,15 @@ export default {
     title: "Program",
     days: [
       {
-        key: "sun",
-        weekday: "definer to later",
-        date: "definer to later",
-        items: [
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-        ],
-      },
-      {
-        key: "mon",
-        weekday: "definer to later",
-        date: "definer to later",
-        items: [
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-        ],
-      },
-      {
-        key: "tue",
-        weekday: "definer to later",
-        date: "definer to later",
-        items: [
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-        ],
-      },
-      {
-        key: "wed",
-        weekday: "definer to later",
-        date: "definer to later",
-        items: [
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-        ],
-      },
-      {
         key: "thu",
-        weekday: "definer to later",
-        date: "definer to later",
+        weekday: "Thursday",
+        date: "4 Jun 2026",
         items: [
           {
             time: "definer to later",
             title: "definer to later",
             description: "definer to later",
           },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          {
-            time: "definer to later",
-            title: "definer to later",
-            description: "definer to later",
-          },
-          { time: "definer to later", title: "definer to later" },
         ],
       },
     ],

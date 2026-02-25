@@ -9,14 +9,14 @@ export default function PairedMonthsRow({ row }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 560px)");
+    const mq = window.matchMedia("(max-width: 1024px)"); // ✅ 1024 inclusive
     const onChange = () => setIsMobile(mq.matches);
     onChange();
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  // 📱 MOBILE → cada mês vira um bloco normal
+  // 📱 TABLET/MOBILE (<=1024) → cada mês vira um bloco normal
   if (isMobile) {
     const [left, right] = row.items;
 
@@ -28,13 +28,17 @@ export default function PairedMonthsRow({ row }) {
     );
   }
 
-  // 🖥 DESKTOP / TABLET → layout emparelhado
-  const { leftLabel, rightLabel, slots, needsSpacer, rightHeaderCol } =
+  // 🖥 DESKTOP (>1024) → layout emparelhado
+  const { leftLabel, rightLabel, slots, rightHeaderCol } =
     getPairedRowModel(row);
+
+  const isTwoCards = slots.length === 2;
 
   return (
     <div className={styles.pairedBlock}>
-      <div className={styles.pairedHeader}>
+      <div
+        className={`${styles.pairedHeader} ${isTwoCards ? styles.cols2 : ""}`}
+      >
         <div className={styles.pairedTitleLeft}>
           <span className={styles.pairedMonth}>{leftLabel}</span>
         </div>
@@ -48,14 +52,10 @@ export default function PairedMonthsRow({ row }) {
         </div>
       </div>
 
-      <div className={styles.rowGrid3}>
+      <div className={`${styles.rowGrid} ${isTwoCards ? styles.cols2 : ""}`}>
         {slots.map((ev) => (
           <EventCard key={ev.key} event={ev} />
         ))}
-
-        {needsSpacer ? (
-          <div className={styles.spacerCard} aria-hidden="true" />
-        ) : null}
       </div>
     </div>
   );

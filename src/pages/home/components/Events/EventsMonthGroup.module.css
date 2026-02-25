@@ -23,7 +23,13 @@
 /* grid normal */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+
+    /* ✅ permite 3 cards em “desktop estreito” (ex.: 1025px)
+     - min 220 mantém legível
+     - max 300 evita quebrar por falta de espaço
+  */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+
     gap: clamp(0.9rem, 2.2vw, 1.6rem);
     justify-content: start;
 }

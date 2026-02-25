@@ -1,7 +1,6 @@
 .card {
     display: grid;
     grid-template-rows: auto 1fr;
-    /* ✅ media + body, body estica */
     height: 100%;
 
     text-decoration: none;
@@ -22,11 +21,11 @@
     outline: none;
 
     min-width: 0;
-    /* ✅ evita overflow em grids */
 
-    /* ✅ trava largura para ficar igual em qualquer grelha */
     width: 100%;
-    max-width: 320px;
+
+    /* ✅ max-width responsivo: permite 3 cards em desktop “estreito” */
+    max-width: clamp(260px, 28vw, 320px);
 }
 
 .card:hover {

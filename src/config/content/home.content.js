@@ -11,12 +11,12 @@ import eventInternationalCoachingAcademy from "../../assets/events/international
 import eventInternationalContinentalCup from "../../assets/events/international-continental-cup.png";
 import eventInternationalWagTrainingCamp from "../../assets/events/international-wag-training-camp.png";
 import eventMasterTrackWorldRecord from "../../assets/events/master-track-world-record.png";
-import eventRgAtlanticCup from "../../assets/events/rg-atlantic-cup.png";
+// import eventRgAtlanticCup from "../../assets/events/rg-atlantic-cup.png";
 import eventRhythmicGymnasticsSunsetCup from "../../assets/events/rhythmic-gymnastics-sunset-cup.png";
 import eventStarsChallenge from "../../assets/events/stars-challenge.png";
 import eventSunliveBmxTrophyC2 from "../../assets/events/sunlive-bmx-trophy-c2.png";
 import eventSunliveInternationalCup from "../../assets/events/sunlive-international-cup.png";
-import eventSunliveInternationalWagTrainingCamp from "../../assets/events/sunlive-international-wag-training-camp.png";
+// import eventSunliveInternationalWagTrainingCamp from "../../assets/events/sunlive-international-wag-training-camp.png";
 import eventSunliveTrackTrophyC2 from "../../assets/events/sunlive-track-trophy-c2.png";
 import eventTeamGym from "../../assets/events/team-gym.png";
 
@@ -250,6 +250,17 @@ const events = {
       end: { year: 2026, month: 5, day: 17 },
     },
     {
+      key: "master-track-world-record",
+      title: "Master Track Hour World Record",
+      image: eventMasterTrackWorldRecord,
+      href: "",
+      year: 2026,
+      month: "June",
+      dateText: "4 June, 2026",
+      tbd: true,
+      sport: "Track Cycling",
+    },
+    {
       key: "bootcamp",
       title: "BootCamp",
       image: eventBootCamp,
@@ -260,17 +271,7 @@ const events = {
       tbd: true,
       sport: "RG Brasil",
     },
-    {
-      key: "master-track-world-record",
-      title: "Master Track Hour World Record",
-      image: eventMasterTrackWorldRecord,
-      href: "",
-      year: 2026,
-      month: "June",
-      dateText: "June 2026 (date to be confirmed)",
-      tbd: true,
-      sport: "Track Cycling",
-    },
+
     {
       key: "sunlive-international-cup",
       title: "Sunlive International Tournament",
@@ -284,19 +285,19 @@ const events = {
       start: { year: 2026, month: 7, day: 3 },
       end: { year: 2026, month: 7, day: 5 },
     },
-    {
-      key: "sunlive-international-wag-training-camp",
-      title: "Sunlive International WAG Training Camp",
-      image: eventSunliveInternationalWagTrainingCamp,
-      href: "https://www.wagtrainingcamp.sunlive.pt/malta",
-      year: 2026,
-      month: "July",
-      dateText: "8–13 July, 2026",
-      tbd: false,
-      sport: "WAG",
-      start: { year: 2026, month: 7, day: 12 },
-      end: { year: 2026, month: 7, day: 19 },
-    },
+    // {
+    //   key: "sunlive-international-wag-training-camp",
+    //   title: "Sunlive International WAG Training Camp",
+    //   image: eventSunliveInternationalWagTrainingCamp,
+    //   href: "https://www.wagtrainingcamp.sunlive.pt/malta",
+    //   year: 2026,
+    //   month: "July",
+    //   dateText: "8–13 July, 2026",
+    //   tbd: false,
+    //   sport: "WAG",
+    //   start: { year: 2026, month: 7, day: 12 },
+    //   end: { year: 2026, month: 7, day: 19 },
+    // },
     {
       key: "eg-trampolins-training-camp",
       title: "EG Trampolins Training Camp",
@@ -360,17 +361,17 @@ const events = {
       tbd: true,
       sport: "BMX",
     },
-    {
-      key: "rg-atlantic-cup",
-      title: "RG Atlantic Cup",
-      image: eventRgAtlanticCup,
-      href: "",
-      year: 2026,
-      month: "October",
-      dateText: "October 2026 (date to be confirmed)",
-      tbd: true,
-      sport: "RG",
-    },
+    // {
+    //   key: "rg-atlantic-cup",
+    //   title: "RG Atlantic Cup",
+    //   image: eventRgAtlanticCup,
+    //   href: "",
+    //   year: 2026,
+    //   month: "October",
+    //   dateText: "October 2026 (date to be confirmed)",
+    //   tbd: true,
+    //   sport: "RG",
+    // },
     {
       key: "stars-challenge",
       title: "Stars Challenge",
@@ -413,9 +414,9 @@ const events = {
 // ✅ eventos externos (não têm página interna)
 export const EXTERNAL_EVENT_KEYS = new Set([
   "blackline",
-  "sunlive-international-wag-training-camp", // WAG Malta
-  "international-wag-training-camp", // WAG Portugal/Anadia
-  "international-continental-cup", // Continental Cup
+  // "sunlive-international-wag-training-camp", // WAG Malta
+  "international-wag-training-camp",
+  "international-continental-cup",
 ]);
 
 // ✅ auto-href: todos internos menos estes 4
