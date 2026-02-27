@@ -20,10 +20,10 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "Trampoline Gymnastics" },
-      { icon: "award", label: "Level", value: "European" },
+      { icon: "trophy", label: "Discipline", value: "Trampolining" },
+      { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "5 days" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "100+" },
     ],
   },
 

@@ -12,10 +12,8 @@ export default {
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
-  
+
     image: "track-trophy.png",
-
-
 
     actions: {
       primary: { label: "Register", href: "#register" },
@@ -27,8 +25,8 @@ export default {
     items: [
       { icon: "trophy", label: "Discipline", value: "Track Cycling" },
       { icon: "award", label: "Level", value: "International" },
-      { icon: "calendar", label: "Duration", value: "definer to later" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "calendar", label: "Duration", value: "2 Days" },
+      { icon: "users", label: "Capacity", value: "100+" },
     ],
   },
 

@@ -18,10 +18,10 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "Artistic Gymnastics" },
+      { icon: "trophy", label: "Discipline", value: "Men’s Artistic Gymnastics" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "7 days" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "100" },
     ],
   },
 

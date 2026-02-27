@@ -11,8 +11,6 @@ export default {
 
     image: "sunlive-international-tournament.png",
 
-
-
     actions: {
       secondary: { label: "Download Program", href: "/" },
     },
@@ -21,9 +19,9 @@ export default {
   overview: {
     items: [
       { icon: "trophy", label: "Discipline", value: "Basketball" },
-      { icon: "award", label: "Level", value: "National" },
+      { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "3 days" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "4 Teams" },
     ],
   },
 

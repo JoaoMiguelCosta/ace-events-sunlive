@@ -12,7 +12,6 @@ export default {
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
     image: "master-track.png",
 
-
     actions: {
       secondary: { label: "Download Program", href: "/" },
     },
@@ -20,10 +19,10 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "definer to later" },
-      { icon: "award", label: "Level", value: "definer to later" },
+      { icon: "trophy", label: "Discipline", value: "Track Cycling" },
+      { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "1 Day" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "4" },
     ],
   },
 

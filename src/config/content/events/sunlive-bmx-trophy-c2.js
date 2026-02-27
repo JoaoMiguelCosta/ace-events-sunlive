@@ -22,10 +22,10 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "BMX Race" },
+      { icon: "trophy", label: "Discipline", value: "BMX" },
       { icon: "award", label: "Level", value: "International" },
-      { icon: "calendar", label: "Duration", value: "definer to later" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "calendar", label: "Duration", value: "2 Days" },
+      { icon: "users", label: "Capacity", value: "250" },
     ],
   },
 

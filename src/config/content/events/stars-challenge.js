@@ -27,7 +27,7 @@ export default {
       },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "1 day" },
-      { icon: "users", label: "Capacity", value: "definer to later" },
+      { icon: "users", label: "Capacity", value: "12" },
     ],
   },
 
