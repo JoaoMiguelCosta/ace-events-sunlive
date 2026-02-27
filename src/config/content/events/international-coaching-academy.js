@@ -21,7 +21,7 @@ export default {
       { icon: "trophy", label: "Discipline", value: "Men’s Artistic Gymnastics" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "7 days" },
-      { icon: "users", label: "Capacity", value: "100" },
+      { icon: "users", label: "Capacity", value: "100+ Athletes" },
     ],
   },
 

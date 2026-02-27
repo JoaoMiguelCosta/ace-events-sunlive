@@ -25,7 +25,7 @@ export default {
       { icon: "trophy", label: "Discipline", value: "BMX" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "2 Days" },
-      { icon: "users", label: "Capacity", value: "250" },
+      { icon: "users", label: "Capacity", value: "250+ Athletes"},
     ],
   },
 

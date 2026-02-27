@@ -26,7 +26,7 @@ export default {
       { icon: "trophy", label: "Discipline", value: "Track Cycling" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "2 Days" },
-      { icon: "users", label: "Capacity", value: "100+" },
+      { icon: "users", label: "Capacity", value: "100+ Athletes" },
     ],
   },
 

@@ -25,7 +25,7 @@ export default {
       { icon: "trophy", label: "Discipline", value: "Rhythmic Gymnastics" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "3 Days" },
-      { icon: "users", label: "Capacity", value: "150+" },
+      { icon: "users", label: "Capacity", value: "150+ Athletes" },
     ],
   },
 

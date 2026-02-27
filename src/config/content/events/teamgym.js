@@ -29,7 +29,7 @@ export default {
       { icon: "trophy", label: "Discipline", value: "TeamGym" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "11 days" },
-      { icon: "users", label: "Capacity", value: "80" },
+      { icon: "users", label: "Capacity", value: "80 Athletes" },
     ],
   },
 
