@@ -30,23 +30,20 @@
 /* =========================
    HERO (FULL RESPONSIVE)
 ========================= */
-/* =========================
-   HERO (FULL RESPONSIVE)
-========================= */
 .hero {
     position: relative;
     overflow: hidden;
     width: 100%;
 
-    /* 🎯 Mantém proporção do banner (552/2048 ≈ 0.27) mas com limites */
-    height: clamp(260px, calc(100vw * 0.27), 560px);
+    /* banner = 1200x560 => 0.4667 */
+    height: clamp(260px, calc(100vw * 0.4667), 560px);
     min-height: 240px;
 
-    /* defaults / tokens */
-    --heroBleedX: 3px;
-    --heroBleedY: 6px;
-    --heroBgPos: center;
-    --heroBgScale: 1.01;
+    /* ✅ posições separadas */
+    --heroBgPosCover: center;
+    --heroBgPosContain: center;
+
+    --heroBgScale: 1;
 
     --heroPadX: clamp(14px, 2.6vw, 28px);
     --heroPadY: clamp(12px, 2.2vw, 22px);
@@ -66,34 +63,36 @@
     background-color: transparent;
 }
 
-/* blur layer */
+/* blur layer (preenche fundo) */
 .hero::before {
     content: "";
     position: absolute;
-    inset: calc(-1 * var(--heroBleedY)) calc(-1 * var(--heroBleedX));
+    inset: 0;
     z-index: 0;
 
     background-image: inherit;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: var(--heroBgPos);
+    background-position: var(--heroBgPosCover);
 
     filter: blur(10px);
-    transform: scale(1.08);
+    transform: scale(1.12);
     opacity: 0.22;
 }
 
-/* sharp layer */
+/* sharp layer (DESKTOP/TABLET: imagem 100% visível) */
 .hero::after {
     content: "";
     position: absolute;
-    inset: calc(-1 * var(--heroBleedY)) calc(-1 * var(--heroBleedX));
+    inset: 0;
     z-index: 0;
 
     background-image: inherit;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: var(--heroBgPos);
+
+    /* ✅ desktop: sem cortes */
+    background-size: contain;
+    background-position: var(--heroBgPosContain);
 
     transform: scale(var(--heroBgScale));
 }
@@ -135,7 +134,6 @@
     margin: 0 0 clamp(12px, 1.6vw, 18px) 0;
     color: var(--text, #fff);
 
-    /* desktop: 1 linha + ellipsis */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -176,14 +174,16 @@
     color: var(--textMuted, #b6c0cc);
 }
 
-/* ✅ Badge como link (Google Maps) */
 .badgeLink {
     text-decoration: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 
-    transition: background-color 160ms ease, border-color 160ms ease,
-        transform 160ms ease, box-shadow 160ms ease;
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease;
 }
 
 .badgeLink:hover {
@@ -245,8 +245,12 @@
     font-weight: 600;
     cursor: pointer;
 
-    transition: background-color 160ms ease, color 160ms ease,
-        border-color 160ms ease, transform 160ms ease, opacity 160ms ease;
+    transition:
+        background-color 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease,
+        opacity 160ms ease;
 }
 
 .secondaryBtn:hover {
@@ -254,13 +258,18 @@
     color: var(--text, #fff);
 }
 
-/* ✅ secondary desativado */
 .secondaryBtnDisabled {
     opacity: 0.55;
     cursor: not-allowed;
     pointer-events: none;
     transform: none;
     box-shadow: none;
+    filter: grayscale(0.25);
+}
+
+.secondaryBtnDisabled:hover {
+    background: color-mix(in srgb, var(--surface, #162231) 40%, transparent);
+    color: var(--textMuted, #b6c0cc);
 }
 
 .btnIcon {
@@ -270,7 +279,7 @@
     color: currentColor;
 }
 
-/* back (button-like) */
+/* back */
 .heroBack {
     display: inline-flex;
     align-items: center;
@@ -340,17 +349,24 @@
 }
 
 /* =========================
-   NO ACTIONS (base)
+   NO ACTIONS
 ========================= */
 .heroNoActions .heroBadges {
     margin-bottom: 0;
 }
 
+.heroNoActions .heroShade {
+    align-items: flex-start;
+}
+
+.heroNoActions .heroInner {
+    padding-top: clamp(18px, 4vw, 34px);
+    padding-bottom: clamp(12px, 3vw, 18px);
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
-
-/* ✅ <=1024px: título passa a 2 linhas (máx) */
 @media (max-width: 1024px) {
     .heroTitle {
         white-space: normal;
@@ -365,11 +381,17 @@
     }
 }
 
-/* ✅ <=688px: badges em coluna + conteúdo em baixo */
+/* ✅ Solução B: em mobile, a imagem nítida passa a cover para preencher 100% */
 @media (max-width: 688px) {
     .hero {
         height: auto;
         min-height: 340px;
+    }
+
+    .hero::after {
+        background-size: cover;
+        /* ✅ preenche sempre */
+        background-position: var(--heroBgPosCover);
     }
 
     .heroShade {
@@ -393,12 +415,20 @@
         white-space: normal;
     }
 
-    .heroNoActions .heroBadges {
-        margin-bottom: 0;
+    .heroNoActions .heroShade {
+        align-items: flex-start;
+    }
+
+    .heroNoActions .heroInner {
+        padding-top: 16px;
+        padding-bottom: 14px;
+    }
+
+    .heroNoActions .hero {
+        min-height: 300px;
     }
 }
 
-/* ✅ <=480px: botões podem partir (se necessário) */
 @media (max-width: 480px) {
     .heroInner {
         padding: 14px 14px 18px;
@@ -419,7 +449,6 @@
     }
 }
 
-/* ✅ MICRO: 432 -> 375 (compactar tudo um pouco) */
 @media (max-width: 432px) {
     .hero {
         --heroTitle: clamp(1.35rem, 6.2vw, 2.05rem);
@@ -455,58 +484,6 @@
     .heroActions {
         gap: 10px;
     }
-}
-
-/* =========================
-   NO ACTIONS (Sunlive / Stars) - conteúdo mais acima
-   (no fim para ganhar prioridade)
-========================= */
-.heroNoActions .heroShade {
-    align-items: flex-start;
-}
-
-.heroNoActions .heroInner {
-    padding-top: clamp(18px, 4vw, 34px);
-    padding-bottom: clamp(12px, 3vw, 18px);
-}
-
-/* ✅ sobrescreve o "flex-end" do <=688px */
-@media (max-width: 688px) {
-    .heroNoActions .heroShade {
-        align-items: flex-start;
-    }
-
-    .heroNoActions .heroInner {
-        padding-top: 16px;
-        padding-bottom: 14px;
-    }
-
-    .heroNoActions .hero {
-        min-height: 300px;
-    }
-}
-
-@media (max-width: 432px) {
-    .heroNoActions .heroInner {
-        padding-top: 14px;
-        padding-bottom: 12px;
-    }
-}
-
-/* =========================
-   Secondary Disabled (Download Program)
-========================= */
-.secondaryBtnDisabled {
-    opacity: 0.55;
-    cursor: not-allowed;
-    pointer-events: none;
-    filter: grayscale(0.25);
-}
-
-/* evita hover “enganador” quando disabled */
-.secondaryBtnDisabled:hover {
-    background: color-mix(in srgb, var(--surface, #162231) 40%, transparent);
-    color: var(--textMuted, #b6c0cc);
 }
 /* =========================
    OVERVIEW (cards após o hero) - RESPONSIVO

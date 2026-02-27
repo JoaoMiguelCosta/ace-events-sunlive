@@ -8,13 +8,23 @@ const BANNERS = import.meta.glob("../../../assets/banners/*", {
   import: "default",
 });
 
-const getBannerUrl = (filename) => {
+function getBannerUrl(filename) {
   if (!filename) return null;
   const hit = Object.entries(BANNERS).find(([path]) =>
     path.endsWith(`/${filename}`),
   );
   return hit ? hit[1] : null;
-};
+}
+
+function isAnchor(href) {
+  return typeof href === "string" && href.startsWith("#");
+}
+
+function scrollToAnchor(href) {
+  const el = document.querySelector(href);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function HeroSection({ hero, fallbackTitle, flags }) {
   if (!hero) return null;
@@ -23,81 +33,79 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
     title,
     dateLabel,
     locationLabel,
-    locationHref, // ✅ novo
+    locationHref,
     image,
     actions,
+
+    // compatibilidade com configs antigos
+    bgPos,
+
+    // opcional: posições separadas (boa prática)
+    bgPosCover,
+    bgPosContain,
+
+    // opcional: micro-ajuste
+    bgScale,
   } = hero;
 
   const hideActions = flags?.hideHeroActions === true;
 
-  const primary = actions?.primary;
-  const secondary = actions?.secondary;
+  const primary = actions?.primary ?? null;
+  const secondary = actions?.secondary ?? null;
 
-  const primaryLabel = primary?.label || "Inscrever";
-  const primaryHref = primary?.href || "#";
-
-  const secondaryLabel = secondary?.label || "Download Programa";
-  const secondaryHref = secondary?.href || "#";
-
-  const hasAnyAction = !!(primary?.href || secondary?.href);
+  const hasAnyAction = Boolean(primary?.href || secondary?.href);
   const noActions = hideActions || !hasAnyAction;
 
   const bgUrl = getBannerUrl(image);
 
-  const onAnchorClick = (href) => (e) => {
-    if (!href || !href.startsWith("#")) return;
+  // ✅ cover pode ser ajustado por evento; contain fica centrado por defeito
+  const posCover = bgPosCover ?? bgPos ?? "center";
+  const posContain = bgPosContain ?? "center";
+  const scale = Number.isFinite(bgScale) ? bgScale : 1;
+
+  // ✅ por agora: desativar o secondary
+  const secondaryDisabled = true;
+
+  const onActionClick = (href) => (e) => {
+    if (!isAnchor(href)) return;
     e.preventDefault();
-
-    const el = document.querySelector(href);
-    if (!el) return;
-
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToAnchor(href);
   };
 
-  // ✅ overrides por evento (sem afetar os outros)
-  const bgPos = hero?.bgPos || "center";
-  const bleedX = Number.isFinite(hero?.bleedX) ? hero.bleedX : 3;
-  const bleedY = Number.isFinite(hero?.bleedY) ? hero.bleedY : 6;
-  const bgScale = Number.isFinite(hero?.bgScale) ? hero.bgScale : 1.01;
-
-  // ✅ por agora: desativar o secondary (Download Programa)
-  const secondaryDisabled = true;
+  const resolvedTitle = title || fallbackTitle;
 
   return (
     <section
       className={`${styles.hero} ${noActions ? styles.heroNoActions : ""}`}
       style={{
         backgroundImage: bgUrl ? `url(${bgUrl})` : undefined,
-        "--heroBgPos": bgPos,
-        "--heroBleedX": `${bleedX}px`,
-        "--heroBleedY": `${bleedY}px`,
-        "--heroBgScale": bgScale,
+        "--heroBgPosCover": posCover,
+        "--heroBgPosContain": posContain,
+        "--heroBgScale": scale,
       }}
       aria-label="Event Hero"
     >
       <div className={styles.heroShade}>
         <div className={styles.heroInner}>
-          {/* ✅ volta para Home já na secção Events */}
           <Link to="/#events" className={styles.heroBack}>
             <ArrowLeft size={16} className={styles.backIcon} />
             Back
           </Link>
 
-          <h1 className={styles.heroTitle}>{title || fallbackTitle}</h1>
+          <h1 className={styles.heroTitle}>{resolvedTitle}</h1>
 
           <div className={styles.heroBadges}>
-            {dateLabel && (
+            {dateLabel ? (
               <div className={styles.badge}>
                 <Calendar size={18} className={styles.badgeIcon} />
                 <span>{dateLabel}</span>
               </div>
-            )}
+            ) : null}
 
-            {locationLabel &&
-              (locationHref ? (
-                // ✅ badge clicável (nova aba)
+            {locationLabel ? (
+              locationHref ? (
                 <a
-                  className={`${styles.badge} ${styles.badgeGhost}`}
+                  className={`${styles.badge} ${styles.badgeGhost} ${styles.badgeLink}`}
                   href={locationHref}
                   target="_blank"
                   rel="noreferrer noopener"
@@ -108,32 +116,32 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
                   <span>{locationLabel}</span>
                 </a>
               ) : (
-                // fallback: só texto
                 <div className={`${styles.badge} ${styles.badgeGhost}`}>
                   <Pin size={18} className={styles.badgeIcon} />
                   <span>{locationLabel}</span>
                 </div>
-              ))}
+              )
+            ) : null}
           </div>
 
-          {!hideActions && hasAnyAction && (
+          {!hideActions && hasAnyAction ? (
             <div className={styles.heroActions}>
-              {primary?.href && (
+              {primary?.href ? (
                 <a
                   className={styles.primaryBtn}
-                  href={primaryHref}
-                  onClick={onAnchorClick(primaryHref)}
+                  href={primary.href}
+                  onClick={onActionClick(primary.href)}
                 >
-                  {primaryLabel}
+                  {primary.label || "Inscrever"}
                 </a>
-              )}
+              ) : null}
 
-              {secondary?.href && (
+              {secondary?.href ? (
                 <a
                   className={`${styles.secondaryBtn} ${
                     secondaryDisabled ? styles.secondaryBtnDisabled : ""
                   }`}
-                  href={secondaryDisabled ? undefined : secondaryHref}
+                  href={secondaryDisabled ? undefined : secondary.href}
                   aria-disabled={secondaryDisabled}
                   tabIndex={secondaryDisabled ? -1 : 0}
                   onClick={(e) => {
@@ -141,11 +149,11 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
                   }}
                 >
                   <Download size={18} className={styles.btnIcon} />
-                  {secondaryLabel}
+                  {secondary.label || "Download Programa"}
                 </a>
-              )}
+              ) : null}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </section>

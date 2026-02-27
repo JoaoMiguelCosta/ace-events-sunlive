@@ -13,14 +13,10 @@ export default {
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
-    image: "stars-challenge.png",
+   
     image: "teamgym.png",
 
-    // ✅ overrides
-    bgPos: "98% 20%", // right + top
-    bleedX: 3,
-    bleedY: 12,
-    bgScale: 1.003,
+
 
     actions: {
       primary: { label: "Register", href: "#register" },

@@ -1,6 +1,6 @@
 // src/config/content/events/bootcamp.js
 
-import camilaFerezin from "../../../assets/persons/camila-ferezin.png";
+import camilaFerezin from "../../../assets/persons/camila-farezin.png";
 import brunaMartins from "../../../assets/persons/bruna-martins.png";
 import cbgLogo from "../../../assets/logos/cbg.png";
 
@@ -18,11 +18,7 @@ export default {
       secondary: { label: "Download Program", href: "/" },
     },
 
-    // ✅ só para este banner (corrige topo/fundo + apanha o logo Sunlive)
-    bgPos: "85% 65%",
-    bleedX: 3,
-    bleedY: 10, // 🔥 mais bleed vertical (topo/fundo)
-    bgScale: 1.005, // 🔥 menos crop
+   
   },
 
   overview: {

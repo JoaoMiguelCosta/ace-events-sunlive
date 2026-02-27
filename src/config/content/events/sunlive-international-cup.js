@@ -11,11 +11,7 @@ export default {
 
     image: "sunlive-international-tournament.png",
 
-    // ✅ overrides
-    bgPos: "93% 12%", // right + top
-    bleedX: 3,
-    bleedY: 14, // mais topo/fundo
-    bgScale: 1.002, // menos crop
+
 
     actions: {
       secondary: { label: "Download Program", href: "/" },
