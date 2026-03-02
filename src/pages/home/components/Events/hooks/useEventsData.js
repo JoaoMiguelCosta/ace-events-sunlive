@@ -1,13 +1,13 @@
 import { useMemo, useState } from "react";
 import {
-  MONTHS,
+  getMonths,
   inferMonthIndexFromEvent,
   monthLabel,
 } from "../utils/months.js";
 import { getSportOptions, tokenizeSports } from "../utils/sports.js";
 import { groupByMonthKey } from "../utils/group.js";
 
-export function useEventsData(events) {
+export function useEventsData(events, lang = "en") {
   const items = events?.items ?? [];
 
   const [activeMonth, setActiveMonth] = useState("all");
@@ -32,12 +32,12 @@ export function useEventsData(events) {
       return {
         ...ev,
         year: ev.year ?? 2026,
-        monthIndex: inferMonthIndexFromEvent(ev),
+        monthIndex: inferMonthIndexFromEvent(ev, lang),
         sport: sportRaw,
         sportTokens: tokenizeSports(sportRaw),
       };
     });
-  }, [items]);
+  }, [items, lang]);
 
   const sportOptions = useMemo(() => getSportOptions(normalized), [normalized]);
 
@@ -56,28 +56,27 @@ export function useEventsData(events) {
     const groups = groupByMonthKey(filtered);
     return groups.map((g) => ({
       ...g,
-      label: `${monthLabel(g.monthIndex)} ${g.year}`,
+      label: `${monthLabel(g.monthIndex, lang)} ${g.year}`,
     }));
-  }, [filtered]);
+  }, [filtered, lang]);
 
-  // ✅ meses que têm eventos (para desativar botões vazios)
   const monthHasEvents = useMemo(() => {
     const base =
       activeFilter === "sport" && activeSport !== "all"
         ? normalized.filter((ev) => ev.sportTokens.includes(activeSport))
         : normalized;
 
-    const set = new Set(base.map((ev) => ev.monthIndex)); // 1..12
+    const set = new Set(base.map((ev) => ev.monthIndex));
     return set;
   }, [normalized, activeFilter, activeSport]);
 
-  // ✅ months já com disabled embutido (pronto para UI)
   const months = useMemo(() => {
-    return MONTHS.map((m) => ({
+    const list = getMonths(lang);
+    return list.map((m) => ({
       ...m,
       disabled: !monthHasEvents.has(m.value),
     }));
-  }, [monthHasEvents]);
+  }, [monthHasEvents, lang]);
 
   return {
     months,

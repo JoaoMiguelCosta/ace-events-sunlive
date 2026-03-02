@@ -5,8 +5,8 @@ export default function SportDropdown({
   options,
   value,
   onChange,
-  allLabel = "Todas",
-  active = false, // ✅ novo
+  allLabel = "All Disciplines",
+  active = false,
 }) {
   const items = useMemo(() => ["all", ...(options ?? [])], [options]);
   const labelByValue = (v) => (v === "all" ? allLabel : v);

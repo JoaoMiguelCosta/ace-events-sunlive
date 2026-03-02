@@ -1,14 +1,13 @@
 import { useEffect } from "react";
 import styles from "./About.module.css";
 
-import { headerContent } from "../../../../config/content/home.content.js";
 import AboutTabs from "./AboutTabs.jsx";
 import AboutPanel from "./AboutPanel.jsx";
 import AboutValues from "./AboutValues.jsx";
 import useAboutTabs from "./useAboutTabs.js";
 
-export default function About() {
-  const about = headerContent?.about;
+export default function About({ content }) {
+  const about = content;
   const tabs = about?.tabs ?? [];
 
   const { activeKey, activeTab, setActiveByKey, setActiveTab } =
@@ -53,7 +52,6 @@ export default function About() {
           ))}
         </div>
 
-        {/* ✅ Título fora da grid (para alinhar os cards no mesmo nível) */}
         <h2 className={styles.title}>{about.title}</h2>
 
         <div className={styles.grid}>

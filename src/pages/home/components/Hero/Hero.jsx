@@ -1,12 +1,13 @@
 import styles from "./Hero.module.css";
-import { headerContent } from "../../../../config/content/home.content.js";
 
-export default function Hero() {
-  const { backgroundImage, title, subtitle, stats, cta } = headerContent.hero;
+export default function Hero({ content }) {
+  if (!content) return null;
+
+  const { id, backgroundImage, title, subtitle, stats = [], cta } = content;
 
   return (
     <section
-      id={headerContent.hero.id}
+      id={id}
       className={styles.hero}
       style={{ "--hero-bg": `url(${backgroundImage})` }}
       aria-label="Hero"
@@ -16,11 +17,13 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <h1 className={styles.title}>
-            {title.split("\n").map((line) => (
-              <span key={line} className={styles.titleLine}>
-                {line}
-              </span>
-            ))}
+            {String(title || "")
+              .split("\n")
+              .map((line) => (
+                <span key={line} className={styles.titleLine}>
+                  {line}
+                </span>
+              ))}
           </h1>
 
           <div className={styles.right}>
@@ -37,11 +40,13 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={styles.ctaWrap}>
-          <a href={cta.href} className={styles.ctaButton}>
-            {cta.label}
-          </a>
-        </div>
+        {cta?.href ? (
+          <div className={styles.ctaWrap}>
+            <a href={cta.href} className={styles.ctaButton}>
+              {cta.label}
+            </a>
+          </div>
+        ) : null}
       </div>
     </section>
   );

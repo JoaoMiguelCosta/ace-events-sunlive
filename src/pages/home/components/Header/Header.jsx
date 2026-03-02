@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
-import { headerContent } from "../../../../config/content/home.content";
 import HeaderNav from "./HeaderNav";
 
-export default function Header() {
-  const { logo, menu } = headerContent;
+export default function Header({ content }) {
+  const { logo, menu, i18n } = content;
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ export default function Header() {
             </span>
           </a>
 
-          <HeaderNav menu={menu} />
+          <HeaderNav menu={menu} i18n={i18n} />
         </div>
       </div>
     </header>

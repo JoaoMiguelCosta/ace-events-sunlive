@@ -3,6 +3,8 @@ import styles from "./EventsToolbar.module.css";
 import ToolbarChip from "./ToolbarChip.jsx";
 import SportDropdown from "./SportDropdown.jsx";
 
+import { useLanguage } from "../../../../shared/i18n/LanguageContext.jsx";
+
 export default function EventsToolbar({
   months,
   sportOptions,
@@ -12,10 +14,16 @@ export default function EventsToolbar({
   setActiveSport,
   activeFilter,
 }) {
+  const { lang } = useLanguage();
+
   const monthIsActive = activeFilter === "month";
   const sportIsActive = activeFilter === "sport";
 
   const hasAnyEvents = months?.some((m) => !m.disabled);
+
+  const allLabel = lang === "pt" ? "Todos" : "All";
+  const allDisciplinesLabel =
+    lang === "pt" ? "Disciplinas (todas)" : "All Disciplines";
 
   return (
     <div
@@ -25,10 +33,10 @@ export default function EventsToolbar({
     >
       <div className={styles.chips} role="tablist" aria-label="Meses">
         <ToolbarChip
-          label="All"
+          label={allLabel}
           active={monthIsActive && activeMonth === "all"}
           onClick={() => setActiveMonth("all")}
-          disabled={!hasAnyEvents} // opcional
+          disabled={!hasAnyEvents}
         />
 
         {months.map((m) => (
@@ -38,7 +46,7 @@ export default function EventsToolbar({
             title={m.label}
             active={monthIsActive && activeMonth === m.value}
             onClick={() => setActiveMonth(m.value)}
-            disabled={m.disabled} // ✅ aqui
+            disabled={m.disabled}
           />
         ))}
       </div>
@@ -48,7 +56,7 @@ export default function EventsToolbar({
           options={sportOptions}
           value={activeSport}
           onChange={setActiveSport}
-          allLabel="All sports"
+          allLabel={allDisciplinesLabel}
           active={sportIsActive}
         />
       </div>

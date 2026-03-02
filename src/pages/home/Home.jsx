@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./Home.module.css";
 
@@ -11,17 +11,19 @@ import Partners from "./components/Partners/Partners.jsx";
 
 import Footer from "../../shared/components/Footer/Footer.jsx";
 
-import { headerContent } from "../../config/content/home.content.js";
+import { useLanguage } from "../../shared/i18n/LanguageContext.jsx";
+import { getHomeContent } from "../../config/content/home.content.js";
 
 export default function Home() {
   const { hash } = useLocation();
+  const { lang } = useLanguage();
 
-  // ✅ title da Home
+  const content = useMemo(() => getHomeContent(lang), [lang]);
+
   useEffect(() => {
     document.title = "ACE - Athletic Challenge Event";
-  }, []);
+  }, [lang]);
 
-  // ✅ scroll suave para âncoras (/#events, /#partners, etc.)
   useEffect(() => {
     if (!hash) return;
 
@@ -36,20 +38,18 @@ export default function Home() {
   return (
     <main id="top" className={styles.wrapper}>
       <div className={styles.container}>
-        <Header />
-        <Hero />
-        <About />
+        <Header content={content.header} />
 
-        {/* ✅ Events (âncora para voltar do evento) */}
+        <Hero content={content.hero} />
+        <About content={content.about} />
+
         <section id="events">
-          <EventsSection events={headerContent.events} />
+          <EventsSection events={content.events} />
         </section>
 
-        {/* ✅ Partners */}
-        <Partners />
+        <Partners content={content.partners} />
       </div>
 
-      {/* ✅ Footer (full width) */}
       <Footer />
     </main>
   );

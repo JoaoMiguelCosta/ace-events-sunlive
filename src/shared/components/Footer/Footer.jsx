@@ -1,8 +1,11 @@
 import styles from "./Footer.module.css";
-import { headerContent } from "../../../config/content/home.content.js";
+import { useLanguage } from "../../i18n/LanguageContext.jsx";
+import { getFooterContent } from "../../../config/content/footer.content.js";
 
-export default function Footer() {
-  const footer = headerContent?.footer;
+export default function Footer({ content }) {
+  const { lang } = useLanguage();
+
+  const footer = content ?? getFooterContent(lang);
 
   const text =
     footer?.copyright ??

@@ -1,10 +1,9 @@
 import styles from "./Partners.module.css";
-import { headerContent } from "../../../../config/content/home.content.js";
 
-export default function Partners() {
-  const partners = headerContent?.partners;
+export default function Partners({ content }) {
+  const partners = content;
   const title = partners?.title ?? "Partners";
-  const subtitle = partners?.subtitle ?? ""; // ✅ opcional
+  const subtitle = partners?.subtitle ?? "";
   const items = partners?.items ?? [];
 
   return (

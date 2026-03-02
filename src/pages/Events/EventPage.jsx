@@ -1,10 +1,12 @@
 // src/pages/Events/EventPage.jsx
 import { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
+
 import {
-  headerContent,
+  getEventBaseByKey,
   EXTERNAL_EVENT_KEYS,
-} from "../../config/content/home.content.js";
+} from "../../config/content/events/index.js";
+
 import { EVENTS_BY_KEY } from "../../config/content/events/eventRoutes.js";
 
 import EventLayout from "../../shared/layout/EventLayout/EventLayout.jsx";
@@ -21,24 +23,21 @@ import EventTeam from "./components/EventTeam.jsx";
 import OfficialPartner from "./components/OfficialPartner.jsx";
 import CombinedContact from "./components/CombinedContact.jsx";
 import Registration from "./components/Registration.jsx";
-import Footer from "./components/Footer.jsx";
+import Footer from "../../shared/components/Footer/Footer.jsx";
 
 export default function EventPage() {
   const { key } = useParams();
 
   if (EXTERNAL_EVENT_KEYS.has(key)) return <Navigate to="/" replace />;
 
-  const eventBase =
-    headerContent?.events?.items?.find((e) => e.key === key) || null;
-
+  const eventBase = getEventBaseByKey(key);
   const content = EVENTS_BY_KEY?.[key] || null;
 
   if (!eventBase || !content) return <Navigate to="/" replace />;
 
-  // ✅ title do browser: vem do ficheiro do evento (ex.: bootcamp.js)
   useEffect(() => {
     const rawTitle = content?.hero?.title || eventBase?.title || "ACE";
-    const cleanTitle = String(rawTitle).replace(/\s+/g, " ").trim(); // remove \n
+    const cleanTitle = String(rawTitle).replace(/\s+/g, " ").trim();
     document.title = cleanTitle;
 
     return () => {
@@ -71,7 +70,9 @@ export default function EventPage() {
           fallbackTitle={eventBase.title}
           flags={content.flags}
         />
+
         <EventOverview content={content} />
+
         {useCombined ? (
           <CombinedContact content={content} />
         ) : (
@@ -80,13 +81,14 @@ export default function EventPage() {
             <OfficialPartner content={content} />
           </>
         )}
+
         <EventDescription content={content} />
         <Program content={content} />
         <Pricing content={content} />
         <OptionalExtras content={content} />
         <ImportantNotes content={content} />
         <Registration content={content} />
-        <Footer content={content} />
+        <Footer />
       </div>
     </EventLayout>
   );

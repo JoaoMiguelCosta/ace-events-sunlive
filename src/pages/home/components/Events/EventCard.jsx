@@ -1,5 +1,5 @@
 import styles from "./EventCard.module.css";
-import { EXTERNAL_EVENT_KEYS } from "../../../../config/content/home.content.js";
+import { EXTERNAL_EVENT_KEYS } from "../../../../config/content/events/index.js";
 
 export default function EventCard({ event }) {
   const dateLabel = event.dateText ?? event.month ?? "";

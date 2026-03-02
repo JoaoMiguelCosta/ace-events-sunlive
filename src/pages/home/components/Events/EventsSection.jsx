@@ -7,7 +7,11 @@ import PairedMonthsRow from "./PairedMonthsRow.jsx";
 import { useEventsData } from "./hooks/useEventsData.js";
 import { useEventsRows } from "./hooks/useEventsRows.js";
 
+import { useLanguage } from "../../../../shared/i18n/LanguageContext.jsx";
+
 export default function EventsSection({ events }) {
+  const { lang } = useLanguage();
+
   const {
     months,
     sportOptions,
@@ -15,21 +19,24 @@ export default function EventsSection({ events }) {
     setActiveMonth,
     activeSport,
     setActiveSport,
-    activeFilter, // ✅ novo
+    activeFilter,
     grouped,
-  } = useEventsData(events);
+  } = useEventsData(events, lang);
 
   const { rows } = useEventsRows(grouped, activeMonth);
+
+  const sectionTitle = events?.title ?? (lang === "pt" ? "Eventos" : "Events");
+  const emptyText = lang === "pt" ? "Sem resultados" : "No results";
 
   return (
     <section
       id={events?.id ?? "events"}
       className={styles.section}
-      aria-label="Events"
+      aria-label={sectionTitle}
     >
       <div className={styles.container}>
         <header className={styles.header}>
-          <h2 className={styles.title}>{events?.title ?? "Events"}</h2>
+          <h2 className={styles.title}>{sectionTitle}</h2>
         </header>
 
         <EventsToolbar
@@ -39,13 +46,13 @@ export default function EventsSection({ events }) {
           setActiveMonth={setActiveMonth}
           activeSport={activeSport}
           setActiveSport={setActiveSport}
-          activeFilter={activeFilter} // ✅ novo
+          activeFilter={activeFilter}
         />
 
         <div className={styles.groups}>
           {grouped.length === 0 ? (
             <div className={styles.empty}>
-              <p className={styles.emptyTitle}>no results</p>
+              <p className={styles.emptyTitle}>{emptyText}</p>
             </div>
           ) : (
             rows.map((row) => {
