@@ -1,22 +1,19 @@
 // src/config/content/events/teamgym.js
+
 import silvio from "../../../assets/persons/silvio.png";
 import vasco from "../../../assets/persons/vasco.png";
-
-// ✅ logo para a secção Partnership (TeamGym)
 import teamGymLogo from "../../../assets/logos/team-gym.png";
 
-export default {
+const base = {
   key: "teamgym",
+
   hero: {
     title: "TeamGym",
     dateLabel: "29 August - 8 September, 2026",
     locationLabel: "Velódromo de Sangalhos • High Performance Center",
     locationHref:
       "https://www.google.com/maps/search/?api=1&query=Vel%C3%B3dromo%20Nacional%20de%20Sangalhos%2C%203780-524%20Sangalhos%2C%20Portugal",
-   
     image: "teamgym.png",
-
-
 
     actions: {
       primary: { label: "Register", href: "#register" },
@@ -46,7 +43,7 @@ export default {
     name: "TeamGym Luxembourg",
     description: "Official event partner and organizational support.",
     logo: teamGymLogo,
-    logoVariant: "tall", // ✅ "wide" | "tall" | (vazio = default)
+    logoVariant: "tall",
   },
 
   description: {
@@ -395,7 +392,7 @@ export default {
 
   pricing: {
     title: "Pricing",
-    icon: "signal", // consome SignalHighIcon
+    icon: "signal",
     plans: [
       {
         key: "athlete",
@@ -426,11 +423,7 @@ export default {
         price: "definer to later",
       },
       { key: "meals", label: "definer to later", price: "definer to later" },
-      {
-        key: "pack",
-        label: "definer to later",
-        price: "definer to later",
-      },
+      { key: "pack", label: "definer to later", price: "definer to later" },
     ],
   },
 
@@ -444,10 +437,6 @@ export default {
     subtitle: "Don't miss this one-of-a-kind sports event.",
     buttonLabel: "Register Now",
     helper: "Registration is done via Google Forms.",
-  },
-
-  footer: {
-    text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },
 
   layout: {
@@ -483,3 +472,242 @@ export default {
 
   flags: {},
 };
+
+const i18n = {
+  pt: {
+    hero: {
+      // ✅ não traduzimos o título do evento
+      dateLabel: "29 Agosto - 8 Setembro, 2026",
+      locationLabel: "Velódromo de Sangalhos • Centro de Alto Rendimento",
+      actions: {
+        primary: { label: "Inscrever-me" },
+        secondary: { label: "Download do Programa" },
+      },
+    },
+
+    overview: {
+      items: [
+        { icon: "trophy", label: "Disciplina", value: "TeamGym" },
+        { icon: "award", label: "Nível", value: "Internacional" },
+        { icon: "calendar", label: "Duração", value: "11 dias" },
+        { icon: "users", label: "Capacidade", value: "80 Atletas" },
+      ],
+    },
+
+    team: {
+      title: "Responsáveis do Evento",
+    },
+
+    officialPartner: {
+      title: "Parceria",
+      description: "Parceiro oficial do evento e apoio organizacional.",
+    },
+
+    description: {
+      title: "O Evento: Estágio de TeamGym com Silvio Sagramola",
+      paragraphs: [
+        "A excelência do TeamGym chega ao Velódromo em parceria com o reconhecido especialista Silvio Sagramola. Durante mais de uma semana, equipas e atletas trabalham as competências técnicas e acrobáticas que definem esta disciplina dinâmica.",
+        "O estágio combina sessões estruturadas com progressões e treino orientado para performance. O foco está na evolução individual consistente, reforçando também o timing, a confiança e a coesão da equipa num contexto de alto rendimento.",
+      ],
+      highlights: {
+        title: "Destaques",
+        items: [
+          "Estágio de TeamGym liderado por Silvio Sagramola",
+          "Mais de uma semana de desenvolvimento técnico e acrobático",
+          "Sessões estruturadas com progressões e trabalho específico da disciplina",
+          "Foco na evolução individual e na coesão da equipa num ambiente de alto rendimento",
+        ],
+      },
+    },
+
+    program: {
+      title: "Programa",
+      days: [
+        {
+          key: "aug29",
+          weekday: "Sábado",
+          date: "29 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "aug30",
+          weekday: "Domingo",
+          date: "30 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "aug31",
+          weekday: "Segunda-feira",
+          date: "31 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep01",
+          weekday: "Terça-feira",
+          date: "1 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep02",
+          weekday: "Quarta-feira",
+          date: "2 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep03",
+          weekday: "Quinta-feira",
+          date: "3 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep04",
+          weekday: "Sexta-feira",
+          date: "4 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep05",
+          weekday: "Sábado",
+          date: "5 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep06",
+          weekday: "Domingo",
+          date: "6 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep07",
+          weekday: "Segunda-feira",
+          date: "7 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sep08",
+          weekday: "Terça-feira",
+          date: "8 Setembro",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+      ],
+    },
+
+    pricing: {
+      title: "Preços",
+      plans: [
+        {
+          key: "athlete",
+          name: "Atleta",
+          price: "A definir",
+          items: ["A definir", "A definir", "A definir", "A definir"],
+        },
+        {
+          key: "coach",
+          name: "Treinador(a)",
+          price: "A definir",
+          items: ["A definir", "A definir", "A definir"],
+        },
+      ],
+    },
+
+    optionalExtras: {
+      title: "Extras (Opcional)",
+      items: [
+        { key: "accommodation", label: "A definir", price: "A definir" },
+        { key: "meals", label: "A definir", price: "A definir" },
+        { key: "pack", label: "A definir", price: "A definir" },
+      ],
+    },
+
+    importantNotes: {
+      label: "Notas:",
+      text: "A definir",
+    },
+
+    registration: {
+      title: "Garante o teu lugar",
+      subtitle: "Não percas este evento desportivo único.",
+      buttonLabel: "Inscrever agora",
+      helper: "A inscrição é feita via Google Forms.",
+    },
+  },
+};
+
+export default { key: base.key, base, i18n };

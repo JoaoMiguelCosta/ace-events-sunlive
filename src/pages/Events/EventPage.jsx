@@ -1,5 +1,5 @@
 // src/pages/Events/EventPage.jsx
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
 import {
@@ -7,7 +7,8 @@ import {
   EXTERNAL_EVENT_KEYS,
 } from "../../config/content/events/index.js";
 
-import { EVENTS_BY_KEY } from "../../config/content/events/eventRoutes.js";
+import { getEventContentByKey } from "../../config/content/events/eventRoutes.js";
+import { useLanguage } from "../../shared/i18n/LanguageContext.jsx";
 
 import EventLayout from "../../shared/layout/EventLayout/EventLayout.jsx";
 import styles from "./EventPage.module.css";
@@ -23,15 +24,19 @@ import EventTeam from "./components/EventTeam.jsx";
 import OfficialPartner from "./components/OfficialPartner.jsx";
 import CombinedContact from "./components/CombinedContact.jsx";
 import Registration from "./components/Registration.jsx";
-import Footer from "../../shared/components/Footer/Footer.jsx";
+
 
 export default function EventPage() {
   const { key } = useParams();
+  const { lang } = useLanguage();
 
+  // ✅ safety guard
+  if (!key) return <Navigate to="/" replace />;
   if (EXTERNAL_EVENT_KEYS.has(key)) return <Navigate to="/" replace />;
 
-  const eventBase = getEventBaseByKey(key);
-  const content = EVENTS_BY_KEY?.[key] || null;
+  const eventBase = useMemo(() => getEventBaseByKey(key, lang), [key, lang]);
+
+  const content = useMemo(() => getEventContentByKey(key, lang), [key, lang]);
 
   if (!eventBase || !content) return <Navigate to="/" replace />;
 
@@ -45,19 +50,20 @@ export default function EventPage() {
     };
   }, [content, eventBase]);
 
-  const theme = content.theme || {};
+  const theme = content?.theme ?? {};
 
+  // ✅ não injectar undefined nas vars
   const themeVars = {
-    "--bg": theme.bg,
-    "--bgAlt": theme.bgAlt,
-    "--surface": theme.surface,
-    "--surfaceAlt": theme.surfaceAlt,
-    "--primary": theme.primary,
-    "--secondary": theme.secondary,
-    "--accent": theme.accent,
-    "--text": theme.text,
-    "--textMuted": theme.textMuted,
-    "--border": theme.border,
+    "--bg": theme.bg ?? undefined,
+    "--bgAlt": theme.bgAlt ?? undefined,
+    "--surface": theme.surface ?? undefined,
+    "--surfaceAlt": theme.surfaceAlt ?? undefined,
+    "--primary": theme.primary ?? undefined,
+    "--secondary": theme.secondary ?? undefined,
+    "--accent": theme.accent ?? undefined,
+    "--text": theme.text ?? undefined,
+    "--textMuted": theme.textMuted ?? undefined,
+    "--border": theme.border ?? undefined,
   };
 
   const useCombined = !!content?.flags?.useCombinedContact;
@@ -88,7 +94,7 @@ export default function EventPage() {
         <OptionalExtras content={content} />
         <ImportantNotes content={content} />
         <Registration content={content} />
-        <Footer />
+
       </div>
     </EventLayout>
   );

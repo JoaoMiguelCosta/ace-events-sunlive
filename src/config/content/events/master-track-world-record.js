@@ -1,9 +1,12 @@
+// src/config/content/events/master-track-world-record.js
+
 import bernado from "../../../assets/persons/bernardo.png";
 import jonasbohr from "../../../assets/persons/jonas-bohr.png";
 import aeroedgeLogo from "../../../assets/logos/aeroedge.png";
 
-export default {
+const base = {
   key: "master-track-world-record",
+
   hero: {
     title: "Master Track Hour World Record",
     dateLabel: "4 June, 2026",
@@ -78,10 +81,6 @@ export default {
     ],
   },
 
-  footer: {
-    text: "© Copyright 2026 Sunlive – All Rights Reserved",
-  },
-
   layout: {
     bg: "#1c1f17",
     bgAlt: "#24281d",
@@ -115,3 +114,71 @@ export default {
 
   flags: {},
 };
+
+const i18n = {
+  pt: {
+    hero: {
+      // ✅ não traduzimos o título do evento
+      dateLabel: "4 Junho, 2026",
+      locationLabel: "Velódromo de Sangalhos • Centro de Alto Rendimento",
+      actions: {
+        secondary: { label: "Download do Programa" },
+      },
+    },
+
+    overview: {
+      items: [
+        { icon: "trophy", label: "Disciplina", value: "Ciclismo de Pista" },
+        { icon: "award", label: "Nível", value: "Internacional" },
+        { icon: "calendar", label: "Duração", value: "2 Dias" },
+        { icon: "users", label: "Capacidade", value: "4 Atletas" },
+      ],
+    },
+
+    team: {
+      title: "Responsáveis do Evento",
+    },
+
+    officialPartner: {
+      title: "Parceria",
+      description: "Parceiro oficial do evento e apoio organizacional.",
+    },
+
+    description: {
+      title: "O Evento: AeroEdge e Sunlive Cycling, Recorde da Hora",
+      paragraphs: [
+        "O recorde da hora é um contrarrelógio individual em que o ciclista tenta percorrer a maior distância possível em exatamente 60 minutos, normalmente num velódromo coberto para manter as condições controladas.",
+        "É um dos testes mais puros do ciclismo porque o sucesso depende de manter elevada potência, minimizar o arrasto aerodinâmico e otimizar a eficiência biomecânica.",
+      ],
+      highlights: {
+        title: "Destaques",
+        items: [
+          "Tentativa de Recorde da Hora — contrarrelógio individual de 60 minutos para a máxima distância",
+          "Realizado no Velódromo de Sangalhos, num ambiente coberto e controlado",
+          "Foco total na performance: potência, aerodinâmica e eficiência biomecânica",
+          "Parceria oficial com a AeroEdge, com apoio organizacional",
+        ],
+      },
+    },
+
+    program: {
+      title: "Programa",
+      days: [
+        {
+          key: "thu",
+          weekday: "Quinta-feira",
+          date: "4 Junho",
+          items: [
+            {
+              time: "A definir",
+              title: "A definir",
+              description: "A definir",
+            },
+          ],
+        },
+      ],
+    },
+  },
+};
+
+export default { key: base.key, base, i18n };

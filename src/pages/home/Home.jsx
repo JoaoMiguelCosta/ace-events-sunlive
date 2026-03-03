@@ -50,7 +50,7 @@ export default function Home() {
         <Partners content={content.partners} />
       </div>
 
-      <Footer />
+      <Footer content={content.footer} variant="home" />
     </main>
   );
 }

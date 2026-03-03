@@ -1,10 +1,11 @@
-import manuelpastor from "../../../assets/persons/manuel-pastor.png";
+// src/config/content/events/stars-challenge.js
 
-// ✅ logo wide
+import manuelpastor from "../../../assets/persons/manuel-pastor.png";
 import fgpLogo from "../../../assets/logos/fgp.png";
 
-export default {
+const base = {
   key: "stars-challenge",
+
   hero: {
     title: "Stars Challenge",
     dateLabel: "21 November, 2026",
@@ -20,11 +21,7 @@ export default {
 
   overview: {
     items: [
-      {
-        icon: "trophy",
-        label: "Discipline",
-        value: "Artistic Gymnastics",
-      },
+      { icon: "trophy", label: "Discipline", value: "Artistic Gymnastics" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "1 day" },
       { icon: "users", label: "Capacity", value: "12 Athletes" },
@@ -67,7 +64,7 @@ export default {
     title: "Program",
     days: [
       {
-        key: "sun",
+        key: "sat",
         weekday: "Saturday",
         date: "21 Nov",
         items: [
@@ -79,10 +76,6 @@ export default {
         ],
       },
     ],
-  },
-
-  footer: {
-    text: "© Copyright 2026 Sunlive – All Rights Reserved",
   },
 
   layout: {
@@ -118,3 +111,70 @@ export default {
 
   flags: {},
 };
+
+const i18n = {
+  pt: {
+    hero: {
+      dateLabel: "21 Novembro, 2026",
+      locationLabel: "Velódromo de Sangalhos • Centro de Alto Rendimento",
+      actions: {
+        secondary: { label: "Download do Programa" },
+      },
+    },
+
+    overview: {
+      items: [
+        { icon: "trophy", label: "Disciplina", value: "Ginástica Artística" },
+        { icon: "award", label: "Nível", value: "Internacional" },
+        { icon: "calendar", label: "Duração", value: "1 dia" },
+        { icon: "users", label: "Capacidade", value: "12 Atletas" },
+      ],
+    },
+
+    team: {
+      title: "Responsável do Evento",
+    },
+
+    officialPartner: {
+      title: "Parceria",
+      description: "Parceiro oficial do evento e apoio organizacional.",
+    },
+
+    description: {
+      title: "O Evento: Competição de Ginástica Artística (WAG & MAG)",
+      paragraphs: [
+        "O evento principal do ano. O Stars Challenge é um espetáculo de classe mundial que traz a melhor Ginástica Artística Feminina e Masculina ao Velódromo, transformando-o num palco prestigiado onde a excelência técnica se encontra com o espetáculo.",
+        "A entrada é apenas por convite, com participação e assistência limitadas. Isto mantém um ambiente premium e focado em atuações de alto nível, culminando numa noite em formato gala pensada para ser memorável dentro e fora do praticável.",
+      ],
+      highlights: {
+        title: "Destaques",
+        items: [
+          "Gala/competição de Ginástica Artística de classe mundial (Feminina e Masculina)",
+          "Um evento prestigiado onde a excelência técnica se encontra com o espetáculo",
+          "Formato gala com atuações de alto nível e produção premium",
+          "Acesso exclusivo — apenas por convite",
+        ],
+      },
+    },
+
+    program: {
+      title: "Programa",
+      days: [
+        {
+          key: "sat",
+          weekday: "Sábado",
+          date: "21 Novembro",
+          items: [
+            {
+              time: "A definir",
+              title: "A definir",
+              description: "A definir",
+            },
+          ],
+        },
+      ],
+    },
+  },
+};
+
+export default { key: base.key, base, i18n };

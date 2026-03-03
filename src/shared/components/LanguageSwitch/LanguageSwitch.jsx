@@ -1,3 +1,4 @@
+// src/shared/components/LanguageSwitch/LanguageSwitch.jsx
 import styles from "./LanguageSwitch.module.css";
 
 export default function LanguageSwitch({
@@ -10,12 +11,15 @@ export default function LanguageSwitch({
   if (!i18n?.options?.length) return null;
 
   const { options, label = "Language", defaultKey } = i18n;
-
   const activeKey = lang ?? defaultKey ?? options[0]?.key;
 
-  const wrapCls = `${styles.wrap} ${
-    mode === "mobile" ? styles.wrapMobile : ""
-  } ${className}`.trim();
+  const wrapCls = [
+    styles.wrap,
+    mode === "mobile" ? styles.wrapMobile : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className={wrapCls} role="group" aria-label={label}>

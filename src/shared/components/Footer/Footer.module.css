@@ -1,9 +1,8 @@
-/* wrapper sem fundo (só para espaçamento e alinhamento) */
 .shell {
     width: 100%;
 }
 
-/* footer limitado (fundo + glow + grain dentro dos 1200px) */
+/* base comum */
 .footer {
     width: min(1200px, 100%);
     margin: 0 auto;
@@ -14,13 +13,39 @@
     padding: clamp(1.15rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 
+    box-shadow: 0 0.75rem 2.2rem rgba(11, 18, 32, 0.16);
+}
+
+/* =========================
+   HOME (mantém o teu azul original)
+========================= */
+.footerHome {
     background:
         radial-gradient(110% 80% at 12% 8%, rgba(1, 80, 127, 0.35), rgba(1, 80, 127, 0) 55%),
         radial-gradient(90% 70% at 88% 18%, rgba(1, 67, 109, 0.32), rgba(1, 67, 109, 0) 58%),
         radial-gradient(120% 90% at 50% 110%, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0) 60%),
         linear-gradient(180deg, #012f4b 0%, #013a5f 40%, #01283f 100%);
+}
 
-    box-shadow: 0 0.75rem 2.2rem rgba(11, 18, 32, 0.16);
+/* =========================
+   EVENT (segue o tema do evento via CSS vars)
+========================= */
+.footerEvent {
+    border-top: 1px solid var(--border, rgba(255, 255, 255, 0.10));
+
+    background:
+        radial-gradient(110% 80% at 12% 8%,
+            color-mix(in srgb, var(--accent, #60a5fa) 18%, transparent) 0%,
+            transparent 58%),
+        radial-gradient(90% 70% at 88% 18%,
+            color-mix(in srgb, var(--primary, #22c55e) 16%, transparent) 0%,
+            transparent 60%),
+        radial-gradient(120% 90% at 50% 110%,
+            rgba(0, 0, 0, 0.28) 0%,
+            transparent 62%),
+        linear-gradient(180deg,
+            color-mix(in srgb, var(--bgAlt, var(--bg, #0b1020)) 70%, #000 0%) 0%,
+            color-mix(in srgb, var(--bg, #0b1020) 85%, #000 0%) 100%);
 }
 
 /* glow */
@@ -32,8 +57,7 @@
 
     background:
         radial-gradient(60% 70% at 15% 10%, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 60%),
-        radial-gradient(55% 65% at 85% 20%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 65%),
-        radial-gradient(70% 60% at 50% 0%, rgba(1, 67, 109, 0.18), rgba(1, 67, 109, 0) 62%);
+        radial-gradient(55% 65% at 85% 20%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 65%);
 
     filter: blur(10px);
     opacity: 0.9;

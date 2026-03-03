@@ -1,8 +1,11 @@
+// src/config/content/events/international-coaching-academy.js
+
 import ionuttrandaburu from "../../../assets/persons/ionut-trandaburu.png";
 import fgpLogo from "../../../assets/logos/fgp.png";
 
-export default {
+const base = {
   key: "international-coaching-academy",
+
   hero: {
     title: "Sunlive International Coaching Academy",
     dateLabel: "10–16 August, 2026",
@@ -18,7 +21,11 @@ export default {
 
   overview: {
     items: [
-      { icon: "trophy", label: "Discipline", value: "Men’s Artistic Gymnastics" },
+      {
+        icon: "trophy",
+        label: "Discipline",
+        value: "Men’s Artistic Gymnastics",
+      },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "7 days" },
       { icon: "users", label: "Capacity", value: "100+ Athletes" },
@@ -266,10 +273,6 @@ export default {
     ],
   },
 
-  footer: {
-    text: "© Copyright 2026 Sunlive – All Rights Reserved",
-  },
-
   layout: {
     bg: "#1b2a1f",
     bgAlt: "#243a2a",
@@ -303,3 +306,155 @@ export default {
 
   flags: {},
 };
+
+const i18n = {
+  pt: {
+    hero: {
+      // ✅ não traduzimos o título do evento
+      dateLabel: "10–16 Agosto, 2026",
+      locationLabel: "Velódromo de Sangalhos • Centro de Alto Rendimento",
+      actions: {
+        secondary: { label: "Download do Programa" },
+      },
+    },
+
+    overview: {
+      items: [
+        {
+          icon: "trophy",
+          label: "Disciplina",
+          value: "Ginástica Artística Masculina",
+        },
+        { icon: "award", label: "Nível", value: "Internacional" },
+        { icon: "calendar", label: "Duração", value: "7 dias" },
+        { icon: "users", label: "Capacidade", value: "100+ Atletas" },
+      ],
+    },
+
+    team: {
+      title: "Responsável do Evento",
+    },
+
+    officialPartner: {
+      title: "Parceria",
+      description: "Parceiro oficial do evento e apoio organizacional.",
+    },
+
+    description: {
+      title:
+        "O Evento: Sunlive International Coaching Academy (Semana de Alto Rendimento)",
+      paragraphs: [
+        "A Sunlive International Coaching Academy é uma semana intensiva desenhada para treinadores e atletas que querem elevar o nível do treino com um método claro e prático. Num ambiente de alto rendimento, vais focar-te em fundamentais, progressões inteligentes e hábitos de treino que se aplicam diretamente à prática diária.",
+        "Ao longo de sessões diárias e clínicas curtas, o objetivo é simples: melhorar a qualidade técnica, afinar decisões de treino e aprender num contexto internacional. Espera trabalho prático, feedback real e espaço para troca de ideias com pessoas que vivem o desporto a alto nível.",
+      ],
+      highlights: {
+        title: "Destaques",
+        items: [
+          "Especialistas por aparelho para feedback e Q&A no treino",
+          "Força e condicionamento + trabalho de velocidade (fast-track)",
+          "Networking internacional num centro de alto rendimento",
+          "Sessões extra: planeamento, arbitragem e preparação para competição",
+        ],
+      },
+    },
+
+    program: {
+      title: "Programa",
+      days: [
+        {
+          key: "mon",
+          weekday: "Segunda-feira",
+          date: "10 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "tue",
+          weekday: "Terça-feira",
+          date: "11 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "wed",
+          weekday: "Quarta-feira",
+          date: "12 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "thu",
+          weekday: "Quinta-feira",
+          date: "13 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "fri",
+          weekday: "Sexta-feira",
+          date: "14 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sat",
+          weekday: "Sábado",
+          date: "15 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+        {
+          key: "sun",
+          weekday: "Domingo",
+          date: "16 Agosto",
+          items: [
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir", description: "A definir" },
+            { time: "A definir", title: "A definir" },
+          ],
+        },
+      ],
+    },
+  },
+};
+
+export default { key: base.key, base, i18n };

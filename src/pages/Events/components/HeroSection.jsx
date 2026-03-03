@@ -1,7 +1,6 @@
 // src/pages/Events/components/HeroSection.jsx
-import { Link } from "react-router-dom";
 import styles from "../EventPage.module.css";
-import { ArrowLeft, Calendar, Pin, Download } from "../../../ui/icons";
+import { Calendar, Pin, Download } from "../../../ui/icons";
 
 const BANNERS = import.meta.glob("../../../assets/banners/*", {
   eager: true,
@@ -36,15 +35,9 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
     locationHref,
     image,
     actions,
-
-    // compatibilidade com configs antigos
     bgPos,
-
-    // opcional: posições separadas (boa prática)
     bgPosCover,
     bgPosContain,
-
-    // opcional: micro-ajuste
     bgScale,
   } = hero;
 
@@ -58,12 +51,10 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
 
   const bgUrl = getBannerUrl(image);
 
-  // ✅ cover pode ser ajustado por evento; contain fica centrado por defeito
   const posCover = bgPosCover ?? bgPos ?? "center";
-  const posContain = bgPosContain ?? "center";
+  const posContain = bgPosContain ?? "center 110%";
   const scale = Number.isFinite(bgScale) ? bgScale : 1;
 
-  // ✅ por agora: desativar o secondary
   const secondaryDisabled = true;
 
   const onActionClick = (href) => (e) => {
@@ -87,73 +78,71 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
     >
       <div className={styles.heroShade}>
         <div className={styles.heroInner}>
-          <Link to="/#events" className={styles.heroBack}>
-            <ArrowLeft size={16} className={styles.backIcon} />
-            Back
-          </Link>
-
           <h1 className={styles.heroTitle}>{resolvedTitle}</h1>
 
-          <div className={styles.heroBadges}>
-            {dateLabel ? (
-              <div className={styles.badge}>
-                <Calendar size={18} className={styles.badgeIcon} />
-                <span>{dateLabel}</span>
-              </div>
-            ) : null}
-
-            {locationLabel ? (
-              locationHref ? (
-                <a
-                  className={`${styles.badge} ${styles.badgeGhost} ${styles.badgeLink}`}
-                  href={locationHref}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="Abrir localização no Google Maps"
-                  title="Abrir no Google Maps"
-                >
-                  <Pin size={18} className={styles.badgeIcon} />
-                  <span>{locationLabel}</span>
-                </a>
-              ) : (
-                <div className={`${styles.badge} ${styles.badgeGhost}`}>
-                  <Pin size={18} className={styles.badgeIcon} />
-                  <span>{locationLabel}</span>
+          {/* ✅ stack único com espaçamento igual entre tudo */}
+          <div className={styles.heroStack}>
+            <div className={styles.heroBadges}>
+              {dateLabel ? (
+                <div className={styles.badge}>
+                  <Calendar size={18} className={styles.badgeIcon} />
+                  <span>{dateLabel}</span>
                 </div>
-              )
-            ) : null}
-          </div>
-
-          {!hideActions && hasAnyAction ? (
-            <div className={styles.heroActions}>
-              {primary?.href ? (
-                <a
-                  className={styles.primaryBtn}
-                  href={primary.href}
-                  onClick={onActionClick(primary.href)}
-                >
-                  {primary.label || "Inscrever"}
-                </a>
               ) : null}
 
-              {secondary?.href ? (
-                <a
-                  className={`${styles.secondaryBtn} ${
-                    secondaryDisabled ? styles.secondaryBtnDisabled : ""
-                  }`}
-                  href={secondaryDisabled ? undefined : secondary.href}
-                  aria-disabled={secondaryDisabled}
-                  tabIndex={secondaryDisabled ? -1 : 0}
-                  onClick={(e) => {
-                    if (secondaryDisabled) e.preventDefault();
-                  }}
-                >
-                  <Download size={18} className={styles.btnIcon} />
-                  {secondary.label || "Download Programa"}
-                </a>
+              {locationLabel ? (
+                locationHref ? (
+                  <a
+                    className={`${styles.badge} ${styles.badgeGhost} ${styles.badgeLink}`}
+                    href={locationHref}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Abrir localização no Google Maps"
+                    title="Abrir no Google Maps"
+                  >
+                    <Pin size={18} className={styles.badgeIcon} />
+                    <span>{locationLabel}</span>
+                  </a>
+                ) : (
+                  <div className={`${styles.badge} ${styles.badgeGhost}`}>
+                    <Pin size={18} className={styles.badgeIcon} />
+                    <span>{locationLabel}</span>
+                  </div>
+                )
               ) : null}
             </div>
-          ) : null}
+
+            {!hideActions && hasAnyAction ? (
+              <div className={styles.heroActions}>
+                {primary?.href ? (
+                  <a
+                    className={styles.primaryBtn}
+                    href={primary.href}
+                    onClick={onActionClick(primary.href)}
+                  >
+                    {primary.label || "Register"}
+                  </a>
+                ) : null}
+
+                {secondary?.href ? (
+                  <a
+                    className={`${styles.secondaryBtn} ${
+                      secondaryDisabled ? styles.secondaryBtnDisabled : ""
+                    }`}
+                    href={secondaryDisabled ? undefined : secondary.href}
+                    aria-disabled={secondaryDisabled}
+                    tabIndex={secondaryDisabled ? -1 : 0}
+                    onClick={(e) => {
+                      if (secondaryDisabled) e.preventDefault();
+                    }}
+                  >
+                    <Download size={18} className={styles.btnIcon} />
+                    {secondary.label || "Download Program"}
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </section>

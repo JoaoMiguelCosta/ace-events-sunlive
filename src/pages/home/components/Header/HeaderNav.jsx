@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import styles from "./HeaderNav.module.css";
 import useDropdown from "./useDropdown";
 import HeaderDropdown from "./HeaderDropdown";
-import LanguageSwitch from "./LanguageSwitch";
+import LanguageSwitch from "../.././../../shared/components/LanguageSwitch/LanguageSwitch.jsx";
 
 import { useLanguage } from "../../../../shared/i18n/LanguageContext.jsx";
 

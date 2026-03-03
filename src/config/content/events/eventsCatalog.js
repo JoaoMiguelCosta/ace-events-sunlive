@@ -1,6 +1,6 @@
 // src/config/content/events/eventsCatalog.js
 
-// ✅ Events images (mesmos imports que tinhas no home.content.*)
+// ✅ Events images
 import eventBlackLine from "../../../assets/events/black-line.png";
 import eventBootCamp from "../../../assets/events/boot-camp.png";
 import eventEgTrampolinsTrainingCamp from "../../../assets/events/eg-trampolins-training-camp.png";
@@ -17,7 +17,6 @@ import eventTeamGym from "../../../assets/events/team-gym.png";
 
 /**
  * ✅ Eventos externos (não têm página interna)
- * - Mantém esta lista única (não deve viver no Home)
  */
 export const EXTERNAL_EVENT_KEYS = new Set([
   "blackline",
@@ -26,11 +25,10 @@ export const EXTERNAL_EVENT_KEYS = new Set([
 ]);
 
 /**
- * ✅ Catálogo base de eventos (independente do Home)
- * - Mantém keys/ordem/campos iguais aos que tinhas no home.content.en.js
- * - Nota: os textos (month/dateText/title) estão em EN aqui; podes i18n depois.
+ * ✅ Catálogo base (EN como fonte)
+ * - Sem i18n aqui dentro: EN fica no base
  */
-export const EVENTS_CATALOG = [
+export const EVENTS_CATALOG_EN = [
   {
     key: "rhythmic-gymnastics-sunset-cup",
     title: "Rhythmic Gymnastics Sunset Cup",
@@ -192,6 +190,66 @@ export const EVENTS_CATALOG = [
 ];
 
 /**
+ * ✅ PT overrides só para strings (não duplica imagens)
+ * - chave -> campos traduzidos
+ * - adiciona mais quando quiseres
+ */
+export const EVENTS_CATALOG_PT_PATCH = {
+  "rhythmic-gymnastics-sunset-cup": {
+    month: "Outubro",
+    dateText: "Outubro 2026 (data por confirmar)",
+  },
+  "master-track-world-record": {
+    month: "Junho",
+    dateText: "4 Junho, 2026",
+  },
+  bootcamp: {
+    month: "Junho",
+    dateText: "Junho 2026 (data por confirmar)",
+  },
+  "sunlive-international-cup": {
+    month: "Julho",
+    dateText: "3–5 Julho, 2026",
+  },
+  "eg-trampolins-training-camp": {
+    month: "Julho",
+    dateText: "27–31 Julho, 2026",
+  },
+  "international-coaching-academy": {
+    month: "Agosto",
+    dateText: "10–16 Agosto, 2026",
+  },
+  "international-wag-training-camp": {
+    month: "Agosto",
+    dateText: "19–24 Agosto, 2026",
+  },
+  teamgym: {
+    month: "Agosto/Setembro",
+    dateText: "29 Agosto – 8 Setembro, 2026",
+  },
+  "sunlive-bmx-trophy-c2": {
+    month: "Setembro",
+    dateText: "Setembro 2026 (data por confirmar)",
+  },
+  "stars-challenge": {
+    month: "Novembro",
+    dateText: "21 Novembro, 2026",
+  },
+  "international-continental-cup": {
+    month: "Novembro",
+    dateText: "27–29 Novembro, 2026",
+  },
+  "sunlive-track-trophy-c2": {
+    month: "Dezembro",
+    dateText: "Dezembro 2026 (data por confirmar)",
+  },
+  blackline: {
+    month: "Maio",
+    dateText: "3–17 Maio, 2026",
+  },
+};
+
+/**
  * ✅ Auto-href: internos por defeito, exceto os externos
  */
 export function withAutoHref(items = []) {
@@ -203,6 +261,26 @@ export function withAutoHref(items = []) {
 }
 
 /**
- * ✅ Lista final para usar na UI
+ * ✅ Aplica patch PT por key (só strings)
  */
-export const EVENTS = withAutoHref(EVENTS_CATALOG);
+export function applyLangPatch(items = [], lang = "en") {
+  if (lang !== "pt") return items;
+
+  return items.map((e) => {
+    const patch = EVENTS_CATALOG_PT_PATCH[e.key];
+    return patch ? { ...e, ...patch } : e;
+  });
+}
+
+/**
+ * ✅ Selector por idioma (catálogo base para UI)
+ */
+export function getEventsCatalog(lang = "en") {
+  const baseItems = withAutoHref(EVENTS_CATALOG_EN);
+  return applyLangPatch(baseItems, lang);
+}
+
+/**
+ * ✅ Export default EN (para usos antigos)
+ */
+export const EVENTS = getEventsCatalog("en");
