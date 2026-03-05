@@ -51,6 +51,7 @@ import {
   Globe,
   Award,
   Instagram,
+  WhatsApp
 } from "../../ui/icons";
 
 /* =========================
@@ -460,6 +461,56 @@ const partners = {
 };
 
 /* =========================
+   CONTACTOS
+========================= */
+const contacts = {
+  id: "contacts",
+  title: "Contactos",
+  subtitle: "Contactos diretos para coordenação e apoio.",
+  items: [
+    {
+      key: "lucas-gonzalez",
+      name: "Lucas Gonzalez",
+      role: "CEO — Sunlive Group",
+      phone: "+351 933600364",
+      whatsappHref: "https://wa.me/351933600364",
+      waIcon: WhatsApp,
+    },
+    {
+      key: "marina-remelgado",
+      name: "Marina Remelgado",
+      role: "Por definir",
+      phone: "+351 934094584",
+      whatsappHref: "https://wa.me/351934094584",
+      waIcon: WhatsApp,
+    },
+    {
+      key: "maria-regina-andrade",
+      name: "Maria Regina Andrade",
+      role: "Por definir",
+      phone: "+351 915298642",
+      whatsappHref: "https://wa.me/351915298642",
+      waIcon: WhatsApp,
+    },
+    {
+      key: "fernando-piccirilo",
+      name: "Fernando Piccirilo",
+      role: "Comercial — Sunlive Group",
+      phone: "+351 913093702",
+      whatsappHref: "https://wa.me/351913093702",
+      waIcon: WhatsApp,
+    },
+    {
+      key: "dilma-almeida",
+      name: "Dilma Almeida",
+      role: "Por definir",
+      phone: "+351 935630798",
+      whatsappHref: "https://wa.me/351935630798",
+      waIcon: WhatsApp,
+    },
+  ],
+};
+/* =========================
    FOOTER
 ========================= */
 const footer = {
@@ -477,5 +528,6 @@ export const homeContent = {
   about,
   events,
   partners,
+  contacts,
   footer,
 };

@@ -7,6 +7,7 @@ import Hero from "./components/Hero/Hero";
 import About from "./components/About/About.jsx";
 
 import EventsSection from "./components/Events/EventsSection.jsx";
+import Contacts from "./components/Contacts/Contacts.jsx";
 import Partners from "./components/Partners/Partners.jsx";
 
 import Footer from "../../shared/components/Footer/Footer.jsx";
@@ -47,6 +48,7 @@ export default function Home() {
           <EventsSection events={content.events} />
         </section>
 
+        <Contacts content={content.contacts} />
         <Partners content={content.partners} />
       </div>
 

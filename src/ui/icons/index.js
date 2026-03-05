@@ -14,3 +14,4 @@ export { default as Trophy } from "./Trophy";
 export { default as SignalHighIcon } from "./SignalHighIcon";
 
 export { default as CheckIcon } from "./CheckIcon";
+export { default as WhatsApp } from "./WhatsApp";

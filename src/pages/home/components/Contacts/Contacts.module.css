@@ -1,0 +1,443 @@
+/* src/pages/home/components/Contacts/Contacts.module.css */
+
+.section {
+    width: 100%;
+    padding: clamp(1rem, 2.5vw, 2.25rem) 0 clamp(2.75rem, 6vw, 5.25rem);
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(110% 80% at 12% 8%,
+            rgba(1, 80, 127, 0.35),
+            rgba(1, 80, 127, 0) 55%),
+        radial-gradient(90% 70% at 88% 18%,
+            rgba(1, 67, 109, 0.32),
+            rgba(1, 67, 109, 0) 58%),
+        radial-gradient(120% 90% at 50% 110%,
+            rgba(0, 0, 0, 0.32),
+            rgba(0, 0, 0, 0) 60%),
+        linear-gradient(180deg, #012f4b 0%, #013a5f 40%, #01283f 100%);
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    inset: -6rem -2rem -6rem -2rem;
+    pointer-events: none;
+
+    background:
+        radial-gradient(60% 70% at 15% 10%,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0) 60%),
+        radial-gradient(55% 65% at 85% 20%,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0) 65%),
+        radial-gradient(70% 60% at 50% 0%,
+            rgba(1, 67, 109, 0.18),
+            rgba(1, 67, 109, 0) 62%);
+
+    filter: blur(10px);
+    opacity: 0.9;
+}
+
+.section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+
+    background-image: repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.08) 0px,
+            rgba(255, 255, 255, 0.08) 1px,
+            rgba(0, 0, 0, 0) 2px,
+            rgba(0, 0, 0, 0) 4px);
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: clamp(0.9rem, 1.6vw, 1.25rem);
+}
+
+.title {
+    margin: 0;
+    color: var(--color-text-on-primary);
+    font-size: clamp(2.1rem, 4.2vw, 4rem);
+    line-height: 1.02;
+    font-weight: 950;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.subtitle {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--color-text-on-primary-muted);
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: var(--leading-relaxed);
+}
+
+/* =========================================================
+   Layout
+   - Desktop mantém 4 colunas
+   - Entre larguras “intermédias” evita cards esmagados
+   - Mobile mantém 1 coluna com largura total
+   ========================================================= */
+
+/* Desktop / Large */
+.gridTop {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.9rem, 2vw, 1.35rem);
+    margin-bottom: clamp(0.9rem, 2vw, 1.35rem);
+    align-items: stretch;
+
+    /* evita “encostar” em ecrãs muito largos */
+    justify-items: center;
+}
+
+.lucasSlot {
+    grid-column: 2 / 4;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+.gridBottom {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.9rem, 2vw, 1.35rem);
+    align-items: stretch;
+
+    /* em vez de center global (que pode criar offsets),
+     centra cada item sem partir a grid */
+    justify-items: center;
+}
+
+/* Card */
+.card {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 0.55rem;
+
+    justify-items: center;
+    text-align: center;
+
+    border-radius: var(--radius-lg);
+
+    background:
+        radial-gradient(120% 120% at 20% 18%,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0) 55%),
+        radial-gradient(120% 120% at 80% 70%,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0) 60%),
+        rgba(2, 23, 39, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 22px 54px rgba(11, 18, 32, 0.14),
+        0 8px 18px rgba(11, 18, 32, 0.10);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    padding: clamp(1rem, 1.6vw, 1.25rem);
+    overflow: hidden;
+
+    /* ✅ melhor controlo: não “espreme” e mantém proporção boa */
+    width: 100%;
+    max-width: 260px;
+
+    min-height: 156px;
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-normal),
+        background var(--transition-normal);
+
+    will-change: transform;
+}
+
+/* ✅ mantém as percentagens como pediste */
+.cardFeatured {
+    width: 60%;
+    min-height: 176px;
+
+    /* garante que não fica pequeno demais em ecrãs “curtos” */
+    max-width: 520px;
+    min-width: 260px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+
+    background:
+        radial-gradient(120% 120% at 18% 18%,
+            rgba(46, 167, 224, 0.22),
+            rgba(46, 167, 224, 0) 55%),
+        radial-gradient(120% 120% at 82% 70%,
+            rgba(1, 80, 127, 0.22),
+            rgba(1, 80, 127, 0) 60%);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.20);
+    box-shadow:
+        0 28px 66px rgba(11, 18, 32, 0.20),
+        0 10px 24px rgba(11, 18, 32, 0.12);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:focus-within {
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow:
+        0 28px 66px rgba(11, 18, 32, 0.20),
+        0 10px 24px rgba(11, 18, 32, 0.12),
+        0 0 0 0.22rem rgba(46, 167, 224, 0.18);
+}
+
+/* Nome */
+.name {
+    margin: 0;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.92);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: clamp(0.95rem, 1.1vw, 1.3rem);
+    line-height: 1.15;
+    max-width: 100%;
+}
+
+/* Função */
+.role {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+
+    font-size: clamp(0.82rem, 0.95vw, 0.98rem);
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Telefone */
+.phone {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.2rem;
+
+    min-width: 190px;
+    text-align: center;
+
+    font-weight: 900;
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+
+    padding: 0.42rem 0.7rem;
+    border-radius: var(--radius-pill);
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-normal);
+}
+
+.phone:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 0.75rem 1.6rem rgba(11, 18, 32, 0.16);
+}
+
+.phone:focus-visible {
+    outline: 3px solid rgba(46, 167, 224, 0.22);
+    outline-offset: 2px;
+}
+
+/* WhatsApp */
+.waBtn {
+    width: 46px;
+    height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-normal);
+}
+
+.waBtn:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.26);
+    box-shadow: 0 0.85rem 1.8rem rgba(11, 18, 32, 0.18);
+}
+
+.waBtn:focus-visible {
+    outline: 3px solid rgba(46, 167, 224, 0.22);
+    outline-offset: 2px;
+}
+
+.waIcon {
+    display: block;
+}
+
+/* =========================================================
+   Responsivo (melhor escalonamento por “degraus”)
+   ========================================================= */
+
+/* 1200 -> 1024: evita cards apertados mantendo o layout */
+@media (max-width: 1180px) {
+    .card {
+        max-width: 280px;
+    }
+
+    .cardFeatured {
+        max-width: 560px;
+    }
+}
+
+/* <=1024: 2 colunas, featured ocupa linha inteira (como já tinhas) */
+@media (max-width: 1024px) {
+
+    .gridTop,
+    .gridBottom {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+    }
+
+    .lucasSlot {
+        grid-column: 1 / -1;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* ✅ mantém a tua percentagem */
+    .cardFeatured {
+        max-width: none;
+        width: 50%;
+        min-width: 260px;
+    }
+}
+
+/* <=820: ainda 2 colunas, mas featured passa a “confortável” */
+@media (max-width: 820px) {
+    .cardFeatured {
+        width: min(520px, 100%);
+    }
+}
+
+/* <=640: 1 coluna e tudo full width */
+@media (max-width: 640px) {
+
+    .gridTop,
+    .gridBottom {
+        grid-template-columns: 1fr;
+        justify-items: stretch;
+    }
+
+    .lucasSlot {
+        grid-column: auto;
+    }
+
+    .card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .cardFeatured {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .phone {
+        min-width: 0;
+        width: 75%;
+    }
+}
+
+/* <=420: micro-ajustes para não “rebentar” em telemóveis pequenos */
+@media (max-width: 420px) {
+    .title {
+        letter-spacing: -0.02em;
+    }
+
+    .card {
+        padding: 0.95rem;
+    }
+
+    .waBtn {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .card,
+    .phone,
+    .waBtn {
+        transition: none;
+    }
+
+    .card:hover,
+    .phone:hover,
+    .waBtn:hover {
+        transform: none;
+    }
+}

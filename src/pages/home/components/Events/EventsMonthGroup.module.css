@@ -64,10 +64,10 @@
 /* ✅ entre 562px e 696px: cards alinhados à esquerda */
 @media (min-width: 562px) and (max-width: 696px) {
     .group {
-        justify-items: start;
+        justify-items: center;
     }
 
     .grid {
-        justify-content: start;
+        justify-content: center;
     }
 }

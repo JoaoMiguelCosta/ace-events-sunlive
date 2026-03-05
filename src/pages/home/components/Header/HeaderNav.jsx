@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import styles from "./HeaderNav.module.css";
 import useDropdown from "./useDropdown";
 import HeaderDropdown from "./HeaderDropdown";
-import LanguageSwitch from "../.././../../shared/components/LanguageSwitch/LanguageSwitch.jsx";
+import LanguageSwitch from "../../../../shared/components/LanguageSwitch/LanguageSwitch.jsx";
 
 import { useLanguage } from "../../../../shared/i18n/LanguageContext.jsx";
 
@@ -45,10 +45,6 @@ export default function HeaderNav({ menu, i18n }) {
     const href = item.href ?? item.anchor ?? "#";
     const Icon = item.icon;
 
-    // ✅ estável entre idiomas (não depende de label)
-    const isContacts = item.anchor === "#contacts";
-    const isDisabled = isContacts;
-
     const iconOnlyDesktop = !isMobile && isExternal && Icon;
     const iconOnlyMobile = isMobile && isExternal && Icon;
 
@@ -60,23 +56,13 @@ export default function HeaderNav({ menu, i18n }) {
           ? styles.mobileLink
           : styles.navLink;
 
-    const cls = `${baseCls} ${isDisabled ? styles.linkDisabled : ""}`;
-
     const commonProps = {
-      href: isDisabled ? undefined : href,
-      className: cls,
-      onClick: (e) => {
-        if (isDisabled) {
-          e.preventDefault();
-          return;
-        }
+      href,
+      className: baseCls,
+      onClick: () => {
         if (isMobile) closeAll();
       },
-      ...(isDisabled
-        ? { "aria-disabled": true, tabIndex: -1 }
-        : isExternal
-          ? { target: "_blank", rel: "noreferrer noopener" }
-          : null),
+      ...(isExternal ? { target: "_blank", rel: "noreferrer noopener" } : null),
       ...(iconOnlyDesktop || iconOnlyMobile
         ? { "aria-label": item.label, title: item.label }
         : null),
@@ -108,15 +94,9 @@ export default function HeaderNav({ menu, i18n }) {
               <span className={styles.linkText}>{item.label}</span>
             </span>
 
-            {!isDisabled ? (
-              <span className={styles.mobileLinkRight} aria-hidden="true">
-                ↗
-              </span>
-            ) : (
-              <span className={styles.mobileLinkRight} aria-hidden="true">
-                —
-              </span>
-            )}
+            <span className={styles.mobileLinkRight} aria-hidden="true">
+              ↗
+            </span>
           </>
         ) : (
           item.label

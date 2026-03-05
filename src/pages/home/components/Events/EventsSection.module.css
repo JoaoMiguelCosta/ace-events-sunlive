@@ -128,11 +128,11 @@
 /* ✅ entre 562px e 696px: volta ao alinhamento normal (esquerda) */
 @media (min-width: 562px) and (max-width: 696px) {
     .groups {
-        justify-items: start;
+        justify-items: center;
     }
 
     .row {
-        justify-items: start;
+        justify-items: center;
     }
 }
 

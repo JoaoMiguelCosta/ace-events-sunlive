@@ -6,7 +6,6 @@
     align-items: center;
 }
 
-
 /* =========================
    Mobile controls (instagram + langs + hamburger)
 ========================= */
@@ -49,8 +48,7 @@
     border: 0.0625rem solid rgba(255, 255, 255, 0);
 
     transition: background-color var(--transition-normal),
-        border-color var(--transition-normal),
-        transform var(--transition-normal),
+        border-color var(--transition-normal), transform var(--transition-normal),
         opacity var(--transition-normal);
 
     white-space: nowrap;
@@ -134,8 +132,7 @@
 
     transition: transform var(--transition-normal),
         background-color var(--transition-normal),
-        border-color var(--transition-normal),
-        opacity var(--transition-normal);
+        border-color var(--transition-normal), opacity var(--transition-normal);
 }
 
 .iconLinkPlain:hover {
@@ -150,24 +147,6 @@
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.14);
     box-shadow: 0 0 0 0.16rem rgba(255, 255, 255, 0.18);
-}
-
-/* =========================
-   DISABLED LINK (Contacts)
-========================= */
-.linkDisabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-    pointer-events: none;
-    transform: none !important;
-    filter: grayscale(0.25);
-}
-
-.linkDisabled:hover {
-    background: rgba(255, 255, 255, 0) !important;
-    border-color: rgba(255, 255, 255, 0) !important;
-    box-shadow: none !important;
-    filter: grayscale(0.25);
 }
 
 /* =========================
@@ -234,13 +213,8 @@
     padding: 0.38rem;
     border-radius: 0.85rem;
 
-    background: radial-gradient(16rem 11rem at 18% 10%,
-            rgba(25, 120, 255, 0.1) 0%,
-            rgba(0, 0, 0, 0) 62%),
-        linear-gradient(180deg,
-            rgba(1, 28, 52, 0.94) 0%,
-            rgba(1, 36, 58, 0.92) 55%,
-            rgba(1, 24, 44, 0.94) 100%);
+    background: radial-gradient(16rem 11rem at 18% 10%, rgba(25, 120, 255, 0.1) 0%, rgba(0, 0, 0, 0) 62%),
+        linear-gradient(180deg, rgba(1, 28, 52, 0.94) 0%, rgba(1, 36, 58, 0.92) 55%, rgba(1, 24, 44, 0.94) 100%);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -370,13 +344,8 @@
 
     width: min(78vw, 15.5rem);
 
-    background: radial-gradient(16rem 11rem at 20% 10%,
-            rgba(25, 120, 255, 0.1) 0%,
-            rgba(0, 0, 0, 0) 62%),
-        linear-gradient(180deg,
-            rgba(1, 28, 52, 0.96) 0%,
-            rgba(1, 36, 58, 0.94) 55%,
-            rgba(1, 24, 44, 0.96) 100%);
+    background: radial-gradient(16rem 11rem at 20% 10%, rgba(25, 120, 255, 0.1) 0%, rgba(0, 0, 0, 0) 62%),
+        linear-gradient(180deg, rgba(1, 28, 52, 0.96) 0%, rgba(1, 36, 58, 0.94) 55%, rgba(1, 24, 44, 0.96) 100%);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 1.2rem 3rem rgba(11, 18, 32, 0.28),
