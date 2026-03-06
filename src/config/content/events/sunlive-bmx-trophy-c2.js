@@ -26,7 +26,7 @@ const base = {
       { icon: "trophy", label: "Discipline", value: "BMX" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "2 Days" },
-      { icon: "users", label: "Capacity", value: "250+ Athletes" },
+      { icon: "users", label: "Capacity", value: "+250 Athletes" },
     ],
   },
 
@@ -316,7 +316,7 @@ const i18n = {
         { icon: "trophy", label: "Disciplina", value: "BMX" },
         { icon: "award", label: "Nível", value: "Internacional" },
         { icon: "calendar", label: "Duração", value: "2 Dias" },
-        { icon: "users", label: "Capacidade", value: "250+ Atletas" },
+        { icon: "users", label: "Capacidade", value: "+250 Atletas" },
       ],
     },
 

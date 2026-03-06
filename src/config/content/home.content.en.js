@@ -108,9 +108,9 @@ const hero = {
   subtitle:
     "Sports events that bring together competition, culture, and community in a unique experience.",
   stats: [
-    { value: "1000+", label: "Participants" },
-    { value: "6+", label: "Sports" },
-    { value: "20+", label: "Countries" },
+    { value: "+1000", label: "Participants" },
+    { value: "+6", label: "Sports" },
+    { value: "+20", label: "Countries" },
   ],
   cta: {
     label: "Explore Events",

@@ -9,9 +9,11 @@ const BANNERS = import.meta.glob("../../../assets/banners/*", {
 
 function getBannerUrl(filename) {
   if (!filename) return null;
+
   const hit = Object.entries(BANNERS).find(([path]) =>
     path.endsWith(`/${filename}`),
   );
+
   return hit ? hit[1] : null;
 }
 
@@ -78,10 +80,9 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
     >
       <div className={styles.heroShade}>
         <div className={styles.heroInner}>
-          <h1 className={styles.heroTitle}>{resolvedTitle}</h1>
+          <div className={styles.heroTop}>
+            <h1 className={styles.heroTitle}>{resolvedTitle}</h1>
 
-          {/* ✅ stack único com espaçamento igual entre tudo */}
-          <div className={styles.heroStack}>
             <div className={styles.heroBadges}>
               {dateLabel ? (
                 <div className={styles.badge}>
@@ -111,38 +112,38 @@ export default function HeroSection({ hero, fallbackTitle, flags }) {
                 )
               ) : null}
             </div>
-
-            {!hideActions && hasAnyAction ? (
-              <div className={styles.heroActions}>
-                {primary?.href ? (
-                  <a
-                    className={styles.primaryBtn}
-                    href={primary.href}
-                    onClick={onActionClick(primary.href)}
-                  >
-                    {primary.label || "Register"}
-                  </a>
-                ) : null}
-
-                {secondary?.href ? (
-                  <a
-                    className={`${styles.secondaryBtn} ${
-                      secondaryDisabled ? styles.secondaryBtnDisabled : ""
-                    }`}
-                    href={secondaryDisabled ? undefined : secondary.href}
-                    aria-disabled={secondaryDisabled}
-                    tabIndex={secondaryDisabled ? -1 : 0}
-                    onClick={(e) => {
-                      if (secondaryDisabled) e.preventDefault();
-                    }}
-                  >
-                    <Download size={18} className={styles.btnIcon} />
-                    {secondary.label || "Download Program"}
-                  </a>
-                ) : null}
-              </div>
-            ) : null}
           </div>
+
+          {!hideActions && hasAnyAction ? (
+            <div className={styles.heroActions}>
+              {secondary?.href ? (
+                <a
+                  className={`${styles.secondaryBtn} ${
+                    secondaryDisabled ? styles.secondaryBtnDisabled : ""
+                  }`}
+                  href={secondaryDisabled ? undefined : secondary.href}
+                  aria-disabled={secondaryDisabled}
+                  tabIndex={secondaryDisabled ? -1 : 0}
+                  onClick={(e) => {
+                    if (secondaryDisabled) e.preventDefault();
+                  }}
+                >
+                  <Download size={18} className={styles.btnIcon} />
+                  {secondary.label || "Download Program"}
+                </a>
+              ) : null}
+
+              {primary?.href ? (
+                <a
+                  className={styles.primaryBtn}
+                  href={primary.href}
+                  onClick={onActionClick(primary.href)}
+                >
+                  {primary.label || "Register"}
+                </a>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

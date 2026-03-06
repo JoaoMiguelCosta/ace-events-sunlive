@@ -48,7 +48,6 @@
 
     --heroTitle: clamp(1.55rem, 3.8vw, 4.1rem);
 
-    /* ✅ gap único para TUDO (linhas vermelhas) */
     --stackGap: clamp(14px, 1.6vw, 18px);
 
     --badgePadY: clamp(8px, 1.1vw, 10px);
@@ -59,8 +58,8 @@
     --btnPadX: clamp(16px, 1.7vw, 22px);
     --btnRadius: clamp(12px, 1.5vw, 14px);
 
-    --heroPadTop: clamp(4px, 0.5vw, 8px);
-    --heroPadBottom: 0px;
+    --heroPadTop: clamp(52px, 5.6vw, 80px);
+    --heroPadBottom: clamp(18px, 2vw, 24px);
 
     background: none;
     background-color: transparent;
@@ -98,17 +97,15 @@
     transform: scale(var(--heroBgScale));
 }
 
-/* overlay — menos agressivo */
+/* overlay */
 .heroShade {
     position: absolute;
     inset: 0;
     z-index: 1;
 
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
 
-    /* descer controlado */
-    padding-top: clamp(52px, 5.6vw, 80px);
     box-sizing: border-box;
 
     background:
@@ -127,11 +124,25 @@
 
 .heroInner {
     width: min(1200px, 100%);
+    height: 100%;
     margin-inline: auto;
-
-    /* top quase a zero (para não somar) */
-    padding: 0 var(--heroPadX) var(--heroPadBottom);
+    padding:
+        var(--heroPadTop) var(--heroPadX) var(--heroPadBottom);
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--stackGap);
+}
+
+.heroTop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--stackGap);
+    width: 100%;
 }
 
 .heroTitle {
@@ -139,9 +150,7 @@
     font-size: var(--heroTitle);
     line-height: 1.05;
     letter-spacing: -0.02em;
-
-    /* ✅ usa o gap único */
-    margin: 0 0 var(--stackGap) 0;
+    margin: 0;
 
     color: var(--text, #fff);
 
@@ -157,11 +166,7 @@
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: nowrap;
-
-    /* ✅ gap igual ao resto */
     gap: var(--stackGap);
-
-    /* ✅ sem margin-bottom para não criar espaçamento diferente */
     margin: 0;
 }
 
@@ -222,21 +227,18 @@
     outline-offset: 3px;
 }
 
-/* actions — Register em cima, Download em baixo */
+/* actions — no fundo à esquerda e lado a lado */
 .heroActions {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-end;
     justify-content: flex-start;
-
-    /* ✅ gap igual ao resto */
+    flex-wrap: wrap;
     gap: var(--stackGap);
 
-    /* ✅ garante o MESMO espaçamento entre badges e actions */
-    margin-top: var(--stackGap);
-
-    width: fit-content;
+    width: 100%;
     max-width: 100%;
+    margin: 0;
 }
 
 .primaryBtn,
@@ -255,8 +257,9 @@
 
     width: fit-content;
     max-width: 100%;
-
     min-width: clamp(180px, 22vw, 260px);
+
+    text-decoration: none;
 }
 
 .primaryBtn {
@@ -267,10 +270,29 @@
     color: color-mix(in srgb, var(--bg, #0e1621) 70%, #000);
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        filter 160ms ease,
+        background-color 160ms ease;
 }
 
 .primaryBtn:hover {
-    filter: brightness(1.03);
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.primaryBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.primaryBtn:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent, #7c4dff) 70%, #fff);
+    outline-offset: 3px;
 }
 
 .secondaryBtn {
@@ -281,18 +303,35 @@
     color: var(--textMuted, #b6c0cc);
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
 
     transition:
         background-color 160ms ease,
         color 160ms ease,
         border-color 160ms ease,
         transform 160ms ease,
-        opacity 160ms ease;
+        box-shadow 160ms ease,
+        opacity 160ms ease,
+        filter 160ms ease;
 }
 
 .secondaryBtn:hover {
     background: var(--surfaceAlt, rgba(255, 255, 255, 0.06));
     color: var(--text, #fff);
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+    filter: brightness(1.02);
+}
+
+.secondaryBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.secondaryBtn:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent, #7c4dff) 70%, #fff);
+    outline-offset: 3px;
 }
 
 .secondaryBtnDisabled {
@@ -307,6 +346,10 @@
 .secondaryBtnDisabled:hover {
     background: color-mix(in srgb, var(--surface, #162231) 40%, transparent);
     color: var(--textMuted, #b6c0cc);
+    border-color: var(--border, rgba(255, 255, 255, 0.15));
+    transform: none;
+    box-shadow: none;
+    filter: grayscale(0.25);
 }
 
 .btnIcon {
@@ -328,21 +371,12 @@
 /* =========================
    NO ACTIONS
 ========================= */
-.heroNoActions .heroShade {
-    align-items: flex-start;
-}
-
 .heroNoActions .heroInner {
-    padding-top: clamp(18px, 4vw, 34px);
-    padding-bottom: clamp(12px, 3vw, 18px);
-}
-
-.heroNoActions .heroBadges {
-    margin: 0;
+    justify-content: flex-start;
 }
 
 .heroNoActions .heroActions {
-    margin-top: 0;
+    display: none;
 }
 
 /* =========================
@@ -351,11 +385,9 @@
 @media (max-width: 1024px) {
     .heroTitle {
         white-space: normal;
-
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-
         overflow: hidden;
         text-overflow: clip;
         line-height: 1.08;
@@ -373,28 +405,30 @@
         background-position: var(--heroBgPosCover);
     }
 
-    .heroShade {
-        align-items: flex-end;
-        padding-top: 6px;
+    .heroInner {
+        justify-content: flex-start;
     }
 
-    /* mobile: botões full width */
     .heroActions {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         width: 100%;
-        align-items: stretch;
+        gap: 10px;
     }
 
     .primaryBtn,
     .secondaryBtn {
-        width: 100%;
+        width: min(100%, 300px);
         min-width: 0;
-        white-space: normal;
+        white-space: nowrap;
     }
 }
 
 @media (max-width: 480px) {
     .heroInner {
-        padding: 14px 14px 18px;
+        padding:
+            clamp(18px, 4vw, 22px) 14px 18px;
     }
 }
 

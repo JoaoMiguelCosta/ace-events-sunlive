@@ -108,9 +108,9 @@ const hero = {
   subtitle:
     "Eventos desportivos que juntam competição, cultura e comunidade numa experiência única.",
   stats: [
-    { value: "1000+", label: "Participantes" },
-    { value: "6+", label: "Modalidades" },
-    { value: "20+", label: "Países" },
+    { value: "+1000", label: "Participantes" },
+    { value: "+6", label: "Modalidades" },
+    { value: "+20", label: "Países" },
   ],
   cta: {
     label: "Explorar Eventos",

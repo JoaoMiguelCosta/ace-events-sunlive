@@ -26,7 +26,7 @@ const base = {
       { icon: "trophy", label: "Discipline", value: "Track Cycling" },
       { icon: "award", label: "Level", value: "International" },
       { icon: "calendar", label: "Duration", value: "2 Days" },
-      { icon: "users", label: "Capacity", value: "100+ Athletes" },
+      { icon: "users", label: "Capacity", value: "+100 Athletes" },
     ],
   },
 
@@ -229,7 +229,7 @@ const i18n = {
         { icon: "trophy", label: "Disciplina", value: "Ciclismo de Pista" },
         { icon: "award", label: "Nível", value: "Internacional" },
         { icon: "calendar", label: "Duração", value: "2 Dias" },
-        { icon: "users", label: "Capacidade", value: "100+ Atletas" },
+        { icon: "users", label: "Capacidade", value: "+100 Atletas" },
       ],
     },
 
