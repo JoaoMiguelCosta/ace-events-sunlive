@@ -1,14 +1,14 @@
 import styles from "./Contacts.module.css";
 
 function normalizePhone(raw) {
-  const s = String(raw || "").trim();
-  return s.replace(/\s+/g, "");
+  return String(raw || "")
+    .trim()
+    .replace(/\s+/g, "");
 }
 
 function ContactCard({ contact, featured = false }) {
   const phoneRaw = contact.phone ?? "";
   const phoneTel = normalizePhone(phoneRaw);
-
   const role = contact.role ?? "";
   const waHref = contact.whatsappHref ?? "";
   const WaIcon = contact.waIcon ?? null;
@@ -18,30 +18,29 @@ function ContactCard({ contact, featured = false }) {
       className={`${styles.card} ${featured ? styles.cardFeatured : ""}`}
       role="listitem"
       aria-label={contact.name}
+      data-featured={featured ? "true" : "false"}
     >
-      {/* Linha 1: Nome */}
+      <div className={styles.cardGlow} aria-hidden="true" />
+
       <h3 className={styles.name} title={contact.name}>
         {contact.name}
       </h3>
 
-      {/* Linha 2: Função */}
       {role ? (
         <p className={styles.role} title={role}>
           {role}
         </p>
       ) : null}
 
-      {/* Linha 3: Telefone */}
       <a
         className={styles.phone}
         href={`tel:${phoneTel}`}
         aria-label={`Ligar para ${contact.name}`}
-        title="Ligar"
+        title={`Ligar para ${contact.name}`}
       >
         {phoneRaw}
       </a>
 
-      {/* Linha 4: WhatsApp */}
       {waHref && WaIcon ? (
         <a
           className={styles.waBtn}
@@ -49,7 +48,7 @@ function ContactCard({ contact, featured = false }) {
           target="_blank"
           rel="noreferrer"
           aria-label={`Abrir WhatsApp para ${contact.name}`}
-          title="WhatsApp"
+          title={`WhatsApp de ${contact.name}`}
         >
           <WaIcon size={22} className={styles.waIcon} />
         </a>
@@ -86,7 +85,7 @@ export default function Contacts({ content }) {
           <div
             className={styles.gridTop}
             role="list"
-            aria-label={`${title} — Lucas`}
+            aria-label={`${title} — destaque`}
           >
             <div className={styles.lucasSlot}>
               <ContactCard contact={lucas} featured />
@@ -99,9 +98,9 @@ export default function Contacts({ content }) {
           role="list"
           aria-label={`${title} — restantes`}
         >
-          {rest.map((c) => {
-            const key = c.key ?? c.phone ?? c.name;
-            return <ContactCard key={key} contact={c} />;
+          {rest.map((contact) => {
+            const key = contact.key ?? contact.phone ?? contact.name;
+            return <ContactCard key={key} contact={contact} />;
           })}
         </div>
       </div>

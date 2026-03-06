@@ -479,7 +479,7 @@ const contacts = {
     {
       key: "marina-remelgado",
       name: "Marina Remelgado",
-      role: "Por definir",
+      role: "Staff",
       phone: "+351 934094584",
       whatsappHref: "https://wa.me/351934094584",
       waIcon: WhatsApp,
@@ -487,7 +487,7 @@ const contacts = {
     {
       key: "maria-regina-andrade",
       name: "Maria Regina Andrade",
-      role: "Por definir",
+      role: "Staff",
       phone: "+351 915298642",
       whatsappHref: "https://wa.me/351915298642",
       waIcon: WhatsApp,
@@ -495,7 +495,7 @@ const contacts = {
     {
       key: "fernando-piccirilo",
       name: "Fernando Piccirilo",
-      role: "Comercial — Sunlive Group",
+      role: "Staff",
       phone: "+351 913093702",
       whatsappHref: "https://wa.me/351913093702",
       waIcon: WhatsApp,
@@ -503,7 +503,7 @@ const contacts = {
     {
       key: "dilma-almeida",
       name: "Dilma Almeida",
-      role: "Por definir",
+      role: "Staff",
       phone: "+351 935630798",
       whatsappHref: "https://wa.me/351935630798",
       waIcon: WhatsApp,
