@@ -1,6 +1,11 @@
 // src/pages/Events/EventPage.jsx
 import { useEffect, useMemo } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import {
+  useParams,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import {
   getEventBaseByKey,
@@ -25,20 +30,31 @@ import OfficialPartner from "./components/OfficialPartner.jsx";
 import CombinedContact from "./components/CombinedContact.jsx";
 import Registration from "./components/Registration.jsx";
 
-
 export default function EventPage() {
   const { key } = useParams();
   const { lang } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // ✅ safety guard
   if (!key) return <Navigate to="/" replace />;
   if (EXTERNAL_EVENT_KEYS.has(key)) return <Navigate to="/" replace />;
 
   const eventBase = useMemo(() => getEventBaseByKey(key, lang), [key, lang]);
-
   const content = useMemo(() => getEventContentByKey(key, lang), [key, lang]);
 
   if (!eventBase || !content) return <Navigate to="/" replace />;
+
+  useEffect(() => {
+    const isPtRoute = location.pathname.startsWith("/eventos/");
+    const isEnRoute = location.pathname.startsWith("/events/");
+
+    const expectedBase = lang === "pt" ? "/eventos" : "/events";
+    const expectedPath = `${expectedBase}/${key}${location.hash || ""}`;
+
+    if ((lang === "pt" && isEnRoute) || (lang === "en" && isPtRoute)) {
+      navigate(expectedPath, { replace: true });
+    }
+  }, [lang, key, location.pathname, location.hash, navigate]);
 
   useEffect(() => {
     const rawTitle = content?.hero?.title || eventBase?.title || "ACE";
@@ -52,7 +68,6 @@ export default function EventPage() {
 
   const theme = content?.theme ?? {};
 
-  // ✅ não injectar undefined nas vars
   const themeVars = {
     "--bg": theme.bg ?? undefined,
     "--bgAlt": theme.bgAlt ?? undefined,
@@ -94,7 +109,6 @@ export default function EventPage() {
         <OptionalExtras content={content} />
         <ImportantNotes content={content} />
         <Registration content={content} />
-
       </div>
     </EventLayout>
   );

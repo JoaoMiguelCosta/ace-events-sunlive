@@ -7,6 +7,7 @@ export default function AppRouter() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/events/:key" element={<EventPage />} />
+      <Route path="/eventos/:key" element={<EventPage />} />
     </Routes>
   );
 }

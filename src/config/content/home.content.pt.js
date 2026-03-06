@@ -31,7 +31,7 @@ import partnerConfederacaoBrasileira from "../../assets/partners/confederacaobra
 import partnerDidDlenger from "../../assets/partners/diddlenger.png";
 import partnerEuropeanGymnastics from "../../assets/partners/europeangymnastics.png";
 import partnerFederacaoCiclismo from "../../assets/partners/federacaociclismo.png";
-import partnerFederacaoJudo from "../../assets/partners/federacaociclismo.png"; // (mantém o teu import real se for federacaojudo.png)
+import partnerFederacaoJudo from "../../assets/partners/federacaociclismo.png"; // mantém o teu import real se tiveres o ficheiro correto
 import partnerFeracaoKarate from "../../assets/partners/feracaokarate.png";
 import partnerFpb from "../../assets/partners/fpb.png";
 import partnerKuwait from "../../assets/partners/kuwait.png";
@@ -76,19 +76,19 @@ const header = {
       label: "Sobre",
       type: "dropdown",
       children: [
-        { label: "O que é o ACE", anchor: "#about-what", icon: MoveRight },
-        { label: "Conceito Base", anchor: "#about-concept", icon: Target },
-        { label: "Eventos ACE", anchor: "#about-events", icon: Users },
+        { label: "O que é o ACE", anchor: "#sobre-o-ace", icon: MoveRight },
+        { label: "Conceito Base", anchor: "#conceito-base", icon: Target },
+        { label: "Eventos ACE", anchor: "#eventos-ace", icon: Users },
         {
           label: "Interação com a Região",
-          anchor: "#about-region",
+          anchor: "#interacao-com-a-regiao",
           icon: Handshake,
         },
       ],
     },
-    { label: "Eventos", anchor: "#events" },
-    { label: "Parceiros", anchor: "#partners" },
-    { label: "Contactos", anchor: "#contacts" },
+    { label: "Eventos", anchor: "#eventos" },
+    { label: "Parceiros", anchor: "#parceiros" },
+    { label: "Contactos", anchor: "#contactos" },
     {
       label: "Instagram",
       href: "https://www.instagram.com/ace.sunlive/",
@@ -114,7 +114,7 @@ const hero = {
   ],
   cta: {
     label: "Explorar Eventos",
-    href: "#events",
+    href: "#eventos",
   },
 };
 
@@ -128,7 +128,7 @@ const about = {
     {
       key: "what",
       label: "O que é o ACE",
-      anchor: "#about-what",
+      anchor: "#sobre-o-ace",
       icon: MoveRight,
       heading: "O que é o ACE",
       bullets: [
@@ -142,7 +142,7 @@ const about = {
     {
       key: "concept",
       label: "Conceito Base",
-      anchor: "#about-concept",
+      anchor: "#conceito-base",
       icon: Target,
       heading: "Conceito Base",
       bullets: [
@@ -156,7 +156,7 @@ const about = {
     {
       key: "events",
       label: "Eventos ACE",
-      anchor: "#about-events",
+      anchor: "#eventos-ace",
       icon: Users,
       heading: "Eventos ACE",
       bullets: [
@@ -170,7 +170,7 @@ const about = {
     {
       key: "region",
       label: "Interação com a Região",
-      anchor: "#about-region",
+      anchor: "#interacao-com-a-regiao",
       icon: Handshake,
       heading: "Interação com a Região",
       sections: [
@@ -219,18 +219,15 @@ const about = {
   ],
 };
 
-/* =========================
-   EVENTS (UI SECTION)
-========================= */
 const events = {
-  id: "events",
+  id: "eventos",
   title: "Eventos ACE",
   items: [
     {
       key: "rhythmic-gymnastics-sunset-cup",
       title: "Rhythmic Gymnastics Sunset Cup",
       image: eventRhythmicGymnasticsSunsetCup,
-      href: "/events/rhythmic-gymnastics-sunset-cup",
+      href: "/eventos/rhythmic-gymnastics-sunset-cup",
       year: 2026,
       month: "Outubro",
       dateText: "Outubro 2026 (data a confirmar)",
@@ -254,7 +251,7 @@ const events = {
       key: "master-track-world-record",
       title: "Master Track Hour World Record",
       image: eventMasterTrackWorldRecord,
-      href: "/events/master-track-world-record",
+      href: "/eventos/master-track-world-record",
       year: 2026,
       month: "Junho",
       dateText: "4 Junho, 2026",
@@ -265,7 +262,7 @@ const events = {
       key: "bootcamp",
       title: "BootCamp",
       image: eventBootCamp,
-      href: "/events/bootcamp",
+      href: "/eventos/bootcamp",
       year: 2026,
       month: "Junho",
       dateText: "Junho 2026 (data a confirmar)",
@@ -276,7 +273,7 @@ const events = {
       key: "sunlive-international-cup",
       title: "Sunlive International Tournament",
       image: eventSunliveInternationalCup,
-      href: "/events/sunlive-international-cup",
+      href: "/eventos/sunlive-international-cup",
       year: 2026,
       month: "Julho",
       dateText: "3–5 Julho, 2026",
@@ -289,7 +286,7 @@ const events = {
       key: "eg-trampolins-training-camp",
       title: "EG Trampolins Training Camp",
       image: eventEgTrampolinsTrainingCamp,
-      href: "/events/eg-trampolins-training-camp",
+      href: "/eventos/eg-trampolins-training-camp",
       year: 2026,
       month: "Julho",
       dateText: "27–31 Julho, 2026",
@@ -302,7 +299,7 @@ const events = {
       key: "international-coaching-academy",
       title: "International Coaching Academy",
       image: eventInternationalCoachingAcademy,
-      href: "/events/international-coaching-academy",
+      href: "/eventos/international-coaching-academy",
       year: 2026,
       month: "Agosto",
       dateText: "10–16 Agosto, 2026",
@@ -328,7 +325,7 @@ const events = {
       key: "teamgym",
       title: "TeamGym",
       image: eventTeamGym,
-      href: "/events/teamgym",
+      href: "/eventos/teamgym",
       year: 2026,
       month: "Agosto/Setembro",
       dateText: "29 Agosto – 8 Setembro, 2026",
@@ -341,7 +338,7 @@ const events = {
       key: "sunlive-bmx-trophy-c2",
       title: "Sunlive BMX Trophy",
       image: eventSunliveBmxTrophyC2,
-      href: "/events/sunlive-bmx-trophy-c2",
+      href: "/eventos/sunlive-bmx-trophy-c2",
       year: 2026,
       month: "Setembro",
       dateText: "Setembro 2026 (data a confirmar)",
@@ -352,7 +349,7 @@ const events = {
       key: "stars-challenge",
       title: "Stars Challenge",
       image: eventStarsChallenge,
-      href: "/events/stars-challenge",
+      href: "/eventos/stars-challenge",
       year: 2026,
       month: "Novembro",
       dateText: "21 Novembro, 2026",
@@ -377,7 +374,7 @@ const events = {
       key: "sunlive-track-trophy-c2",
       title: "Sunlive Track Trophy",
       image: eventSunliveTrackTrophyC2,
-      href: "/events/sunlive-track-trophy-c2",
+      href: "/eventos/sunlive-track-trophy-c2",
       year: 2026,
       month: "Dezembro",
       dateText: "Dezembro 2026 (data a confirmar)",
@@ -386,12 +383,11 @@ const events = {
     },
   ],
 };
-
 /* =========================
    PARTNERS
 ========================= */
 const partners = {
-  id: "partners",
+  id: "parceiros",
   title: "Parceiros",
   items: [
     { key: "anadia", image: partnerAnadia, name: "Anadia" },
@@ -464,7 +460,7 @@ const partners = {
    CONTACTOS
 ========================= */
 const contacts = {
-  id: "contacts",
+  id: "contactos",
   title: "Contactos",
   subtitle: "Contactos diretos para coordenação e apoio.",
   items: [
@@ -510,6 +506,7 @@ const contacts = {
     },
   ],
 };
+
 /* =========================
    FOOTER
 ========================= */
@@ -520,7 +517,7 @@ const footer = {
 };
 
 /* =========================
-   EXPORT (HOME CONTENT) — Opção A
+   EXPORT (HOME CONTENT)
 ========================= */
 export const homeContent = {
   header,
