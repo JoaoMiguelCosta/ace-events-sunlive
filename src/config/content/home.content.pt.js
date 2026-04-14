@@ -474,7 +474,7 @@ const contacts = {
     },
     {
       key: "marina-remelgado",
-      name: "Marina Remelgado",
+      name: "Maria Remelgado",
       role: "STAFF",
       phone: "+351 934094584",
       whatsappHref: "https://wa.me/351934094584",
