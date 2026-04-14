@@ -479,8 +479,8 @@ const contacts = {
       waIcon: WhatsApp,
     },
     {
-      key: "marina-remelgado",
-      name: "Maria Remelgado",
+      key: "mariana-remelgado",
+      name: "Mariana Remelgado",
       role: "STAFF",
       phone: "+351 934094584",
       whatsappHref: "https://wa.me/351934094584",
